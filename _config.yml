@@ -22,7 +22,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 # logo: "/assets/images/logo.png"
 twitter_username: 01100001ditya
 github_username: adigeak
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "neon" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
 enable_copy_code_button: true
@@ -34,7 +34,7 @@ analytics:
 
 # Build settings
 markdown: kramdown
-# remote_theme: mmistakes/minimal-mistakes
+remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
