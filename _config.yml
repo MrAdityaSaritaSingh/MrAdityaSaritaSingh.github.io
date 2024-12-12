@@ -13,28 +13,36 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: Aditya Portfolio
+email: Mr.adityasaritasingh@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
-minimal_mistakes_skin: default
+    I’m a aspring product manager, who was a software engineer with experience in Software development, 
+    But i consider my self as tinker with hacker mentality. One who is curious about thing and system. 
+    From an early age, I have been driven by a fascination for making and breaking things.
+# logo: "/assets/images/logo.png"
+twitter_username: 01100001ditya
+github_username: adigeak
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "neon" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
+enable_copy_code_button: true
+analytics:
+    provider: "google-gtag"
+    google:
+        tracking_id: "G-XK4TZYPM5X"
+        anonymize_ip: false # default
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+# remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: ist # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
-  - _pages
+    - _pages
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -50,66 +58,72 @@ include:
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-gist
+    - jekyll-feed
+    - jemoji
+    - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
-  links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+    name: "Aditya Singh Rathore"
+    avatar: "/assets/images/bio-photo1.jpg"
+    bio: "I'm a software engineer turned into a product guy, who love to do research and exceute the idea to reality"
+    links:
+        - label: "Website"
+          icon: "fas fa-fw fa-link"
+          url: "https://adigeak.github.io/"
+        - label: "Twitter"
+          icon: "fab fa-fw fa-twitter-square"
+          url: "https://twitter.com/01100001ditya"
+        - label: "GitHub"
+          icon: "fab fa-fw fa-github"
+          url: "https://github.com/adigeak"
+        - label: "LinkedIn"
+          icon: "fab fa-fw fa-linkedin"
+          url: "https://www.linkedin.com/in/adigeek/"
+        # - label: "Instagram"
+        #   icon: "fab fa-fw fa-instagram"
+        #   url: "https://instagram.com/"
 
 footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+    links:
+        - label: "Twitter"
+          icon: "fab fa-fw fa-twitter-square"
+          url: "https://twitter.com/01100001ditya"
+        - label: "GitHub"
+          icon: "fab fa-fw fa-github"
+          url: "https://github.com/"
+        - label: "LinkedIn"
+          icon: "fab fa-fw fa-linkedin"
+          url: "https://www.linkedin.com/in/adigeek/"
+        # - label: "Instagram"
+        #   icon: "fab fa-fw fa-instagram"
+        #   url: "https://instagram.com/"
 
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+    # _posts
+    - scope:
+          path: ""
+          type: posts
+      values:
+          layout: single
+          author_profile: true
+          read_time: true
+          comments: true
+          share: true
+          related: true
+    # _pages
+    - scope:
+          path: "_pages"
+          type: pages
+      values:
+          layout: single
+          author_profile: true
 
 category_archive:
-  type: liquid
-  path: /categories/
+    type: liquid
+    path: /categories/
 tag_archive:
-  type: liquid
-  path: /tags/
+    type: liquid
+    path: /tags/
