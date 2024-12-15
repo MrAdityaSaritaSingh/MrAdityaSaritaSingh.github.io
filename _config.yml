@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Aditya Portfolio
+title: Aditya's Portfolio
 email: Mr.adityasaritasingh@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
     I’m a aspring product manager, who was a software engineer with experience in Software development, 
@@ -69,6 +69,7 @@ author:
     name: "Aditya Singh Rathore"
     avatar: "/assets/images/bio-photo1.jpg"
     bio: "I'm a software engineer turned into a product guy, who love to do research and exceute the idea to reality"
+    location: Hyderabad & Pune
     links:
         - label: "Website"
           icon: "fas fa-fw fa-link"
