@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <meta itemprop="headline" content="{{ page.title }}">
+  <meta itemprop="description" content="{{ page.description }}">
+
+  <div class="page__inner-wrap">
+    <header>
+      <h1 id="page-title" class="page__title" itemprop="headline">{{ page.title }}</h1>
+      {% if page.date %}
+        <p class="page__date">
+          <i class="far fa-calendar-alt" aria-hidden="true"></i>
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        </p>
+      {% endif %}
+    </header>
+
+    <section class="page__content" itemprop="text">
+      {% if page.image %}
+        <div class="project-image">
+          <img src="{{ page.image }}" alt="{{ page.title }}">
+        </div>
+      {% endif %}
+
+      {{ content }} {# This is where the project content from the Markdown file goes #}
+
+      {% if page.url %}
+        <p><strong>View Project:</strong> <a href="{{ page.url }}" target="_blank" rel="noopener noreferrer">{{ page.url }}</a></p>
+      {% endif %}
+
+       {% if page.categories %}
+        <div class="page__taxonomy">
+          <ul class="inline-taxonomy">
+            {% for category in page.categories %}
+              <li><a href="/categories/#{{ category | slugify }}" class="page__taxonomy-item p-category">{{ category }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+    </section>
+    <hr>
+    <footer class="page__meta">
+         {% if page.tags %}
+        <div class="page__taxonomy">
+          <ul class="inline-taxonomy">
+            {% for tag in page.tags %}
+              <li><a href="/tags/#{{ tag | slugify }}" class="page__taxonomy-item p-tag">{{ tag }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </footer>
+  </div>
+</article>
+
+<style>
+.project-image {
+  text-align: center; /* Center the image */
+  margin-bottom: 20px; /* Add some space below the image */
+}
+
+.project-image img {
+  max-width: 100%; /* Make the image responsive */
+  height: auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+</style>

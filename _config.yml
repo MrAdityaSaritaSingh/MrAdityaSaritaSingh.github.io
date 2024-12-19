@@ -122,6 +122,11 @@ defaults:
           layout: single
           author_profile: true
 
+collections:
+  projects:
+    output: true 
+    permalink: /projects/:path/ 
+
 category_archive:
     type: liquid
     path: /categories/
