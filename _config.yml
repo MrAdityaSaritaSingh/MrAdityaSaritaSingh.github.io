@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Aditya's Portfolio
+title: Aditya | Think | Build | Repeat
 email: Mr.adityasaritasingh@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
     I’m a aspring product manager, who was a software engineer with experience in Software development, 
@@ -22,8 +22,9 @@ description: >- # this means to ignore newlines until "baseurl:"
 # logo: "/assets/images/logo.png"
 twitter_username: 01100001ditya
 github_username: adigeak
-# theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "dirt" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+#theme: minimal-mistakes-jekyll
+# theame
+minimal_mistakes_skin: "dark" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
 enable_copy_code_button: true
 analytics:
