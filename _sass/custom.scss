@@ -1,4 +1,4 @@
-/* _sass/_custom.scss */
+/* custom css */
 
 .my-custom-class {
     color: red;
@@ -128,56 +128,4 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-  }
-
-  .project-image {
-    text-align: center; /* Center the image */
-    margin-bottom: 20px; /* Add some space below the image */
-  }
-  
-  .project-image img {
-    max-width: 100%; /* Make the image responsive */
-    height: auto;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    grid-gap: 20px;
-  }
-  
-  .grid__item {
-    display: flex;
-  }
-  
-  .project-card {
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .project-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .project-meta {
-    margin-top: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .project-category{
-    font-size: small;
-    background-color: #eee;
-    padding: 0.2rem 0.5rem;
-    border-radius: 5px;
   }

@@ -1,0 +1,45 @@
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* 2 columns minimum 400px wide */
+    grid-gap: 20px;
+  }
+  
+  .project-card {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    min-height: 300px; /*optional: Set a minimum height for consistent card sizes*/
+  }
+  
+  .project-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: cover; /* Prevents image distortion */
+  }
+  
+  .project-card h3 {
+      margin-bottom: 0.5rem;
+  }
+  
+  .project-card p {
+      flex-grow: 1; /* Allows description to take up available space */
+  }
+  
+  .project-meta {
+    margin-top: auto; /* Push meta to the bottom */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .project-category {
+    font-size: small;
+    background-color: #ae8569;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+  }

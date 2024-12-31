@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: splash
 ---
 
 <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
@@ -13,7 +13,7 @@ layout: default
         <p class="page__date">
           <i class="far fa-calendar-alt" aria-hidden="true"></i>
           <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-        </p>
+        </p> 
       {% endif %}
     </header>
 
@@ -24,7 +24,7 @@ layout: default
         </div>
       {% endif %}
 
-      {{ content }} {# This is where the project content from the Markdown file goes #}
+      {{ content }}
 
       {% if page.url %}
         <p><strong>View Project:</strong> <a href="{{ page.url }}" target="_blank" rel="noopener noreferrer">{{ page.url }}</a></p>
