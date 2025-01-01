@@ -43,3 +43,46 @@
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
   }
+
+  .sub-bnr-home {
+    background-image: url('../images/page_project_head.png');
+    background-size: auto; 
+    background-attachment: scroll;
+    background-position: 300px bottom;
+    min-height: 600px;
+    background-color: #f8f8f8;
+    background-repeat: no-repeat;
+    position: relative; 
+}
+
+.position-center-center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+}
+
+.sub-bnr-home h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: normal;
+  color: #232227;
+  letter-spacing: 2px;
+  margin-top: 150px;
+  position: relative;
+}
+
+.sub-bnr-home h1 {
+  font-weight: 800;
+  font-size: 74px;
+  color: #232227;
+  padding-left: 50px;
+  text-transform: uppercase;
+  line-height: 98px;
+  font-weight: 800;
+}
