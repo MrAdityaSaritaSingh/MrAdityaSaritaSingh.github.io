@@ -2,6 +2,7 @@
 title: "Lorem ipsum"
 categories:
   - Placeholder
+hidden: true
 # tags:
 #   - Placeholder
 ---
