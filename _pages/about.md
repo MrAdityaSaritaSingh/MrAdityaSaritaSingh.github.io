@@ -1,11 +1,10 @@
 ---
 permalink: /about/
 title: "About Me"
-layout: "splash"
 ---
 #### Introduction
 
-Hi, I'm Aditya!
+Hi there!!
 
 I'm a Software Engineer with over four years of experience building products especially for the packaging and heavy industry. I'm currently transitioning into Product Management roles, plus doing master from IIIT Hyderabad. I'm experience in C++, C#, python with worked in computer vision application. My background as a "tinkerer with a hacker mentality" fuels my curiosity for understanding systems and now user needs.
 
