@@ -14,9 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Aditya | Think | Build | Repeat
-email: Mr.adityasaritasingh@gmail.com
+email: Mr.adityasrathore@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-    I’m a aspring product manager, who was a software engineer with experience in Software development, 
+    I’m a aspring product manager, who was a software engineer with 4+ year experience in building product in a startup, 
     But i consider my self as tinker with hacker mentality. One who is curious about thing and system. 
     From an early age, I have been driven by a fascination for making and breaking things.
 # logo: "/assets/images/logo.png"
@@ -72,7 +72,7 @@ author:
     bio: "I build, iterate, and think from first principles."
     location: Hyderabad & Pune
     links:
-        - label: "Website"
+        - label: "Blog"
           icon: "fas fa-fw fa-link"
           url: "https://adigeak.github.io/"
         - label: "Twitter"
@@ -83,7 +83,7 @@ author:
           url: "https://github.com/adigeak"
         - label: "LinkedIn"
           icon: "fab fa-fw fa-linkedin"
-          url: "https://www.linkedin.com/in/adigeek/"
+          url: "https://www.linkedin.com/in/aditya-s-rathore/"
         # - label: "Instagram"
         #   icon: "fab fa-fw fa-instagram"
         #   url: "https://instagram.com/"
@@ -95,10 +95,10 @@ footer:
           url: "https://twitter.com/01100001ditya"
         - label: "GitHub"
           icon: "fab fa-fw fa-github"
-          url: "https://github.com/"
+          url: "https://github.com/adigeak"
         - label: "LinkedIn"
           icon: "fab fa-fw fa-linkedin"
-          url: "https://www.linkedin.com/in/adigeek/"
+          url: "https://www.linkedin.com/in/aditya-s-rathore/"
         # - label: "Instagram"
         #   icon: "fab fa-fw fa-instagram"
         #   url: "https://instagram.com/"

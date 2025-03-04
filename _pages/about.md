@@ -14,7 +14,7 @@ Here is my [Resume](https://drive.google.com/drive/folders/1S7-XrgFijp-Jpd7bezqt
 
 #### Education
 
-* Master of Technology (M.Tech) in Product Design & Managment: IIIT Hyderabad, [2024-2026]
+* Master of Technology (M.Tech) in Product Design & Managment(PDM): IIIT Hyderabad, [2024-2026]
 * Bachelor of Technology (B.Tech) in Computer Science: KNIT Sultanpur, [2017-2021]
 
 #### Future
