@@ -27,6 +27,7 @@ github_username: adigeak
 minimal_mistakes_skin: "dark" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
 enable_copy_code_button: true
+google_site_verification: "61p7MzbQhkn7H1km0b7BCp3qvG-17b3eSh_gQYaygvY"
 analytics:
     provider: "google-gtag"
     google:
@@ -67,7 +68,7 @@ plugins:
     - jekyll-include-cache
 
 author:
-    name: "Aditya Singh Rathore"
+    name: "Aditya S. Rathore"
     avatar: "/assets/images/bio-photo1.jpg"
     bio: "I build, iterate, and think from first principles."
     location: Hyderabad & Pune
