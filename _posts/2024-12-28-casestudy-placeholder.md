@@ -2,6 +2,7 @@
 title: "Lorem ipsum"
 categories:
   - Case study 
+hidden: true
 # tags:
 #   - Placeholder
 #   - casestudy

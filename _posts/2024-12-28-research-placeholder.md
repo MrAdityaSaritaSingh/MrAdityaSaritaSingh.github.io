@@ -2,6 +2,7 @@
 title: "Lorem ipsum"
 categories:
   - Research
+hidden: true
 # tags:
 #   - Placeholder
 #   - UX

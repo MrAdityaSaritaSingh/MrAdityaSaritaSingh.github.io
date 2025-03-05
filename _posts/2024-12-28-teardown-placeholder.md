@@ -2,6 +2,7 @@
 title: "Lorem ipsum"
 categories:
   - Teardown
+hidden: true
 # tags:
 #   - Placeholder
 #   - Product
