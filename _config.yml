@@ -13,12 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Aditya | Think | Build | Repeat
+title: Aditya S. Rathore | Product Manager
 email: Mr.adityasrathore@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-    I’m a aspring product manager, who was a software engineer with 4+ year experience in building product, 
-    But i consider my self as tinker with hacker mentality. One who is curious about thing and system. 
-    From an early age, I have been driven by a fascination for making and breaking things.
+    Aditya S. Rathore is an aspiring Product Manager currently pursuing a Master's degree at IIIT Hyderabad.  With over four years of experience as a Software Engineer building products, Aditya brings a unique blend of technical expertise and a product-focused mindset.  Describing himself as a "tinker with a hacker mentality," Aditya has always been driven by a deep curiosity for how things work and a passion for both building and innovating within systems.
 # logo: "/assets/images/logo.png"
 twitter_username: 01100001ditya
 github_username: adigeak
