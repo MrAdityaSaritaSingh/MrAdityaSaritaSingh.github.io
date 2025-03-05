@@ -24,17 +24,17 @@ layout: splash
         </div>
       {% endif %}
 
-      {{ content }}
-
-      {% if page.url %}
-        <p><strong>View Project:</strong> <a href="{{ page.url }}" target="_blank" rel="noopener noreferrer">{{ page.url }}</a></p>
+      {% if page.link %}
+        <h6><a href="{{ page.link }}">View Report</a></h6>
       {% endif %}
+
+      {{ content }}
 
        {% if page.categories %}
         <div class="page__taxonomy">
           <ul class="inline-taxonomy">
             {% for category in page.categories %}
-              <li><a href="/categories/#{{ category | slugify }}" class="page__taxonomy-item p-category">{{ category }}</a></li>
+              <a href="/categories/#{{ category | slugify }}" class="page__taxonomy-item p-category">{{ category }}</a>
             {% endfor %}
           </ul>
         </div>
