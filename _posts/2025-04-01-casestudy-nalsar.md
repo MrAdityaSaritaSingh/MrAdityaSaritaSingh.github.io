@@ -9,7 +9,7 @@ tags:
   - CaseStudy
 ---
 
-Here is the [link](/assets/pdf/AdityaSingh_MAD.pdf).
+Here is the [link](https://mradityasaritasingh.github.io/case%20study/casestudy-nalsar/).
 
 In our recent business case competition, we tackled a challenge at the intersection of technology, sustainability, and rural empowerment: **How can electric vehicles (EVs) become accessible and scalable in rural India?**
 
