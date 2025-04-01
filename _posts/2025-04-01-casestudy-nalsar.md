@@ -9,6 +9,8 @@ tags:
   - CaseStudy
 ---
 
+Here is the [link](/assets/pdf/AdityaSingh_MAD.pdf).
+
 In our recent business case competition, we tackled a challenge at the intersection of technology, sustainability, and rural empowerment: **How can electric vehicles (EVs) become accessible and scalable in rural India?**
 
 The case, titled **"Gramin E-Mobility"**, asked participants to create a launch strategy for an EV startup tailored to rural communities, especially targeting users like small farmers and artisans.
@@ -49,5 +51,3 @@ We created a two-pronged EV product strategy:
 - Financial projections are storytelling tools — not just numbers.
 
 This case was more than a competition — it was a deep dive into rural innovation, where **mobility becomes empowerment**, and **business becomes impact**.
-
-[link](/assets/pdf/AdityaSingh_MAD.pdf)
