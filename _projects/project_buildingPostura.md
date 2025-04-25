@@ -20,14 +20,11 @@ Here is the ppt [link](https://drive.google.com/file/d/1xTVbwqk8SJAWlASD1ZN3ikGa
 ![image](/assets/images/in-post/post-postura/final.png)
 
 1. **The Wearable Vest**
-
-- Equipped with 2 on the shoulders —it tracks slouching and posture dynamics.  
-- It’s lightweight, comfortable, and designed for hours of wear without causing irritation.  
-
+   1. Equipped with 2 on the shoulders —it tracks slouching and posture dynamics.  
+   2. It’s lightweight, comfortable, and designed for hours of wear without causing irritation.  
 2. **The Table Unit**  
-
-- Acts as a central hub for **data collection** and **analytics visualization.**  
-- Delivers actionable feedback to the user, with potential applications for workplace wellness programs.  
+   1. Acts as a central hub for **data collection** and **analytics visualization.**  
+   2. Delivers actionable feedback to the user, with potential applications for workplace wellness programs.  
 
 ---
 
