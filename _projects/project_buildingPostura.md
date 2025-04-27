@@ -19,12 +19,16 @@ Here is the ppt [link](https://drive.google.com/file/d/1xTVbwqk8SJAWlASD1ZN3ikGa
 
 ![image](/assets/images/in-post/post-postura/final.png)
 
-1. **The Wearable Vest**
-   1. Equipped with 2 on the shoulders —it tracks slouching and posture dynamics.  
-   2. It’s lightweight, comfortable, and designed for hours of wear without causing irritation.  
-2. **The Table Unit**  
-   1. Acts as a central hub for **data collection** and **analytics visualization.**  
-   2. Delivers actionable feedback to the user, with potential applications for workplace wellness programs.  
+### 1. Wearable Vest  
+- **Features:**  
+  - Equipped with four sensors: two on the shoulders and two on the spine for accurate posture tracking.  
+  - Lightweight and comfortable for extended wear without irritation.  
+
+### 2. Table Unit  
+- **Features:**  
+  - Serves as a hub for **data collection** and **visualization of analytics.**  
+  - Delivers real-time actionable feedback to help users improve their posture.  
+  - Designed for scalability in workplace wellness programs.  
 
 ---
 
@@ -35,13 +39,15 @@ Here is the ppt [link](https://drive.google.com/file/d/1xTVbwqk8SJAWlASD1ZN3ikGa
 - **Simplification**: Feedback from mentors helped us focus on **slouch detection**, ensuring the system did one thing and did it exceptionally well.  
 - **DIY Excellence**: From building a custom battery pack to integrating two ESP microcontrollers into a compact case, every aspect of the product was thoughtfully designed and executed.
 
-My Role
+---
 
-- Problem identification and ideation  
-- Brainstorming and prototyping the wearable vest and table unit  
-- Sensor integration and hardware assembly  
-- Developing the analytics engine and user feedback loop  
-- Iterative testing and refinement  
+## My Role  
+
+- Identified and defined the problem.  
+- Led ideation and brainstorming sessions for the wearable and table unit design.  
+- Assembled hardware and integrated sensors.  
+- Developed the analytics engine for real-time feedback.  
+- Conducted iterative testing and refinement based on user feedback.  
 
 ---
 
