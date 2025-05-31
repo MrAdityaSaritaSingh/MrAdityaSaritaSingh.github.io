@@ -14,8 +14,7 @@ Poor posture is a pervasive problem, particularly for those spending long hours 
 
 ## Our Solution
 
-We developed a system combining a **wearable vest** with **a table unit hub** that monitors posture in real-time and provides advanced analytics to encourage corrective action.  
-Here is the ppt [link](https://drive.google.com/file/d/1xTVbwqk8SJAWlASD1ZN3ikGahPudZdG_/view?usp=sharing).
+We developed a system combining a **wearable vest** with **a table unit hub** that monitors posture in real-time and provides advanced analytics to encourage corrective action.
 
 ![image](/assets/images/in-post/post-postura/final.png)
 
