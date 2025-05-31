@@ -13,7 +13,8 @@ layout: splash
 </div>
 
 <div class="projects-grid">
-  {% for project in site.projects %}
+  {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+  {% for project in sorted_projects %}
     <div class="project-card">
       {% if project.image %}
         <img src="{{ project.image }}" alt="{{ project.title }}">

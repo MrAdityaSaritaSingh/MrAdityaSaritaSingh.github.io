@@ -1,7 +1,7 @@
 ---
 title: Neuro-Symbolic Visual Reasoning 🧠
-date: 2024-03-15
-categories: \[AI, Education, Cognitive Development, UX]
+date: 2025-05-02
+categories: [AI, Education, Cognitive Development, UX]
 image: /assets/images/post-bg-symbloic.png
 description: Bridging perception and logic to boost children’s spatial reasoning with neuro-symbolic AI.
 layout: project
