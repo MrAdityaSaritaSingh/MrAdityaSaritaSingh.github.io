@@ -1,23 +1,8 @@
+
 /* custom css */
-
 .my-custom-class {
-    color: red;
-    font-weight: bold;
-  }
-  
-/* General Reset / Box-Sizing */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body & Overall Page Style */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #121212; /* Dark background */
-  color: #ffffff;
-  line-height: 1.6;
+  color: $primary-color; /* Was red */
+  font-weight: bold;
 }
 
 /* Hero Section */
@@ -28,6 +13,7 @@ body {
   align-items: center;
   /* Add some padding left/right if you like */
   padding: 0 2rem;
+  background-color: $dark-gray; /* Using dark background for contrast */
 }
 
 .hero-content {
@@ -45,33 +31,33 @@ body {
 
 .hero-text .intro {
   font-size: 1rem;
-  color: #cccccc; /* Slightly lighter gray for the sub-text */
+  color: $base04; /* Was #cccccc */
 }
 
 .hero-text .name {
   font-size: 3rem;
   margin: 0.5rem 0;
-  color: #ff6600; /* Example orange color */
+  color: $footer-background-color; /* Was #ff6600, using a bright color from the skin */
   font-weight: 700;
 }
 
 .hero-text .role {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: $base07; /* Was #ffffff */
   font-weight: 400;
 }
 
 .hero-text .description {
   font-size: 1rem;
   margin-bottom: 2rem;
-  color: #b3b3b3; /* Muted gray for paragraph text */
+  color: $base05; /* Was #b3b3b3 */
 }
 
 /* CTA Button */
 .cta-button {
-  background-color: #ff6600;
-  color: #ffffff;
+  background-color: $primary-color; /* Was #ff6600 */
+  color: $base07; /* Was #ffffff */
   padding: 0.75rem 1.25rem;
   border-radius: 4px;
   text-decoration: none;
@@ -80,29 +66,26 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #e65c00; /* Darken on hover */
+  background-color: mix(#000, $primary-color, 20%); /* Darken on hover, similar to link hovers */
 }
 
 /* Right side image */
 .hero-image {
   max-width: 50%; /* Occupies the other half of the screen */
   text-align: right; /* Keep the image to the right side */
-  background-color: white;
+  /* Giving the background a subtle color from the skin */
+  background-color: $base01;
   border-radius: 50%;
 }
 
 .profile-picture {
-  width: 300px;      /* Adjust to your preference */
+  width: 300px;
   height: auto;
   display: inline-block;
+  border-radius: 50%;
 }
 
-/* Introduction / About Section */
-.introduction {
-  padding: 3rem 2rem;
-  background-color: #1c1c1c; /* Slightly lighter than hero if you want a section distinction */
-}
-
+/* These sections will inherit the body colors */
 .introduction .container {
   max-width: 800px;
   margin: 0 auto;
@@ -118,14 +101,16 @@ body {
   padding-left: 1.25rem;
 }
 
-  
-  ul {
-    list-style-type: disc;
-    padding-left: 20px;
-  }
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
 
-  .contact-page {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-  }
+.contact-page {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  /* Example of using other skin variables */
+  border: 1px solid $border-color;
+  background-color: $form-background-color;
+}
