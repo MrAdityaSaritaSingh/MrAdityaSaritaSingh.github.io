@@ -99,7 +99,7 @@ footer:
           icon: "fab fa-fw fa-linkedin"
           url: "https://www.linkedin.com/in/aditya-s-rathore/"
         - label: "Contact"
-          icon: "fab fa-fw fa-contact"
+          icon: "fa-solid fa-envelope"
           url: "/contact/"
 
 defaults:
