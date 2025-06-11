@@ -1,7 +1,7 @@
 
 /* custom css */
 .my-custom-class {
-  color: $primary-color; /* Was red */
+  color: $primary-color;
   font-weight: bold;
 }
 
@@ -11,53 +11,50 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  /* Add some padding left/right if you like */
   padding: 0 2rem;
-  background-color: $dark-gray; /* Using dark background for contrast */
+  background-color: $dark-gray;
 }
 
 .hero-content {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* You can adjust vertical alignment via align-items here if needed */
   align-items: center;
 }
 
-/* Left side text */
 .hero-text {
-  max-width: 50%; /* Keep text to half the screen, adjust as you see fit */
+  max-width: 50%;
 }
 
 .hero-text .intro {
   font-size: 1rem;
-  color: $base04; /* Was #cccccc */
+  color: $base04;
 }
 
 .hero-text .name {
   font-size: 3rem;
   margin: 0.5rem 0;
-  color: $footer-background-color; /* Was #ff6600, using a bright color from the skin */
+  color: $footer-background-color;
   font-weight: 700;
 }
 
 .hero-text .role {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: $base07; /* Was #ffffff */
+  color: $base07;
   font-weight: 400;
 }
 
 .hero-text .description {
   font-size: 1rem;
   margin-bottom: 2rem;
-  color: $base05; /* Was #b3b3b3 */
+  color: $base05;
 }
 
 /* CTA Button */
 .cta-button {
-  background-color: $primary-color; /* Was #ff6600 */
-  color: $base07; /* Was #ffffff */
+  background-color: $primary-color;
+  color: $base07; 
   padding: 0.75rem 1.25rem;
   border-radius: 4px;
   text-decoration: none;
@@ -66,14 +63,12 @@
 }
 
 .cta-button:hover {
-  background-color: mix(#000, $primary-color, 20%); /* Darken on hover, similar to link hovers */
+  background-color: mix(#000, $primary-color, 20%);
 }
 
-/* Right side image */
 .hero-image {
-  max-width: 50%; /* Occupies the other half of the screen */
-  text-align: right; /* Keep the image to the right side */
-  /* Giving the background a subtle color from the skin */
+  max-width: 50%;
+  text-align: right;
   background-color: $base01;
   border-radius: 50%;
 }
@@ -85,7 +80,6 @@
   border-radius: 50%;
 }
 
-/* These sections will inherit the body colors */
 .introduction .container {
   max-width: 800px;
   margin: 0 auto;
@@ -110,7 +104,6 @@ ul {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  /* Example of using other skin variables */
   border: 1px solid $border-color;
   background-color: $form-background-color;
 }
