@@ -98,9 +98,9 @@ footer:
         - label: "LinkedIn"
           icon: "fab fa-fw fa-linkedin"
           url: "https://www.linkedin.com/in/aditya-s-rathore/"
-        # - label: "Instagram"
-        #   icon: "fab fa-fw fa-instagram"
-        #   url: "https://instagram.com/"
+        - label: "Contact"
+          icon: "fab fa-fw fa-contact"
+          url: "/contact/"
 
 defaults:
     # _posts

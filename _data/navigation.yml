@@ -3,9 +3,9 @@ main:
       url: /
     - title: "About"
       url: /about/
-    - title: "Studies"
+    - title: "Blogs"
+      url: https://adigeak.github.io/
+    - title: "Case Studies"
       url: /posts/
     - title: "Projects"
       url: /projects/
-    - title: "Contact"
-      url: /contact/
