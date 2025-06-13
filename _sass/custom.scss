@@ -7,12 +7,13 @@
 
 /* Hero Section */
 .hero {
+  background-color: $background-color;
+  color: $dark-gray;
   width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 0 2rem;
-  background-color: $dark-gray;
 }
 
 .hero-content {
@@ -24,46 +25,46 @@
 
 .hero-text {
   max-width: 50%;
+  color: $dark-gray;
+
+  .intro {
+    font-size: 1rem;
+    color: $muted-text-color;
+  }
+
+  .name {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    color: $footer-background-color;
+    font-weight: 700;
+  }
+
+  .role {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $muted-text-color;
+    font-weight: 400;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: $muted-text-color;
+  }
 }
 
-.hero-text .intro {
-  font-size: 1rem;
-  color: $base04;
-}
-
-.hero-text .name {
-  font-size: 3rem;
-  margin: 0.5rem 0;
-  color: $footer-background-color;
-  font-weight: 700;
-}
-
-.hero-text .role {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: $base07;
-  font-weight: 400;
-}
-
-.hero-text .description {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: $base05;
-}
-
-/* CTA Button */
 .cta-button {
   background-color: $primary-color;
-  color: $base07; 
+  color: $text-color;
   padding: 0.75rem 1.25rem;
   border-radius: 4px;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
   transition: background-color 0.3s ease;
-}
 
-.cta-button:hover {
-  background-color: mix(#000, $primary-color, 20%);
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
 }
 
 .hero-image {
