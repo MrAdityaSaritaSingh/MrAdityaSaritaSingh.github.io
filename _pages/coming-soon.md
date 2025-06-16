@@ -9,4 +9,4 @@ permalink: /coming-soon.html
 
 We're working hard to bring you a brand new experience. Please check back soon!
 
-<a href="/" class="cta-button">Return to Home</a>
+[Return to Home](/){: .cta-button }
