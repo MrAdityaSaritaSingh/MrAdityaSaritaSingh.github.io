@@ -7,13 +7,14 @@
 
 /* Hero Section */
 .hero {
-  background-color: $background-color;
+  background-color: #F4D7B9;
   color: $dark-gray;
   width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 0 2rem;
+  margin: 1rem auto;
 }
 
 .hero-content {
