@@ -41,7 +41,7 @@
   }
 
   .role {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: $muted-text-color;
     font-weight: 400;
@@ -143,4 +143,10 @@ ul {
   .profile-picture {
     width: 180px;
   }
+}
+
+.hero-text, .hero-image {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s, transform 0.8s;
 }

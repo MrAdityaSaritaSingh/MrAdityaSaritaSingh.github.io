@@ -18,3 +18,52 @@ document.querySelectorAll(".project-card").forEach((card) => {
         card3d.style.transform = "";
     });
 });
+
+// Typing effect
+function typeText(element, text, speed = 60, callback) {
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        } else if (callback) {
+            callback();
+        }
+    }
+    element.textContent = "";
+    type();
+}
+
+// Fade-in effect for hero section
+function fadeInOnLoad(selector) {
+    document.querySelectorAll(selector).forEach((el) => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(30px)";
+        setTimeout(() => {
+            el.style.transition = "opacity 0.8s, transform 0.8s";
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+        }, 200);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Typing effect for role
+    const roleEl = document.getElementById("hero-role");
+    const descEl = document.getElementById("hero-desc");
+    descEl.textContent = "";
+    if (roleEl) {
+        typeText(roleEl, "Product Manager | Software Engineer", 20, () => {
+            if (descEl) {
+                typeText(
+                    descEl,
+                    "Building products with user-centric design and a focus on impact.",
+                    10
+                );
+            }
+        });
+    }
+    // Fade-in hero text and image
+    fadeInOnLoad(".hero-text, .hero-image");
+});
