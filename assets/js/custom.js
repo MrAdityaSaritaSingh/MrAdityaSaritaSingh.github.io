@@ -66,4 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // Fade-in hero text and image
     fadeInOnLoad(".hero-text, .hero-image");
+
+    // Add zoom effect to hero image on hover
+    const heroImg = document.querySelector(".hero-image .profile-picture");
+    if (heroImg) {
+        heroImg.style.transition =
+            "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+        heroImg.addEventListener("mouseenter", () => {
+            heroImg.style.transform = "scale(1.12)";
+        });
+        heroImg.addEventListener("mouseleave", () => {
+            heroImg.style.transform = "scale(1)";
+        });
+    }
 });
