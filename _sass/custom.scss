@@ -7,8 +7,8 @@
 
 /* Hero Section */
 .hero {
-  background-color: $primary-color;
-  color: $dark-gray;
+  background-color: $background-color;
+  color: $text-color;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -26,17 +26,17 @@
 
 .hero-text {
   max-width: 50%;
-  color: $dark-gray;
+  color: $text-color;
 
   .intro {
     font-size: 1rem;
-    color: $muted-text-color;
+    color: mix($background-color, $text-color, 50%);
   }
 
   .name {
     font-size: 3rem;
     margin: 0.5rem 0;
-    color: $footer-background-color;
+    color: $primary-color;
     font-weight: 700;
   }
 
@@ -44,13 +44,13 @@
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 1rem;
-    color: $muted-text-color;
+    color: mix($background-color, $text-color, 50%);
   }
 
   .description {
     font-size: 1rem;
     margin-bottom: 2rem;
-    color: $muted-text-color;
+    color: mix($background-color, $text-color, 50%);
   }
 }
 
@@ -74,7 +74,7 @@
 .hero-image {
   max-width: 50%;
   text-align: right;
-  background-color: $base01;
+  background-color: $secondary-color;
   border-radius: 50%;
 }
 
