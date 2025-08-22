@@ -22,11 +22,13 @@ layout: splash
       <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
       <p>{{ project.description }}</p>
       {% if project.link %}
-        <p><a href="{{ project.link }}">Project Report</a></p>
+        <p><a href="{{ project.link }}" aria-label="View the project report for {{ project.title }}">Project Report</a></p>
       {% endif %}
       <div class="project-meta">
         {% if project.categories %}
-          <span class="project-category">{{ project.categories | join: ", " }}</span>
+          {% for category in project.categories %}
+            <span class="project-category">{{ category }}</span>
+          {% endfor %}
         {% endif %}
       </div>
     </div>
