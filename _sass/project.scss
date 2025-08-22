@@ -9,10 +9,19 @@
     border: 1px solid $border-color;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px $box-shadow;
+    box-shadow: $box-shadow;
     display: flex;
     flex-direction: column; /* Ensure content stacks vertically */
     min-height: 300px; /*optional: Set a minimum height for consistent card sizes*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+    z-index: 1;
+    position: relative;
+  }
+
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2;
   }
   
   .project-card img {
