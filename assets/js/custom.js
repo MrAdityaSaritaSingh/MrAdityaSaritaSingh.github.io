@@ -49,19 +49,22 @@ function setupScrollAnimations() {
     const animatedElements = document.querySelectorAll(".scroll-fade-in");
     if (!animatedElements.length) return;
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: "0px 0px -50px 0px" // Start animation a little before it's fully in view
-    });
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: "0px 0px -50px 0px", // Start animation a little before it's fully in view
+        }
+    );
 
-    animatedElements.forEach(el => observer.observe(el));
+    animatedElements.forEach((el) => observer.observe(el));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -69,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeInOnLoad(".hero-text, .hero-image");
 
     // Typing effect for role, delayed to sync with fade-in
+    /*
     setTimeout(() => {
         const roleEl = document.getElementById("hero-role");
         const descEl = document.getElementById("hero-desc");
@@ -83,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     }, 500); // Start typing 500ms after page load
+    */
 
     // Add zoom effect to hero image on hover
     const heroImg = document.querySelector(".hero-image");

@@ -22,6 +22,7 @@
 .hero-text {
   max-width: 50%;
   color: $text-color;
+  min-height: 18rem; /* Reserve space for text to prevent layout shift */
 
   .intro {
     font-size: $type-size-5;
@@ -40,14 +41,14 @@
     font-weight: 500;
     margin-bottom: $space-m;
     color: mix($background-color, $text-color, 50%);
-    min-height: 2.5em; /* Reserve space to prevent layout shift */
+    min-height: 3em; /* Reserve space to prevent layout shift */
   }
 
   .desc {
     font-size: $type-size-5;
     margin-bottom: $space-xl;
     color: mix($background-color, $text-color, 50%);
-    min-height: 4em; /* Reserve space to prevent layout shift */
+    min-height: 5em; /* Reserve space to prevent layout shift */
   }
 }
 
