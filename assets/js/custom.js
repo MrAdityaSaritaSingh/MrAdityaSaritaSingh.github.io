@@ -1,6 +1,5 @@
 // 3D tilt effect for project cards
 // Applies to .project-card > .card-3d
-
 document.querySelectorAll(".project-card").forEach((card) => {
     const card3d = card.querySelector(".card-3d");
     if (!card3d) return;
@@ -38,32 +37,52 @@ function typeText(element, text, speed = 60, callback) {
 // Fade-in effect for hero section
 function fadeInOnLoad(selector) {
     document.querySelectorAll(selector).forEach((el) => {
-        el.style.opacity = 0;
-        el.style.transform = "translateY(30px)";
+        // Add a small delay before adding the visible class to start the animation
         setTimeout(() => {
-            el.style.transition = "opacity 0.8s, transform 0.8s";
-            el.style.opacity = 1;
-            el.style.transform = "translateY(0)";
+            el.classList.add("visible");
         }, 200);
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Typing effect for role
-    const roleEl = document.getElementById("hero-role");
-    const descEl = document.getElementById("hero-desc");
-    const roleText = roleEl ? roleEl.getAttribute("data-text") : null;
-    const descText = descEl ? descEl.getAttribute("data-text") : null;
+// Scroll-triggered fade-in animation
+function setupScrollAnimations() {
+    const animatedElements = document.querySelectorAll(".scroll-fade-in");
+    if (!animatedElements.length) return;
 
-    if (roleEl && roleText) {
-        typeText(roleEl, roleText, 15, () => {
-            if (descEl && descText) {
-                typeText(descEl, descText, 10);
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
             }
         });
-    }
+    }, {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+        rootMargin: "0px 0px -50px 0px" // Start animation a little before it's fully in view
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
     // Fade-in hero text and image
     fadeInOnLoad(".hero-text, .hero-image");
+
+    // Typing effect for role, delayed to sync with fade-in
+    setTimeout(() => {
+        const roleEl = document.getElementById("hero-role");
+        const descEl = document.getElementById("hero-desc");
+        const roleText = roleEl ? roleEl.getAttribute("data-text") : null;
+        const descText = descEl ? descEl.getAttribute("data-text") : null;
+
+        if (roleEl && roleText) {
+            typeText(roleEl, roleText, 20, () => {
+                if (descEl && descText) {
+                    typeText(descEl, descText, 10);
+                }
+            });
+        }
+    }, 500); // Start typing 500ms after page load
 
     // Add zoom effect to hero image on hover
     const heroImg = document.querySelector(".hero-image");
@@ -77,4 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
             heroImg.style.transform = "scale(1)";
         });
     }
+
+    // Setup scroll animations
+    setupScrollAnimations();
 });

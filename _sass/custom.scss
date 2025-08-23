@@ -126,7 +126,12 @@ ul {
 .hero-text, .hero-image {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s, transform 0.8s;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-text.visible, .hero-image.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .highlight {
@@ -269,6 +274,18 @@ ul {
 .connect-section {
   font-size: $type-size-4;
   font-weight: 500;
+}
+
+/* Scroll-triggered Animations */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /*
