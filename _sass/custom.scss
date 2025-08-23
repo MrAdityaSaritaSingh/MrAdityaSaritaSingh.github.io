@@ -46,7 +46,7 @@
     color: mix($background-color, $text-color, 50%);
   }
 
-  .description {
+  .desc {
     font-size: $type-size-5;
     margin-bottom: $space-xl;
     color: mix($background-color, $text-color, 50%);
@@ -55,23 +55,22 @@
 
 .cta-button {
   background-color: $secondary-color;
-  color: $background-color; /* Ensure contrast */
-  padding: $space-m $space-xl; /* Larger padding */
-  border-radius: 8px; /* Slightly more rounded */
+  color: $background-color;
+  padding: $space-m $space-xl;
+  border-radius: 8px;
   font-weight: bold;
-  font-size: $h-size-3; /* Larger font */
+  font-size: $h-size-3;
   text-decoration: none;
   padding: $space-m $space-xl;
   margin: $space-s 0;
-  display: inline-block;
   white-space: nowrap;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease; /* Animate all properties */
 
   &:hover {
     background-color: darken($primary-color, 10%);
     transform: translateY(-2px); /* Lift on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
   }
 }
 

@@ -52,15 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Typing effect for role
     const roleEl = document.getElementById("hero-role");
     const descEl = document.getElementById("hero-desc");
-    descEl.textContent = "";
-    if (roleEl) {
-        typeText(roleEl, "Product Manager | Software Engineer", 20, () => {
-            if (descEl) {
-                typeText(
-                    descEl,
-                    "Building products with user-centric design and a focus on impact.",
-                    10
-                );
+    const roleText = roleEl ? roleEl.getAttribute("data-text") : null;
+    const descText = descEl ? descEl.getAttribute("data-text") : null;
+
+    if (roleEl && roleText) {
+        typeText(roleEl, roleText, 20, () => {
+            if (descEl && descText) {
+                typeText(descEl, descText, 10);
             }
         });
     }
