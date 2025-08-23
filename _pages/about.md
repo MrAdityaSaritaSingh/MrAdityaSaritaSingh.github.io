@@ -5,6 +5,8 @@ title: "About Me"
 
 I am a Technical Product Lead with over four years of experience, specializing in early-stage startups within the manufacturing sector for the plastic packaging industry. I have a proven track record of leading cross-functional teams to deliver significant improvements in production efficiency and product quality. My approach is rooted in using data, user feedback, and a strong product mindset to create solutions that align with strategic business goals.
 
+[View My Resume](https://drive.google.com/drive/folders/1S7-XrgFijp-Jpd7bezqt1QFVx8VNaWlQ)
+
 ---
 
 ### Work Experience
