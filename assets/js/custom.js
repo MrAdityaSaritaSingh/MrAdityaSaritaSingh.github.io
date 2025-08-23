@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const descText = descEl ? descEl.getAttribute("data-text") : null;
 
     if (roleEl && roleText) {
-        typeText(roleEl, roleText, 140, () => {
+        typeText(roleEl, roleText, 15, () => {
             if (descEl && descText) {
                 typeText(descEl, descText, 10);
             }
