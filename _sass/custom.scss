@@ -1,8 +1,4 @@
 /* custom css */
-.my-custom-class {
-  color: $primary-color;
-  font-weight: bold;
-}
 
 /* Hero Section */
 .hero {
@@ -44,33 +40,43 @@
     font-weight: 500;
     margin-bottom: $space-m;
     color: mix($background-color, $text-color, 50%);
+    min-height: 2.5em; /* Reserve space to prevent layout shift */
   }
 
   .desc {
     font-size: $type-size-5;
     margin-bottom: $space-xl;
     color: mix($background-color, $text-color, 50%);
+    min-height: 4em; /* Reserve space to prevent layout shift */
   }
 }
 
 .cta-button {
-  background-color: $secondary-color;
+  background: linear-gradient(45deg, $primary-color, darken($primary-color, 15%));
   color: $background-color;
   padding: $space-m $space-xl;
   border-radius: 8px;
   font-weight: bold;
   font-size: $h-size-3;
   text-decoration: none;
-  padding: $space-m $space-xl;
   margin: $space-s 0;
   white-space: nowrap;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: 1px solid darken($primary-color, 20%);
+  display: inline-flex;
+  align-items: center;
 
-  &:hover {
-    background-color: darken($primary-color, 10%);
-    transform: translateY(-2px); /* Lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  .fas {
+    margin-right: $space-s;
+  }
+
+  &:hover, &:focus, &:active {
+    background: linear-gradient(45deg, darken($primary-color, 5%), darken($primary-color, 20%));
+    transform: translateY(-3px); /* Deeper lift on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
     text-decoration: none;
+    color: #fff; /* Keep text color consistent */
   }
 }
 

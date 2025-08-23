@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const descText = descEl ? descEl.getAttribute("data-text") : null;
 
     if (roleEl && roleText) {
-        typeText(roleEl, roleText, 20, () => {
+        typeText(roleEl, roleText, 140, () => {
             if (descEl && descText) {
                 typeText(descEl, descText, 10);
             }
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeInOnLoad(".hero-text, .hero-image");
 
     // Add zoom effect to hero image on hover
-    const heroImg = document.querySelector(".hero-image .profile-picture");
+    const heroImg = document.querySelector(".hero-image");
     if (heroImg) {
         heroImg.style.transition =
             "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
