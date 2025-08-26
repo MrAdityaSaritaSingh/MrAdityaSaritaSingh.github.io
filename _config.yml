@@ -29,10 +29,13 @@ search: true
 enable_copy_code_button: true
 google_site_verification: "61p7MzbQhkn7H1km0b7BCp3qvG-17b3eSh_gQYaygvY"
 analytics:
-    provider: "google-gtag"
+    provider: "custom"
     google:
         tracking_id: "G-XK4TZYPM5X"
         anonymize_ip: false # default
+    posthog:
+        api_key: "phc_L1rOfgCO0hmFNPL6RUP5RtytarKaC4oxS8NLvjCdlmE"
+        host: "https://eu.i.posthog.com"
 
 # Build settings
 markdown: kramdown
