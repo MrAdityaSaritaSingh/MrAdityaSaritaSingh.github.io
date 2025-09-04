@@ -5,6 +5,8 @@ main:
       url: /about/
     - title: "Portfolio"
       url: /portfoli/
+    - title: "Curator"
+      url: /curator/
     - title: "Cases"
       url: /posts/
     - title: "Blogs"

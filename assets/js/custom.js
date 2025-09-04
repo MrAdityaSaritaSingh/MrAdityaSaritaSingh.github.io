@@ -104,4 +104,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Setup scroll animations
     setupScrollAnimations();
+
+    // Curator Modal Logic
+    const modal = document.getElementById("curatorModal");
+
+    if (modal) {
+      const closeButton = modal.querySelector(".close-button");
+      const cancelButton = modal.querySelector(".cancel-button");
+
+      const showModal = () => {
+        modal.style.display = "flex"; // Use flex to align center
+      };
+
+      const hideModal = () => {
+        modal.style.display = "none";
+      };
+
+      // Show the modal a moment after the page loads to ensure everything is ready
+      // setTimeout(showModal, 500);
+
+      // Event listeners to close the modal
+      if (closeButton) {
+        closeButton.addEventListener("click", hideModal);
+      }
+      if (cancelButton) {
+        cancelButton.addEventListener("click", hideModal);
+      }
+
+      // Close modal if user clicks on the background overlay
+      window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          hideModal();
+        }
+      });
+    }
 });
