@@ -2,6 +2,7 @@
 title: Talk to Database App – Text2Query
 date: 2024-03-05
 categories: [Product Management, AI, NLP, SQL Automation]
+tags: [Product Management, AI, NLP, System Architecture]
 image: /assets/images/post_bg_text2querry.png
 description: A web application that converts English statements into MySQL queries for data retrieval.
 layout: project

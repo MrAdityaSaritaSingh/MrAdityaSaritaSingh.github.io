@@ -3,55 +3,37 @@ layout: default
 ---
 
 <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-  <meta itemprop="headline" content="{{ page.title }}">
-  <meta itemprop="description" content="{{ page.description }}">
-
+  <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+  <meta itemprop="description" content="{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}">
+  
   <div class="page__inner-wrap">
     <header>
       <h1 id="page-title" class="page__title" itemprop="headline">{{ page.title }}</h1>
-      {% if page.date %}
-        <p class="page__date">
-          <i class="far fa-calendar-alt" aria-hidden="true"></i>
-          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-        </p> 
-      {% endif %}
     </header>
 
     <section class="page__content" itemprop="text">
-      {% if page.image %}
-        <div class="project-image">
-          <img src="{{ page.image }}" alt="{{ page.title }}">
-        </div>
-      {% endif %}
-
+      <p class="archive__item-excerpt" itemprop="description">{{ page.description }}</p>
+      
       {% if page.link %}
-        <a href="{{ page.link }}" class="btn btn--project">View Report</a>
+        <a href="{{ page.link }}" class="btn btn--primary"><i class="fas fa-fw fa-link"></i> View Report</a>
       {% endif %}
 
       {{ content }}
-
-       {% if page.categories %}
-        <div class="page__taxonomy">
-          <ul class="inline-taxonomy">
-            {% for category in page.categories %}
-              <li><a href="/categories/#{{ category | slugify }}" class="page__taxonomy-item p-category">{{ category }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-
     </section>
+
     <hr>
+
     <footer class="page__meta">
-         {% if page.tags %}
-        <div class="page__taxonomy">
-          <ul class="inline-taxonomy">
-            {% for tag in page.tags %}
-              <li><a href="/tags/#{{ tag | slugify }}" class="page__taxonomy-item p-tag">{{ tag }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
+      {% if page.date %}
+        <p class="page__date">
+          <strong><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> Published:</strong> 
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        </p> 
       {% endif %}
+      
+      {% include page__taxonomy.html %}
     </footer>
+
+    {% if page.share %}{% include social-share.html %}{% endif %}
   </div>
 </article>

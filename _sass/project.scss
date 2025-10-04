@@ -158,3 +158,105 @@
     font-size: 1.2rem;
   }
 }
+
+/* ==========================================================================
+   Project Page Specific Styles
+   ========================================================================== */
+
+// Project Title
+.page__title {
+  font-size: 2.5em !important; /* Increased size for dominance */
+}
+
+// Section Headings and Content Styling
+.page__content {
+  h2 {
+    color: $secondary-color;
+    font-weight: bold;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 0.3em;
+    margin-top: 2em;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 1.5em;
+    list-style: none;
+
+    &::before {
+      content: "•";
+      color: $secondary-color;
+      font-weight: bold;
+      display: inline-block;
+      width: 1.5em;
+      margin-left: -1.5em;
+      position: absolute;
+    }
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+    border-radius: 4px;
+  }
+
+  figcaption {
+    text-align: center;
+    color: $primary-color;
+    font-family: $accent-font;
+    font-style: italic;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+  }
+}
+
+// High-Impact Results Box
+.results-box {
+  background-color: $primary-color;
+  color: $background-color;
+  padding: 1.5em;
+  border-radius: 4px;
+  margin: 2em 0;
+  text-align: center;
+
+  h3 {
+    color: $secondary-color;
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+
+  .result-metric {
+    font-size: 3em;
+    font-weight: bold;
+    display: block;
+    margin: 0.2em 0;
+  }
+
+  .result-description {
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+}
+
+// Demo Link Box
+.demo-link-box {
+  border: 1px solid $primary-color;
+  padding: 1em;
+  border-radius: 4px;
+  margin: 1.5em 0;
+  text-align: center;
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    color: $primary-color;
+    font-size: 1.1em;
+
+    .fab, .fas {
+      color: $secondary-color;
+      margin-right: 0.5em;
+    }
+  }
+}

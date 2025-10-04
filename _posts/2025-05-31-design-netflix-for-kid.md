@@ -6,7 +6,7 @@ tags:
   - EdTech
   - Product Design
   - CIRCLES Framework
-  - Kids Streaming
+  - UX
 ---
 ![netflix](/assets/images/netflix-for-kids.png)
 

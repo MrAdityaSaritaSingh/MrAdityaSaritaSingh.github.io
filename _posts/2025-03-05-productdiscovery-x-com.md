@@ -2,8 +2,8 @@
 title: "The Big, Bloated, Blue Bird to lean X.com"
 categories:
   - Discovery
-# tags:
-#   - Placeholder
+tags:
+  - Product Discovery
 ---
 ### **The Big, Bloated, Blue Bird to Lean X.com**
 

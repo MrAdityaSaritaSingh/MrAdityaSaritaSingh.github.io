@@ -2,6 +2,7 @@
 title: Product Development for Aging Population 
 date: 2024-03-05
 categories: [User Research, Product Design, UX, Social Impact]
+tags: [User Research, Product Design, UX]
 image: /assets/images/post_bg_DT_project.png
 description: Understanding the challenges and behaviors of the elderly population through design thinking.
 layout: project

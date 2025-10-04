@@ -2,6 +2,7 @@
 title: KhetToPlate – Farm-to-Product Strategy
 date: 2024-08-31
 categories: [Product Management, Market Research, Competitor Analysis]
+tags: [Product Management, Market Research, Competitor Analysis, Go-to-market Strategy]
 image: /assets/images/post_bg_khet_to_plate.png
 description: A strategic approach to connecting farmers directly with consumers and businesses.
 layout: project

@@ -24,7 +24,7 @@ twitter_username: adityasrathor3
 github_username: adigeak
 #theme: minimal-mistakes-jekyll
 # theame
-minimal_mistakes_skin: "myskin" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "asr" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise", "myskin"
 search: true
 enable_copy_code_button: true
 google_site_verification: "61p7MzbQhkn7H1km0b7BCp3qvG-17b3eSh_gQYaygvY"

@@ -2,6 +2,7 @@
 title: Build better posture with Postura
 date: 2025-04-24
 categories: [Wearable Technology, Product Design, UX, Rapid Prototyping]
+tags: [Product Design, UX, Rapid Prototyping]
 image: /assets/images/post_bg_postur.jpg
 description: Tackling poor posture with a wearable and table unit solution, built through rapid prototyping and user-centric design.
 layout: project

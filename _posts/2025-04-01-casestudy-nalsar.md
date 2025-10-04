@@ -4,9 +4,8 @@ categories:
   - Case study 
 # hidden: true
 tags:
-  - EV
-  - Rural Innovation
   - CaseStudy
+  - Go-to-market Strategy
 ---
 
 Here is the ppt [link](https://mradityasaritasingh.github.io/assets/pdf/AdityaSingh_MAD.pdf).
