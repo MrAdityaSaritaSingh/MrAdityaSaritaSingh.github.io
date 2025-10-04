@@ -20,6 +20,12 @@ description: >- # this means to ignore newlines until "baseurl:"
 hero_role: "Product Manager | Software Engineer"
 hero_description: "Building products with user-centric design and a focus on impact."
 hero_image: "assets/images/profile.webp"
+hero_cta_1:
+  text: "View My Resume"
+  url: "https://drive.google.com/drive/folders/1S7-XrgFijp-Jpd7bezqt1QFVx8VNaWlQ"
+hero_cta_2:
+  text: "Explore My Portfolio"
+  url: "/portfolio/"
 # logo: "/assets/images/logo.png"
 twitter_username: adityasrathor3
 github_username: adigeak

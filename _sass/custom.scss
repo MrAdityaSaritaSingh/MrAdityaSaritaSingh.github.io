@@ -52,21 +52,27 @@
   }
 }
 
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
 .cta-button {
-  background: $secondary-color;
-  color: $background-color;
-  padding: $space-m $space-xl;
+  padding: 0.8rem 1.5rem;
   border-radius: 8px;
-  font-weight: bold;
-  font-size: $h-size-3;
+  font-weight: 700; /* Explicitly bold */
+  font-size: $type-size-5;
   text-decoration: none;
-  margin: $space-s 0;
+  margin: 0; /* Remove margin to use gap in flex container */
   white-space: nowrap;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.2s ease-in-out;
-  border: 1px solid darken($secondary-color, 10%);
+  border: 2px solid darken($secondary-color, 10%);
   display: inline-flex;
   align-items: center;
+  background: $secondary-color;
+  color: $background-color;
 
   .fas {
     margin-right: $space-s;
@@ -74,28 +80,46 @@
 
   &:hover, &:focus, &:active {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 3px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     text-decoration: none;
-    color: $background-color; /* Keep text color consistent */
+    color: $background-color;
+  }
+}
+
+.cta-button--secondary {
+  background: transparent;
+  border: 2px solid $secondary-color;
+  color: $secondary-color;
+
+  &:hover {
+    background: $secondary-color;
+    color: $background-color;
   }
 }
 
 .hero-image {
-  max-width: 50%;
-  text-align: right;
-  border-radius: 50%;
-  background-color: $secondary-color;
-  padding: 10px; /* Adjust padding to create the border effect */
-  display: inline-block; /* Ensure the container wraps the image */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 400px;
+    height: 400px;
+    min-width: 300px;
+
+    background-color: $secondary-color; 
+    border-radius: 50%; 
+    
+    border: 8px solid $border-color; /* Adjust thickness as needed */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure the image is clipped by the border-radius */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .profile-picture {
-  width: 400px;
-  height: 400px; /* Ensure the image is a perfect circle */
-  object-fit: cover; /* Prevent image distortion */
-  display: block; /* Remove extra space below the image */
-  border-radius: 50%;
+    width: 95%;
+    height: 95%;
+    object-fit: cover; 
+    border-radius: 50%; 
+    transform: translate(5px, 5px);
 }
 
 .introduction .container {
@@ -127,7 +151,7 @@ ul {
 }
 
 
-.hero-text, .hero-image {
+.hero-text{
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;

@@ -16,8 +16,8 @@ layout: splash
         <div class="role" id="hero-role">{{ site.hero_role }}</div>
         <div class="desc" id="hero-desc">{{ site.hero_description }}</div>
         <div class="hero-buttons">
-          <!-- <a href="/portfoli/" class="cta-button"><i class="fas fa-rocket"></i> Explore My Work</a> -->
-          <a href="https://drive.google.com/drive/folders/1S7-XrgFijp-Jpd7bezqt1QFVx8VNaWlQ" class="cta-button" target="_blank"><i class="fas fa-file-alt"></i> View My Resume</a>
+          <a href="{{ site.hero_cta_1.url | relative_url }}" class="cta-button"><i class="fas fa-rocket"></i> {{ site.hero_cta_1.text }}</a>
+          <a href="{{ site.hero_cta_2.url }}" class="cta-button" target="_blank"><i class="fas fa-file-alt"></i> {{ site.hero_cta_2.text }}</a>
         </div>
       </div>
     </div>
