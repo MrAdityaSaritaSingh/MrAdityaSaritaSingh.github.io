@@ -1,13 +1,13 @@
 ---
 title: Portfolio
-permalink: /portfoli/ 
+permalink: /portfolio/ 
 layout: splash
 ---
 <div class="sub-bnr-home">
   <div class="position-center">
       <div class="container">
-            <h5>- Now to show you what I got </h5>
-            <h1>My Portfolio </h1>
+            <h1>PM + SE: IDEAS TO PRODUCTS</h1>
+            <h5>VALIDATION IS ALL YOU NEED. ⚡️</h5>
       </div>
   </div>
 </div>
@@ -20,15 +20,18 @@ layout: splash
         <img src="{{ project.image }}" alt="{{ project.title }}">
       {% endif %}
       <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
-      <p>{{ project.description }}</p>
-      {% if project.link %}
-        <p><a href="{{ project.link }}" aria-label="View the project report for {{ project.title }}">Project Report</a></p>
-      {% endif %}
       <div class="project-meta">
         {% if project.categories %}
           {% for category in project.categories %}
             <span class="project-category">{{ category }}</span>
           {% endfor %}
+        {% endif %}
+      </div>
+      <p>{{ project.description }}</p>
+      <div class="project-card-cta">
+        <a href="{{ project.url }}" class="btn btn--primary-card">Read the Detail</a>
+        {% if project.link %}
+          <a href="{{ project.link }}" class="btn btn--secondary-card">View Final Report</a>
         {% endif %}
       </div>
     </div>

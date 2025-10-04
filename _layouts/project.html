@@ -25,7 +25,7 @@ layout: default
       {% endif %}
 
       {% if page.link %}
-        <h6><a href="{{ page.link }}">View Report</a></h6>
+        <a href="{{ page.link }}" class="btn btn--project">View Report</a>
       {% endif %}
 
       {{ content }}
@@ -34,7 +34,7 @@ layout: default
         <div class="page__taxonomy">
           <ul class="inline-taxonomy">
             {% for category in page.categories %}
-              <a href="/categories/#{{ category | slugify }}" class="page__taxonomy-item p-category">{{ category }}</a>
+              <li><a href="/categories/#{{ category | slugify }}" class="page__taxonomy-item p-category">{{ category }}</a></li>
             {% endfor %}
           </ul>
         </div>

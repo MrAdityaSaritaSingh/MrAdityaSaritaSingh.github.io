@@ -53,7 +53,7 @@
 }
 
 .cta-button {
-  background: linear-gradient(45deg, $primary-color, darken($primary-color, 15%));
+  background: $secondary-color;
   color: $background-color;
   padding: $space-m $space-xl;
   border-radius: 8px;
@@ -62,9 +62,9 @@
   text-decoration: none;
   margin: $space-s 0;
   white-space: nowrap;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  border: 1px solid darken($primary-color, 20%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+  border: 1px solid darken($secondary-color, 10%);
   display: inline-flex;
   align-items: center;
 
@@ -73,25 +73,28 @@
   }
 
   &:hover, &:focus, &:active {
-    background: linear-gradient(45deg, darken($primary-color, 5%), darken($primary-color, 20%));
-    transform: translateY(-3px); /* Deeper lift on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 3px 8px rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    color: #fff; /* Keep text color consistent */
+    color: $background-color; /* Keep text color consistent */
   }
 }
 
 .hero-image {
   max-width: 50%;
   text-align: right;
-  background-color: $secondary-color;
   border-radius: 50%;
+  background-color: $secondary-color;
+  padding: 10px; /* Adjust padding to create the border effect */
+  display: inline-block; /* Ensure the container wraps the image */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .profile-picture {
   width: 400px;
-  height: auto;
-  display: inline-block;
+  height: 400px; /* Ensure the image is a perfect circle */
+  object-fit: cover; /* Prevent image distortion */
+  display: block; /* Remove extra space below the image */
   border-radius: 50%;
 }
 
@@ -155,7 +158,6 @@ ul {
   }
   p {
     font-size: $h-size-3;
-    color: mix($background-color, $text-color, 50%);
     max-width: 700px;
     margin: 0 auto;
   }
@@ -198,8 +200,8 @@ ul {
 .timeline-icon {
   width: 50px;
   height: 50px;
-  background: $primary-color;
-  color: $yiq-contrasted-light-default;
+  background: $secondary-color;
+  color: #fff;
   border-radius: 50%;
   margin: 0 1.1rem;
   display: flex;
@@ -222,7 +224,7 @@ ul {
 }
 
 .timeline-content {
-  background-color: $secondary-color;
+  background-color: mix($background-color, $text-color, 95%);
   color: $text-color;
   padding: $space-l;
   border-radius: 8px;
@@ -254,7 +256,7 @@ ul {
 .skill-category {
   h3 {
     font-size: $type-size-5;
-    color: $primary-color;
+    color: $secondary-color;
     margin-bottom: $space-m;
   }
   ul {
@@ -265,7 +267,7 @@ ul {
       margin-bottom: $space-xs;
       &:before {
         content: '✓';
-        color: $primary-color;
+        color: $secondary-color;
         margin-right: $space-xs;
       }
     }
