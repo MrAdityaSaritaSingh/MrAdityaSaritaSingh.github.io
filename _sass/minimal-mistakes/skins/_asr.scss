@@ -1,0 +1,74 @@
+/* ==========================================================================
+   ASR Brand Skin (Aditya S. Rathore)
+   ========================================================================== */
+
+/* 1. Typography Imports */
+// Google Fonts: Montserrat (Headings), Inter/Roboto (Body), Poppins (Accent)
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&family=Poppins:ital,wght@1,500&display=swap');
+
+// Font Variables based on Brand Kit
+$header-font: 'Montserrat', sans-serif;
+$body-font: 'Inter', 'Roboto', sans-serif;
+$accent-font: 'Poppins', cursive; // Use a cursive/serif fallback for quotes
+
+/* 2. Color Palette (The Power Trio) */
+$background-color: #FFFFFF !default;     // Bright White (Clarity)
+$text-color: #1A1A1A !default;           // Deep Charcoal (Professional)
+$muted-text-color: mix($text-color, $background-color, 50%) !default; // Soft Gray for contrast
+$primary-color: #1A1A1A !default;        // Deep Charcoal for Headlines/Links
+$secondary-color: #FF6B35 !default;      // Vibrant Orange (Action/Focus)
+$border-color: mix(#FFFFFF, #1A1A1A, 15%) !default; // Lighter border for subtlety
+$footer-background-color: #1A1A1A !default; // Deep Charcoal for footer background
+
+/* 3. Global Color Assignments */
+$link-color: $primary-color !default;
+$accent-color: $secondary-color !default;
+
+/* 4. Navigation Specifics */
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+// Using your established mix for subtle hover on the menu icon
+$navicon-link-color-hover: mix(#fff, $primary-color, 80%) !default;
+
+/* 5. Component Overrides */
+
+// Use Montserrat for H1-H6 elements
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+}
+
+// Body text defaults to Inter
+body {
+  font-family: $body-font;
+}
+
+// Footer Styling (Ensures white text on charcoal background)
+.page__footer {
+  background-color: $footer-background-color;
+  color: $background-color !important;
+}
+
+// Social Icons in Footer (Ensure they inherit the bright text color)
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+
+// Primary CTA Button (Vibrant Orange on White text)
+.btn--primary {
+  background-color: $accent-color;
+  border-color: $accent-color; // Match border for clean look
+  color: $background-color;
+  // Subtle hover for action
+  &:hover {
+    background-color: darken($accent-color, 10%);
+    border-color: darken($accent-color, 10%);
+  }
+}
+
+// Quotes/Accents (Using Poppins)
+blockquote, .quote {
+  font-family: $accent-font;
+  font-style: italic;
+  color: $muted-text-color; // Helps set it apart from body text
+}
