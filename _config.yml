@@ -44,6 +44,22 @@ analytics:
         api_key: "phc_L1rOfgCO0hmFNPL6RUP5RtytarKaC4oxS8NLvjCdlmE"
         host: "https://eu.i.posthog.com"
 
+# Homepage content
+homepage:
+  timeline:
+    - icon: "fas fa-rocket"
+      title: "Entrepreneur"
+      description: "Founded a food delivery startup, learning market validation, operations, and customer acquisition from the ground up."
+    - icon: "fas fa-code"
+      title: "Full-Stack Engineer"
+      description: "Scaled technology and products as an early startup member, growing into a Senior Software Engineer role."
+    - icon: "fas fa-cube"
+      title: "Product Builder"
+      description: "Led end-to-end development of 0-to-1 products, including both hardware (X-ray gauge) and software (HMI design)."
+    - icon: "fas fa-graduation-cap"
+      title: "Technical Product Leader"
+      description: "Formalizing my practical experience in my Master's program at IIIT Hyderabad."
+
 # Build settings
 markdown: kramdown
 

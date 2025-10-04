@@ -8,11 +8,11 @@ layout: splash
   <header class="hero">
     <div class="hero-content">
       <div class="hero-image">
-        <img src="{{ site.hero_image | relative_url }}" alt="Aditya S. Rathore" class="profile-picture" />
+        <img src="{{ site.hero_image | relative_url }}" alt="{{ site.title }}" class="profile-picture" />
       </div>
 
       <div class="hero-text">
-        <h1 class="name">Aditya S Rathore</h1>
+        <h1 class="name">{{ site.title }}</h1>
         <div class="role" id="hero-role">{{ site.hero_role }}</div>
         <div class="desc" id="hero-desc">{{ site.hero_description }}</div>
         <div class="hero-buttons">
@@ -34,37 +34,15 @@ layout: splash
       </div>
 
       <div class="timeline">
+        {% for item in site.homepage.timeline %}
         <div class="timeline-item scroll-fade-in">
-          <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+          <div class="timeline-icon"><i class="{{ item.icon }}"></i></div>
           <div class="timeline-content">
-            <h3>Entrepreneur</h3>
-            <p>Founded a food delivery startup, learning market validation, operations, and customer acquisition from
-              the ground up.</p>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
           </div>
         </div>
-        <div class="timeline-item scroll-fade-in">
-          <div class="timeline-icon"><i class="fas fa-code"></i></div>
-          <div class="timeline-content">
-            <h3>Full-Stack Engineer</h3>
-            <p>Scaled technology and products as an early startup member, growing into a Senior Software Engineer role.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item scroll-fade-in">
-          <div class="timeline-icon"><i class="fas fa-cube"></i></div>
-          <div class="timeline-content">
-            <h3>Product Builder</h3>
-            <p>Led end-to-end development of 0-to-1 products, including both hardware (X-ray gauge) and software (HMI
-              design).</p>
-          </div>
-        </div>
-        <div class="timeline-item scroll-fade-in">
-          <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-          <div class="timeline-content">
-            <h3>Technical Product Leader</h3>
-            <p>Formalizing my practical experience in my Master's program at IIIT Hyderabad.</p>
-          </div>
-        </div>
+        {% endfor %}
       </div>
 
       <div class="skills-section">
