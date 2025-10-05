@@ -104,9 +104,9 @@ plugins:
 
 author:
     name: "Aditya S. Rathore"
-    avatar: "assets/images/Anime.png"
+    avatar: "assets/images/Headshot.png"
     bio: "I build, iterate, and think from first principles."
-    location: Hyderabad & Pune
+    location: Kanpur, Hyderabad & Pune
     links:
         - label: "Blog"
           icon: "fas fa-fw fa-link"
