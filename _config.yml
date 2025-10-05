@@ -47,18 +47,27 @@ analytics:
 # Homepage content
 homepage:
     timeline:
-        - icon: "fas fa-rocket"
-          title: "Entrepreneur"
-          description: "Founded a food delivery startup, learning market validation, operations, and customer acquisition from the ground up."
-        - icon: "fas fa-code"
-          title: "Full-Stack Engineer"
-          description: "Scaled technology and products as an early startup member, growing into a Senior Software Engineer role."
-        - icon: "fas fa-cube"
-          title: "Product Builder"
-          description: "Led end-to-end development of 0-to-1 products, including both hardware (X-ray gauge) and software (HMI design)."
+        - icon: "fas fa-lightbulb"
+          title: "The Spark (2008)"
+          description: "Inspired by tech visionaries in 'Digit Magazine', my passion for building products was ignited."
         - icon: "fas fa-graduation-cap"
-          title: "Technical Product Leader"
-          description: "Formalizing my practical experience in my Master's program at IIIT Hyderabad."
+          title: "Computer Science Foundation"
+          description: "Built a strong technical foundation with a Bachelor's degree in Computer Science and Engineering."
+        - icon: "fas fa-rocket"
+          title: "Entrepreneurial Leap"
+          description: "Founded a tech-enabled cafe, a 0-to-1 journey from idea to acquisition, learning resilience and market validation."
+        - icon: "fas fa-code"
+          title: "Software Engineer"
+          description: "At Lohia Mechatronik, I developed industrial products, including a web inspection system and a thickness-measuring device."
+        - icon: "fas fa-cube"
+          title: "Transition to Product"
+          description: "Pursuing a Master's in Product Design & Management at IIIT Hyderabad to bridge my technical and business acumen."
+        - icon: "fas fa-heartbeat"
+          title: "Product Management in Healthcare"
+          description: "Interned at the Centre for Digital Technology in Healthcare, conducting research and competitive analysis for non-invasive anemia detection."
+        - icon: "fas fa-bullseye"
+          title: "Future Vision"
+          description: "To build products that enhance human capability, with a long-term goal of starting my own company."
 
 # Build settings
 markdown: kramdown
