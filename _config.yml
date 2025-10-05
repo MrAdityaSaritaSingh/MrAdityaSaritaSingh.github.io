@@ -17,15 +17,15 @@ title: Aditya S. Rathore
 email: Mr.adityasrathore@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
     Aditya S. Rathore is an aspiring Product Manager currently pursuing a Master's degree at IIIT Hyderabad.  With over four years of experience as a Software Engineer building products, Aditya brings a unique blend of technical expertise and a product-focused mindset.  Describing himself as a "tinker with a hacker mentality," Aditya has always been driven by a deep curiosity for how things work and a passion for both building and innovating within systems.
-hero_role: "Product Manager | Software Engineer"
-hero_description: "Building products with user-centric design and a focus on impact."
+hero_role: "Builder | PM | Engineer"
+hero_description: "A hybrid Product Manager that turn user insights into user-centered products with measurable outcomes."
 hero_image: "assets/images/profile.webp"
 hero_cta_1:
-  text: "View My Resume"
-  url: "https://drive.google.com/drive/folders/1S7-XrgFijp-Jpd7bezqt1QFVx8VNaWlQ"
+    text: "View My Resume"
+    url: "https://drive.google.com/drive/folders/1S7-XrgFijp-Jpd7bezqt1QFVx8VNaWlQ"
 hero_cta_2:
-  text: "Explore My Portfolio"
-  url: "/portfolio/"
+    text: "Explore My Portfolio"
+    url: "/portfolio/"
 # logo: "/assets/images/logo.png"
 twitter_username: adityasrathor3
 github_username: adigeak
@@ -46,19 +46,19 @@ analytics:
 
 # Homepage content
 homepage:
-  timeline:
-    - icon: "fas fa-rocket"
-      title: "Entrepreneur"
-      description: "Founded a food delivery startup, learning market validation, operations, and customer acquisition from the ground up."
-    - icon: "fas fa-code"
-      title: "Full-Stack Engineer"
-      description: "Scaled technology and products as an early startup member, growing into a Senior Software Engineer role."
-    - icon: "fas fa-cube"
-      title: "Product Builder"
-      description: "Led end-to-end development of 0-to-1 products, including both hardware (X-ray gauge) and software (HMI design)."
-    - icon: "fas fa-graduation-cap"
-      title: "Technical Product Leader"
-      description: "Formalizing my practical experience in my Master's program at IIIT Hyderabad."
+    timeline:
+        - icon: "fas fa-rocket"
+          title: "Entrepreneur"
+          description: "Founded a food delivery startup, learning market validation, operations, and customer acquisition from the ground up."
+        - icon: "fas fa-code"
+          title: "Full-Stack Engineer"
+          description: "Scaled technology and products as an early startup member, growing into a Senior Software Engineer role."
+        - icon: "fas fa-cube"
+          title: "Product Builder"
+          description: "Led end-to-end development of 0-to-1 products, including both hardware (X-ray gauge) and software (HMI design)."
+        - icon: "fas fa-graduation-cap"
+          title: "Technical Product Leader"
+          description: "Formalizing my practical experience in my Master's program at IIIT Hyderabad."
 
 # Build settings
 markdown: kramdown
