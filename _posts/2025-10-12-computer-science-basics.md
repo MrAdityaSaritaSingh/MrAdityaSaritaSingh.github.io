@@ -1,5 +1,5 @@
 ---
-title: "Computer Science Basics (2012)"
+title: "Computer Science Basics"
 categories:
   - Story
 tags:

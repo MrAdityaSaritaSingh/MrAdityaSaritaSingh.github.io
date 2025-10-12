@@ -48,13 +48,13 @@ analytics:
 homepage:
     timeline:
         - icon: "fas fa-lightbulb"
-          title: "The Spark (2008)"
+          title: "The Spark"
           description: "Inspired by Science fare, my passion for building products was ignited."
-          url: "/story/the-spark-2008/"
+          url: "/story/the-spark/"
         - icon: "fas fa-graduation-cap"
-          title: "Computer Science Basics (2012)"
+          title: "Computer Science Basics"
           description: "Got My First PC, Started building programs in JAVA. Joined Bachelor's degree in Computer Science and Engineering in 2017."
-          url: "/story/computer-science-basics-2012/"
+          url: "/story/computer-science-basics/"
         - icon: "fas fa-rocket"
           title: "Entrepreneurial Leap"
           description: "Founded a tech-enabled cafe in 2019, a 0-to-1 journey from idea to acquisition, learning resilience and market validation."
