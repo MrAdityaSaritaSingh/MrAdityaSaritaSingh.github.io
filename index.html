@@ -33,14 +33,22 @@ layout: splash
 
       <div class="timeline">
         {% for item in site.homepage.timeline %}
-        <div class="timeline-item scroll-fade-in">
-          <div class="timeline-icon"><i class="{{ item.icon }}"></i></div>
-          <div class="timeline-content">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
-          </div>
-        </div>
-        {% endfor %}
+          <div class="timeline-item scroll-fade-in">
+            <div class="timeline-icon"><i class="{{ item.icon }}"></i></div>
+            {% if item.url %}
+              <a href="{{ item.url | relative_url }}" class="timeline-item-link">
+                <div class="timeline-content">
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.description }}</p>
+                </div>
+              </a>
+            {% else %}
+              <div class="timeline-content">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+            {% endif %}
+          </div>        {% endfor %}
       </div>
 
       <div class="skills-section">

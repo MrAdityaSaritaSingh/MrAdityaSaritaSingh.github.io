@@ -1,6 +1,5 @@
 /* custom css */
 
-/* Hero Section */
 .hero {
   background-color: $background-color;
   color: $text-color;
@@ -380,4 +379,21 @@ ul {
     box-sizing: border-box;
   }
 
+}
+
+.timeline-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.timeline-item-link:hover {
+  text-decoration: none;
+  transform: scale(1.02);
+}
+
+.timeline-item-link:hover .timeline-content {
+  background-color: mix($background-color, $text-color, 90%);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
