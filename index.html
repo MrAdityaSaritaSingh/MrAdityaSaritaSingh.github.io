@@ -36,7 +36,7 @@ layout: splash
           <div class="timeline-item scroll-fade-in">
             <div class="timeline-icon"><i class="{{ item.icon }}"></i></div>
             {% if item.url %}
-              <a href="{{ item.url | relative_url }}" class="timeline-item-link">
+              <a href="{{ item.url | relative_url }}" class="timeline-item-link" data-track-timeline="{{ item.title | strip_html | escape }}">
                 <div class="timeline-content">
                   <h3>{{ item.title }}</h3>
                   <p>{{ item.description }}</p>

@@ -9,6 +9,8 @@
  * 2. Event Tracking Definitions
  *    - setupHomepageCtaTracking()
  *    - setupResumeTracking()
+ *    - setupProjectLinkTracking()
+ *    - setupTimelineTracking()
  * 3. Helper Functions
  *    - trackClick()
  * 4. A/B Test Example (for reference)
@@ -32,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     setupHomepageCtaTracking();
     setupResumeTracking();
+    setupProjectLinkTracking();
+    setupTimelineTracking();
+
 
     /**
      * ========================================================================
@@ -107,6 +112,45 @@ function setupResumeTracking() {
 }
 
 /**
+ * EVENT TRACKER: Project Link Clicks
+ *
+ * - **Goal:** Track which projects users are viewing.
+ * - **Event Captured:** `project_link_clicked`
+ */
+function setupProjectLinkTracking() {
+    const projectLinks = document.querySelectorAll("[data-track-project]");
+
+    projectLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            const projectName = link.getAttribute("data-track-project");
+            posthog.capture("project_link_clicked", {
+                project_name: projectName
+            });
+        });
+    });
+}
+
+/**
+ * EVENT TRACKER: Timeline Interaction
+ *
+ * - **Goal:** See which parts of the career story users engage with.
+ * - **Event Captured:** `timeline_link_clicked`
+ */
+function setupTimelineTracking() {
+    const timelineLinks = document.querySelectorAll("[data-track-timeline]");
+
+    timelineLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            const timelineEvent = link.getAttribute("data-track-timeline");
+            posthog.capture("timeline_link_clicked", {
+                timeline_event: timelineEvent
+            });
+        });
+    });
+}
+
+
+/**
  * ========================================================================
  * 3. Helper Functions
  * ========================================================================
@@ -144,7 +188,7 @@ function setupDummyButtonColorTest() {
   // 1. Define the element you want to test.
   const dummyButton = document.getElementById('some-other-button');
   if (!dummyButton) {
-    return; // Exit if the element doesn't exist on this page.
+    return; // Exit if the element doesn't exist on this page. 
   }
 
   // 2. Get the feature flag value from PostHog.

@@ -19,7 +19,7 @@ layout: splash
       {% if project.image %}
         <img src="{{ project.image }}" alt="{{ project.title }}">
       {% endif %}
-      <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+      <h3><a href="{{ project.url }}" data-track-project="{{ project.title | strip_html | escape }}">{{ project.title }}</a></h3>
       <div class="project-meta">
         {% if project.categories %}
           {% for category in project.categories %}
