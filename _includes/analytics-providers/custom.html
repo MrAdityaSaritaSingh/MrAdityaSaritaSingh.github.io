@@ -31,9 +31,10 @@
       api_host: '{{ site.analytics.posthog.host }}',
       person_profiles: 'identified_only',
       autocapture: {
-        capture_pageview: true,
-        capture_clicks: true
-      }
+        capture_pageview: {{ site.analytics.posthog.autocapture.capture_pageview | default: true }},
+        capture_clicks: {{ site.analytics.posthog.autocapture.capture_clicks | default: true }}
+      },
+      disable_session_recording: {{ site.analytics.posthog.disable_session_recording | default: false }}
     });
   </script>
   <!-- End PostHog Snippet -->

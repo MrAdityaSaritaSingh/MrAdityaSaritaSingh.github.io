@@ -102,7 +102,7 @@ function setupResumeTracking() {
     }
 
     downloadButton.addEventListener("click", function () {
-        trackClick("resume_downloaded", "resume-download-button");
+        posthog.capture("resume_downloaded");
     });
 }
 
