@@ -22,10 +22,11 @@ hero_description: "A hybrid Product Manager that turn user insights into user-ce
 hero_image: "assets/images/profile.webp"
 hero_cta_1:
     text: "View My Resume"
-    url: "https://drive.google.com/drive/folders/1S7-XrgFijp-Jpd7bezqt1QFVx8VNaWlQ"
+    url: "/resume/"
 hero_cta_2:
     text: "Explore My Portfolio"
     url: "/portfolio/"
+resume_drive_id: "18LXbDFPmKnLF-a4mL7swDaAJuwMcODDy"
 # logo: "/assets/images/logo.png"
 twitter_username: adityasrathor3
 github_username: adigeak

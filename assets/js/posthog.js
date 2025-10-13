@@ -8,6 +8,7 @@
  * 1. Main Initialization
  * 2. Event Tracking Definitions
  *    - setupHomepageCtaTracking()
+ *    - setupResumeTracking()
  * 3. Helper Functions
  *    - trackClick()
  * 4. A/B Test Example (for reference)
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
    * Call the functions that set up your event trackers.
    */
   setupHomepageCtaTracking();
+  setupResumeTracking();
 
   /**
    * ========================================================================
@@ -81,6 +83,25 @@ function setupHomepageCtaTracking() {
   cta2.addEventListener('click', function() {
     const button_text = cta2.innerText.trim();
     trackClick('cta_click', button_text);
+  });
+}
+
+/**
+ * EVENT TRACKER: Resume Download Button
+ *
+ * - **Goal:** Track every time a user downloads the resume PDF.
+ * - **Event Captured:** `resume_downloaded`
+ */
+function setupResumeTracking() {
+  const downloadButton = document.getElementById('resume-download-button');
+
+  // Exit gracefully if the button isn't on the current page.
+  if (!downloadButton) {
+    return;
+  }
+
+  downloadButton.addEventListener('click', function() {
+    posthog.capture('resume_downloaded');
   });
 }
 
