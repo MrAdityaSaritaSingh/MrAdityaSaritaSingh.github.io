@@ -44,6 +44,9 @@ analytics:
     posthog:
         api_key: "phc_L1rOfgCO0hmFNPL6RUP5RtytarKaC4oxS8NLvjCdlmE"
         host: "https://eu.i.posthog.com"
+        autocapture:
+            capture_pageview: true
+            capture_clicks: true
 
 # Homepage content
 homepage:

@@ -30,9 +30,14 @@
     posthog.init('{{ site.analytics.posthog.api_key }}', {
       api_host: '{{ site.analytics.posthog.host }}',
       person_profiles: 'identified_only',
+      {%- if site.analytics.posthog.autocapture -%}
+      autocapture: {{ site.analytics.posthog.autocapture | to_json }}
+      {%- else -%}
       autocapture: {
-        capture_pageview: true
+        capture_pageview: true,
+        capture_clicks: true
       }
+      {%- endif -%}
     });
   </script>
   <!-- End PostHog Snippet -->
