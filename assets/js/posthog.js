@@ -101,7 +101,7 @@ function setupResumeTracking() {
   }
 
   downloadButton.addEventListener('click', function() {
-    posthog.capture('resume_downloaded');
+    trackClick('resume_downloaded', 'Download PDF');
   });
 }
 
