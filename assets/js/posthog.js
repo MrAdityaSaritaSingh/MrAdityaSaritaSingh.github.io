@@ -15,31 +15,33 @@
  *    - setupDummyButtonColorTest()
  */
 
-document.addEventListener("DOMContentLoaded", function() {
-  // First, check if the PostHog object is available on the window.
-  if (typeof posthog === 'undefined') {
-    console.error('PostHog is not defined. Make sure the PostHog snippet is included before this script.');
-    return;
-  }
+document.addEventListener("DOMContentLoaded", function () {
+    // First, check if the PostHog object is available on the window.
+    if (typeof posthog === "undefined") {
+        console.error(
+            "PostHog is not defined. Make sure the PostHog snippet is included before this script."
+        );
+        return;
+    }
 
-  /**
-   * ========================================================================
-   * 1. Main Initialization
-   * ========================================================================
-   * Call the functions that set up your event trackers.
-   */
-  setupHomepageCtaTracking();
-  setupResumeTracking();
+    /**
+     * ========================================================================
+     * 1. Main Initialization
+     * ========================================================================
+     * Call the functions that set up your event trackers.
+     */
+    setupHomepageCtaTracking();
+    setupResumeTracking();
 
-  /**
-   * ========================================================================
-   * 4. A/B Test Example (for reference)
-   * ========================================================================
-   * The section below is a disabled, commented-out example. To run a real
-   * A/B test, you would uncomment this, create the feature flag in PostHog,
-   * and adapt the code to your needs.
-   */
-  /*
+    /**
+     * ========================================================================
+     * 4. A/B Test Example (for reference)
+     * ========================================================================
+     * The section below is a disabled, commented-out example. To run a real
+     * A/B test, you would uncomment this, create the feature flag in PostHog,
+     * and adapt the code to your needs.
+     */
+    /*
   posthog.onFeatureFlags(function() {
     // This function ensures your A/B test code only runs after the flags
     // have been loaded from PostHog.
@@ -47,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   */
 });
-
 
 /**
  * ========================================================================
@@ -65,25 +66,25 @@ document.addEventListener("DOMContentLoaded", function() {
  *   - `cta_click` on "Explore My Portfolio"
  */
 function setupHomepageCtaTracking() {
-  const cta1 = document.getElementById('cta-button-1');
-  const cta2 = document.getElementById('cta-button-2');
+    const cta1 = document.getElementById("cta-button-1");
+    const cta2 = document.getElementById("cta-button-2");
 
-  // Exit gracefully if the buttons aren't on the current page.
-  if (!cta1 || !cta2) {
-    return;
-  }
+    // Exit gracefully if the buttons aren't on the current page.
+    if (!cta1 || !cta2) {
+        return;
+    }
 
-  // Attach a click listener to the first button.
-  cta1.addEventListener('click', function() {
-    const button_text = cta1.innerText.trim();
-    trackClick('cta_click', button_text);
-  });
+    // Attach a click listener to the first button.
+    cta1.addEventListener("click", function () {
+        const button_text = cta1.innerText.trim();
+        trackClick("cta_click", button_text);
+    });
 
-  // Attach a click listener to the second button.
-  cta2.addEventListener('click', function() {
-    const button_text = cta2.innerText.trim();
-    trackClick('cta_click', button_text);
-  });
+    // Attach a click listener to the second button.
+    cta2.addEventListener("click", function () {
+        const button_text = cta2.innerText.trim();
+        trackClick("cta_click", button_text);
+    });
 }
 
 /**
@@ -93,18 +94,17 @@ function setupHomepageCtaTracking() {
  * - **Event Captured:** `resume_downloaded`
  */
 function setupResumeTracking() {
-  const downloadButton = document.getElementById('resume-download-button');
+    const downloadButton = document.getElementById("resume-download-button");
 
-  // Exit gracefully if the button isn't on the current page.
-  if (!downloadButton) {
-    return;
-  }
+    // Exit gracefully if the button isn't on the current page.
+    if (!downloadButton) {
+        return;
+    }
 
-  downloadButton.addEventListener('click', function() {
-    trackClick('resume_downloaded', 'Download PDF');
-  });
+    downloadButton.addEventListener("click", function () {
+        posthog.capture("resume_downloaded");
+    });
 }
-
 
 /**
  * ========================================================================
@@ -119,13 +119,12 @@ function setupResumeTracking() {
  * @param {string} button_identifier - A string identifying the button (e.g., its text).
  */
 function trackClick(eventName, button_identifier) {
-  // The second argument to `capture` is an object of custom properties.
-  // These properties allow you to filter and segment data in PostHog.
-  posthog.capture(eventName, {
-    button_id: button_identifier
-  });
+    // The second argument to `capture` is an object of custom properties.
+    // These properties allow you to filter and segment data in PostHog.
+    posthog.capture(eventName, {
+        button_id: button_identifier,
+    });
 }
-
 
 /**
  * ========================================================================
