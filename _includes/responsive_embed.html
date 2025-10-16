@@ -1,0 +1,50 @@
+{% comment %}
+  Embed a responsive iframe from a URL.
+  - Handles `page.embed_url` for any direct iframe source.
+  - Handles `page.google_drive_link` for easy Google Drive embedding.
+  - Optionally shows a description and download button.
+{% endcomment %}
+
+{%- assign embed_src = "" -%}
+{%- assign download_href = "" -%}
+{%- assign has_header = false -%}
+
+{%- if page.embed_url -%}
+  {%- assign embed_src = page.embed_url -%}
+{%- elsif page.google_drive_link -%}
+  {%- assign file_id = page.google_drive_link | split: '/d/' | last | split: '/' | first -%}
+  {%- if page.google_drive_link contains '/presentation/' -%}
+    {%- assign embed_src = "https://docs.google.com/presentation/d/" | append: file_id | append: "/embed?start=false&loop=false&delayms=3000" -%}
+  {%- else -%}
+    {%- assign embed_src = "https://drive.google.com/file/d/" | append: file_id | append: "/preview" -%}
+  {%- endif -%}
+  {%- assign download_href = "https://drive.google.com/uc?export=download&id=" | append: file_id -%}
+{%- endif -%}
+
+{% comment %} Allow download_url to override the auto-generated Google Drive link {% endcomment %}
+{%- if page.download_url -%}
+  {%- assign download_href = page.download_url -%}
+{%- endif -%}
+
+{%- if page.embed_description or download_href != "" -%}
+  {%- assign has_header = true -%}
+{%- endif -%}
+
+{% if embed_src != "" %}
+  {% if has_header %}
+    <div class="embed-header">
+      {% if page.embed_description %}
+        <p>{{ page.embed_description }}</p>
+      {% endif %}
+      {% if download_href != "" %}
+        <a href="{{ download_href }}" class="btn btn--primary" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="responsive-embed-container">
+    <iframe src="{{ embed_src }}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  </div>
+{% endif %}
