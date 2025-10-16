@@ -40,7 +40,7 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
-        {% if page.google_drive_link or page.embed_url %}
+        {% if page.drive_link or page.embed_url %}
           {% include responsive_embed.html %}
         {% endif %}
         {% if page.toc %}

@@ -6,7 +6,8 @@ tags: [AI, UX, EdTech]
 image: /assets/images/post-bg-symbloic.png
 description: Bridging perception and logic to boost children’s spatial reasoning with neuro-symbolic AI.
 layout: project
-link: https://docs.google.com/presentation/d/1j_pcdxZWaAc_FJwoCgA03f09yZnWUO2GE8C1puhShew/edit?usp=sharing
+drive_link: https://docs.google.com/presentation/d/1j_pcdxZWaAc_FJwoCgA03f09yZnWUO2GE8C1puhShew/edit?usp=sharing
+embed_description: "You can view the presentation below or download it."
 ---
 
 ## Project Overview
@@ -56,7 +57,7 @@ Many children struggle with spatial and visual reasoning—an essential skill in
     *   Engaging learning experience for children
 
 *   **Demo**
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/TwZfHC4935Q?si=wByhPtiIVi8lzbSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    {% include responsive_embed.html embed_url="https://www.youtube.com/embed/TwZfHC4935Q?si=wByhPtiIVi8lzbSw" %}
 
 ## Impact & Future Scope
 

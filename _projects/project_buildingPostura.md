@@ -6,7 +6,7 @@ tags: [Product Design, UX, Rapid Prototyping]
 image: /assets/images/post_bg_postur.jpg
 description: Tackling poor posture with a wearable and table unit solution, built through rapid prototyping and user-centric design.
 layout: project
-link: https://drive.google.com/file/d/1xTVbwqk8SJAWlASD1ZN3ikGahPudZdG_/view?usp=sharing
+drive_link: https://drive.google.com/file/d/1xTVbwqk8SJAWlASD1ZN3ikGahPudZdG_/view?usp=sharing
 ---
   
 ## Project Overview

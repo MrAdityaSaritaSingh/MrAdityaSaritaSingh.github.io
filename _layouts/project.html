@@ -14,8 +14,8 @@ layout: default
     <section class="page__content" itemprop="text">
       <p class="archive__item-excerpt" itemprop="description">{{ page.description }}</p>
       
-      {% if page.link %}
-        <a href="{{ page.link }}" class="btn btn--primary"><i class="fas fa-fw fa-link"></i> View Report</a>
+      {% if page.drive_link %}
+        {% include responsive_embed.html drive_link=page.drive_link %}
       {% endif %}
 
       {{ content }}
