@@ -75,10 +75,10 @@ homepage:
           title: "Product Management internship"
           description: "Interned at the Centre for Digital Technology in Healthcare, conducting research and analysis for non-invasive anemia detection."
           url: "/story/product-management-internship/"
-        - icon: "fas fa-bullseye"
-          title: "Future Vision"
-          description: "To build products that enhance human capability, with a long-term goal of starting my own company."
-          url: "/story/future-vision/"
+        # - icon: "fas fa-bullseye"
+        #   title: "Future Vision"
+        #   description: "To build products that enhance human capability, with a long-term goal of starting my own company."
+        #   url: "/story/future-vision/"
 
 # Build settings
 markdown: kramdown

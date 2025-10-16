@@ -1,9 +1,9 @@
 main:
     - title: "Home"
       url: /
-    - title: "About"
+    - title: "About Me"
       url: /about/
-    - title: "Portfolio"
+    - title: "Projects"
       url: /portfolio/
     - title: "Cases Studies"
       url: /posts/
