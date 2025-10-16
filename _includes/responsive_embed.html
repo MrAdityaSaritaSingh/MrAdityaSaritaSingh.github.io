@@ -1,44 +1,34 @@
 {% comment %}
-  Embed a responsive iframe from a URL.
-  - Can be called from a layout via front matter or directly in markdown.
-  - When calling directly, pass parameters: {% include responsive_embed.html embed_url="..." %}
+  Embeds a responsive iframe for a Google Drive link from front matter.
+  - Handles page.drive_link for embedding.
+  - Optionally shows a description and download button.
 {% endcomment %}
-
-{%- assign embed_url = include.embed_url | default: page.embed_url -%}
-{%- assign drive_link = include.drive_link | default: page.drive_link -%}
-{%- assign download_url = include.download_url | default: page.download_url -%}
-{%- assign embed_description = include.embed_description | default: page.embed_description -%}
 
 {%- assign embed_src = "" -%}
 {%- assign download_href = "" -%}
-{%- assign has_header = false -%}
+{%- assign embed_class = "responsive-embed-container" -%}
 
-{%- if embed_url -%}
-  {%- assign embed_src = embed_url -%}
-{%- elsif drive_link -%}
-  {%- assign file_id = drive_link | split: '/d/' | last | split: '/' | first -%}
-  {%- if drive_link contains '/presentation/' -%}
+{%- if page.drive_link -%}
+  {%- assign file_id = page.drive_link | split: '/d/' | last | split: '/' | first -%}
+  {%- if page.drive_link contains '/presentation/' -%}
     {%- assign embed_src = "https://docs.google.com/presentation/d/" | append: file_id | append: "/embed?start=false&loop=false&delayms=3000" -%}
   {%- else -%}
     {%- assign embed_src = "https://drive.google.com/file/d/" | append: file_id | append: "/preview" -%}
+    {%- assign embed_class = "responsive-embed-container responsive-embed-container--portrait" -%}
   {%- endif -%}
   {%- assign download_href = "https://drive.google.com/uc?export=download&id=" | append: file_id -%}
 {%- endif -%}
 
-{% comment %} Allow download_url to override the auto-generated Google Drive link {% endcomment %}
-{%- if download_url -%}
-  {%- assign download_href = download_url -%}
-{%- endif -%}
-
-{%- if embed_description or download_href != "" -%}
+{%- assign has_header = false -%}
+{%- if page.embed_description or download_href != "" -%}
   {%- assign has_header = true -%}
 {%- endif -%}
 
 {% if embed_src != "" %}
   {% if has_header %}
     <div class="embed-header">
-      {% if embed_description %}
-        <p>{{ embed_description }}</p>
+      {% if page.embed_description %}
+        <p>{{ page.embed_description }}</p>
       {% endif %}
       {% if download_href != "" %}
         <a href="{{ download_href }}" class="btn btn--primary" target="_blank">
@@ -48,7 +38,7 @@
     </div>
   {% endif %}
 
-  <div class="responsive-embed-container">
+  <div class="{{ embed_class }}">
     <iframe src="{{ embed_src }}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
   </div>
 {% endif %}

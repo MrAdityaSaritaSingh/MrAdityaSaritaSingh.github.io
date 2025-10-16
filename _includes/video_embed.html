@@ -1,0 +1,20 @@
+{% comment %}
+  Embeds a responsive video iframe from a URL.
+  Usage: {% include video_embed.html url="<your_url>" title="<your_title>" %}
+{% endcomment %}
+
+{%- if include.url -%}
+  {%- assign video_title = include.title | default: "Embedded YouTube video" -%}
+  <div class="responsive-embed-container">
+    <iframe
+      src="{{ include.url }}"
+      title="{{ video_title }}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen="true"
+      mozallowfullscreen="true"
+      webkitallowfullscreen="true"
+      frameborder="0"
+    ></iframe>
+  </div>
+{%- endif -%}

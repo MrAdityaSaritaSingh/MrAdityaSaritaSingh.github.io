@@ -15,7 +15,7 @@ layout: default
       <p class="archive__item-excerpt" itemprop="description">{{ page.description }}</p>
       
       {% if page.drive_link %}
-        {% include responsive_embed.html drive_link=page.drive_link %}
+        {% include responsive_embed.html %}
       {% endif %}
 
       {{ content }}
