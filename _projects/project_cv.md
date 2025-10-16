@@ -56,8 +56,8 @@ Many children struggle with spatial and visual reasoning—an essential skill in
     *   Real-time visual explanations of logical reasoning
     *   Engaging learning experience for children
 
-*   **Demo**
-    {% include responsive_embed.html embed_url="https://www.youtube.com/embed/TwZfHC4935Q?si=wByhPtiIVi8lzbSw" %}
+### Demo
+{% include video_embed.html url="https://www.youtube.com/embed/TwZfHC4935Q?si=wByhPtiIVi8lzbSw" %}
 
 ## Impact & Future Scope
 
