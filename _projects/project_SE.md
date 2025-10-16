@@ -1,6 +1,6 @@
 ---
 title: Talk to Database App – Text2Query
-date: 2024-03-05
+date: 2024-11-28
 categories: [Product Management, AI, NLP, SQL Automation]
 tags: [Product Management, AI, NLP, System Architecture]
 image: /assets/images/post_bg_text2querry.png
