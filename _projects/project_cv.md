@@ -12,10 +12,6 @@ embed_description: "You can view the presentation below or download it."
 
 ## Project Overview
 
-<div class="demo-link-box">
-  <a href="https://youtu.be/TwZfHC4935Q"><i class="fab fa-youtube"></i> Watch the Demo</a>
-</div>
-
 Many children struggle with spatial and visual reasoning—an essential skill in STEM learning. Traditional teaching tools often fail to build deep understanding. This project introduces *Spatial Quest*, a neuro-symbolic AI system that combines neural perception with symbolic logic to help children learn spatial reasoning through interactive visual scenes and logical queries.
 
 ## My Role
@@ -40,14 +36,18 @@ Many children struggle with spatial and visual reasoning—an essential skill in
     ![System Diagram](/assets/images/in-post/post-neural-cv/systemdiagram.png)
     *A diagram illustrating the neuro-symbolic workflow, from scene input to logical query answering.*
 
+## The Outcome
+
+The Text2Query project culminated in a high-fidelity prototype that successfully demonstrated the feasibility of a natural language interface for database querying. The prototype was able to accurately translate a wide range of user queries into SQL, and the user feedback was overwhelmingly positive.
+
 <div class="results-box">
-  <h3>Performance Highlights</h3>
-  <span class="result-metric">95.2%</span>
-  <p class="result-description">accuracy on complex CLEVR queries</p>
-  <span class="result-metric">3x Faster</span>
-  <p class="result-description">reasoning than end-to-end neural models</p>
-  <span class="result-metric">Robust</span>
-  <p class="result-description">to noise and partial scene information</p>
+  <h3 class="results-box__title">Performance Highlights</h3>
+  <span class="results-box__metric">95.2%</span>
+  <p class="results-box__description">accuracy on complex CLEVR queries</p>
+  <span class="results-box__metric">3x Faster</span>
+  <p class="results-box__description">reasoning than end-to-end neural models</p>
+  <span class="results-box__metric">Robust</span>
+  <p class="results-box__description">to noise and partial scene information</p>
 </div>
 
 *   **Interactive UI & Explainability:**

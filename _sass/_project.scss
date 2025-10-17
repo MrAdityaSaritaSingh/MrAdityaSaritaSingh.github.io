@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Project Page
+   ========================================================================== */
+
+.page__inner-wrap {
+  padding: 0 2rem;
+
+  @media (max-width: 1024px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+.page__title {
+  font-size: 2.5em !important;
+
+  @media (max-width: 768px) {
+    font-size: 2em !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.8em !important;
+  }
+}
+
+.page__content {
+  h2 {
+    color: $secondary-color;
+    font-weight: bold;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 0.3em;
+    margin-top: 2em;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 1.5em;
+    list-style: none;
+
+    &::before {
+      content: "•";
+      color: $secondary-color;
+      font-weight: bold;
+      display: inline-block;
+      width: 1.5em;
+      margin-left: -1.5em;
+      position: absolute;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    border-radius: 4px;
+  }
+
+  figcaption {
+    text-align: center;
+    color: $primary-color;
+    font-family: $accent-font;
+    font-style: italic;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+  }
+}
+
+/* Results Box
+   ========================================================================== */
+.results-box {
+  background-color: $primary-color;
+  color: $background-color;
+  padding: 1.5em;
+  border-radius: 4px;
+  margin: 2em 0;
+  text-align: center;
+
+  &__title {
+    color: $secondary-color;
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+
+  &__metric {
+    font-size: 3em;
+    font-weight: bold;
+    display: block;
+    margin: 0.2em 0;
+  }
+
+  &__description {
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+}
