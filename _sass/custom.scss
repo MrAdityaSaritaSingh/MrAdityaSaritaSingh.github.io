@@ -15,6 +15,8 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   align-items: center;
 }
 
@@ -157,7 +159,7 @@ ul {
 
 /* New Introduction Section Styles */
 .introduction {
-  // padding: $space-s 0;
+  padding: $space-l 0;
   background-color: $background-color;
   text-align: center;
 }
@@ -307,28 +309,67 @@ ul {
    Responsive Design
    ========================================================================== */
 
-@media (max-width: 768px) {
-
+@media (min-width: 1600px) {
   .hero-content {
-    flex-direction: column; 
-    align-items: center;
+    max-width: 1400px;
+  }
+
+  .hero-image {
+    width: 450px;
+    height: 450px;
+  }
+
+  .hero-text .name {
+    font-size: 3.5rem;
+  }
+
+  .introduction .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
   }
 
   .hero-text {
     max-width: 100%;
-    text-align: center;
+    order: 2; /* Text comes after image */
   }
 
   .hero-image {
-    max-width: 80%; 
-    margin: $space-xl;
-    text-align: center;
+    order: 1; /* Image comes first */
+    margin-bottom: $space-m;
+    width: 300px;
+    height: 300px;
   }
 
-  .profile-picture {
-    width: 180px;
+  .hero-buttons {
+    justify-content: center;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: $space-xl;
+    min-height: auto;
+  }
+
+  .hero-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-text .name {
+    font-size: $type-size-2;
+  }
+
+  .hero-text .role {
+    font-size: $type-size-4;
+  }
+
   .timeline {
     &:before {
       left: 25px;
@@ -359,15 +400,37 @@ ul {
     transform: translateX(-50%);
   }
 
-  .cta-button {
-    font-size: $type-size-6;
-    padding: $space-s $space-m;
-    width: 100%;
-    text-align: center;
-    white-space: normal;
-    box-sizing: border-box;
+  .hero-buttons {
+    flex-direction: column;
   }
 
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    width: 200px;
+    height: 300px;
+  }
+
+  .intro-header h2 {
+    font-size: $type-size-3;
+  }
+
+  .intro-header p {
+    font-size: $type-size-5;
+  }
+
+  .timeline-content {
+    padding: $space-m;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .timeline-item-link {
