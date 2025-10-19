@@ -6,13 +6,13 @@ layout: default
 
   {{ content }}
 
-  <table id="case-studies-table" class="display" style="width:100%">
+  <table id="case-studies-table" class="display responsive nowrap" style="width:100%">
     <thead>
       <tr>
         <th>Title</th>
         <th>Category</th>
         <th>Difficulty</th>
-        <th>Tags</th>
+        <th>Key Frameworks</th>
         <th>Date Solved</th>
       </tr>
     </thead>
@@ -30,9 +30,7 @@ layout: default
           </td>
           <td>
             {% if item.difficulty %}
-              {% assign difficulty_slug = item.difficulty | slugify %}
-              {% assign difficulty_color = site.data.tag_colors[difficulty_slug] | default: "#6c757d" %}
-              <span class="tag" style="background-color: {{ difficulty_color }}">{{ item.difficulty }}</span>
+              <span class="tag pill--{{ item.difficulty | downcase }}">{{ item.difficulty }}</span>
             {% endif %}
           </td>
           <td>

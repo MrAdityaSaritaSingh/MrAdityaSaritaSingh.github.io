@@ -4,9 +4,7 @@ categories:
   - Case Study
 tags:
   - EdTech
-  - Product Design
   - CIRCLES Framework
-  - UX
 ---
 ![netflix](/assets/images/netflix-for-kids.png)
 

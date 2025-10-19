@@ -2,6 +2,12 @@
    Case Studies Table Styles
    ========================================================================== */
 
+.case-studies-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 1em;
+}
+
 /* DataTables Customizations */
 .dataTables_wrapper {
   .dataTables_filter {
@@ -42,3 +48,8 @@
   vertical-align: baseline;
   border-radius: 50rem; /* Fully rounded pills */
 }
+
+/* Difficulty Pill Colors */
+.pill--hard { background-color: #d9534f; }
+.pill--medium { background-color: #f0ad4e; }
+.pill--easy { background-color: #5cb85c; }
