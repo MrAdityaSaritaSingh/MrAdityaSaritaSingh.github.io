@@ -6,6 +6,6 @@ main:
     - title: "Projects"
       url: /portfolio/
     - title: "Cases Studies"
-      url: /posts/
+      url: /case-studies/
     - title: "Contact"
       url: /contact/
