@@ -24,14 +24,15 @@ layout: default
     <hr>
 
     <footer class="page__meta">
-      {% if page.date %}
-        <p class="page__date">
-          <strong><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> Published:</strong> 
-          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-        </p> 
+      {% if site.data.ui-text[site.locale].meta_label %}
+          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+      {% endif %}
+      {% if page.taxonomy%}
+        {% include page__taxonomy.html %}
       {% endif %}
       
-      {% include page__taxonomy.html %}
+      {% include page__date.html %}
+      
     </footer>
 
     {% if page.share %}{% include social-share.html %}{% endif %}
