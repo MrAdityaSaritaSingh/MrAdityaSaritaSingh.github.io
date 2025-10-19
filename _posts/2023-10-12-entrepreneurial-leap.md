@@ -2,6 +2,7 @@
 title: "Entrepreneurial Leap"
 categories:
   - Story
+hidden: true
 tags:
   - Entrepreneurship
 ---

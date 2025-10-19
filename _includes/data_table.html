@@ -1,0 +1,22 @@
+<div class="{{ include.wrapper_class | default: 'data-table-wrapper' }}">
+  <table id="{{ include.id | default: 'data-table' }}" class="display responsive nowrap" style="width:100%">
+    {% if include.headers %}
+      <thead>
+        <tr>
+          {% for header in include.headers %}
+            <th>{{ header }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+    {% endif %}
+    <tbody>
+      {% for row in include.rows %}
+        <tr>
+          {% for cell in row %}
+            {{ cell }}
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

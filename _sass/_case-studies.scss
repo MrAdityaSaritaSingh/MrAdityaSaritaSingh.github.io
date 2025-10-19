@@ -1,55 +1,71 @@
 /* ==========================================================================
-   Case Studies Table Styles
+   Case Studies Page Styles
    ========================================================================== */
 
+/*
+   Wrapper for the data table to control max-width and padding.
+   This ensures it aligns with the rest of the theme's content.
+*/
 .case-studies-wrapper {
-  max-width: 1200px;
+  max-width: $large; // Use theme variable for max-width
   margin: 0 auto;
-  padding: 2em 1em;
+  padding: $space-xl $space-m; // Use theme spacing variables
 }
 
-/* DataTables Customizations */
-.dataTables_wrapper {
-  .dataTables_filter {
-    margin-bottom: 1.5em;
-    text-align: left;
-    
-    label {
-      font-weight: bold;
-    }
-
-    input {
-      margin-left: 0.5em;
-      display: inline-block;
-      width: auto;
-      border: 1px solid $border-color;
-      border-radius: $border-radius;
-      padding: 0.5em 0.75em;
-      
-      &:focus {
-        outline: none;
-        border-color: $primary-color;
-        box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
-      }
-    }
-  }
-}
-
-/* Generic Tag/Pill Style */
+/*
+   Generic Tag/Pill Style
+   Used for categories, frameworks, and difficulty levels.
+*/
 .tag {
   display: inline-block;
   padding: 0.35em 0.65em;
-  font-size: 75%;
-  font-weight: 700;
+  font-size: $type-size-7; // Use theme type scale
+  font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: #fff; // White text is generally safe on colored backgrounds
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 50rem; /* Fully rounded pills */
+  border-radius: 50rem; // Fully rounded pills
 }
 
-/* Difficulty Pill Colors */
-.pill--hard { background-color: #d9534f; }
-.pill--medium { background-color: #f0ad4e; }
-.pill--easy { background-color: #5cb85c; }
+
+
+/*
+   Page Header
+   Mirrors the style of the projects page header for consistency.
+*/
+.page__header {
+  background-color: $secondary-color;
+  padding: 4rem 2rem;
+  text-align: center;
+
+  .page__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: $text-color;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .page__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: $text-color;
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+    .page__title { font-size: 2rem; }
+    .page__subtitle { font-size: 1.2rem; }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+    .page__title { font-size: 1.8rem; }
+    .page__subtitle { font-size: 1rem; }
+  }
+}

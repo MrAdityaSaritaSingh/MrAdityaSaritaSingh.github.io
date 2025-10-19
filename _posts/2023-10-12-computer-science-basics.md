@@ -4,6 +4,7 @@ categories:
   - Story
 tags:
   - Education
+hidden: true
 ---
 
 ![Computer Science Basics](/assets/images/cs-basics.jpg)

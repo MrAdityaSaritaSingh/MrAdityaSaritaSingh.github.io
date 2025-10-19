@@ -4,6 +4,7 @@ categories:
   - Story
 tags:
   - Career
+hidden: true
 ---
 
 ![Software Engineer](/assets/images/software-engineer.jpg)

@@ -1,7 +1,7 @@
 ---
 title: "Designing Netflix for Kids: Learning Meets Entertainment"
 categories:
-  - Case Study
+  - Design
 tags:
   - EdTech
   - CIRCLES Framework

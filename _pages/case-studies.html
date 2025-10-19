@@ -1,0 +1,60 @@
+---
+title: "Case Studies"
+layout: default
+permalink: /case-studies/
+author_profile: true
+---
+
+<div class="page__header">
+  <h1 class="page__title">Case Studies</h1>
+  <p class="page__subtitle">Here is my collection!!</p>
+</div>
+
+{% comment %}
+  Prepare the data for the data_table component.
+  1. Define the table headers.
+  2. Initialize an empty array for the rows.
+  3. Loop through the desired collection (in this case, posts that aren't hidden).
+  4. For each item, build the HTML for each cell and capture it.
+  5. Create a row by joining the cells.
+  6. Add the complete row to the rows array.
+{% endcomment %}
+{% assign table_headers = "Title,Category,Key Frameworks,Date Solved" | split: "," %}
+{% assign table_rows = "" | split: "" %}
+
+{% assign collection = site.posts | where_exp: "item", "item.hidden != true" %}
+{% for item in collection %}
+  {% capture title_cell %}<td><a href="{{ item.url | relative_url }}">{{ item.title }}</a></td>{% endcapture %}
+
+  {% capture category_cell %}
+    <td>
+      {% for category in item.categories %}
+        {% assign category_slug = category | slugify %}
+        {% assign category_color = site.data.tag_colors[category_slug] | default: "#6c757d" %}
+        <span class="tag" style="background-color: {{ category_color }}; margin-right: 5px;">{{ category }}</span>
+      {% endfor %}
+    </td>
+  {% endcapture %}
+
+  {% capture frameworks_cell %}
+    <td>
+      {% for tag in item.tags %}
+        {% assign tag_slug = tag | slugify %}
+        {% assign tag_color = site.data.tag_colors[tag_slug] | default: "#6c757d" %}
+        <span class="tag" style="background-color: {{ tag_color }}; margin-right: 5px;">{{ tag }}</span>
+      {% endfor %}
+    </td>
+  {% endcapture %}
+
+  {% capture date_cell %}<td>{{ item.date | date: "%Y-%m-%d" }}</td>{% endcapture %}
+
+  {% assign row = "" | split: "" %}
+  {% assign row = row | push: title_cell %}
+  {% assign row = row | push: category_cell %}
+  {% assign row = row | push: frameworks_cell %}
+  {% assign row = row | push: date_cell %}
+
+  {% assign table_rows = table_rows | push: row %}
+{% endfor %}
+
+{% include data_table.html headers=table_headers rows=table_rows id='case-studies-table' wrapper_class='case-studies-wrapper' %}

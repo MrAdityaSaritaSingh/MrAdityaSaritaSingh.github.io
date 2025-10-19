@@ -1,8 +1,7 @@
 ---
 title: "Gramin E-Mobility: Powering Rural India"
 categories:
-  - Case study 
-# hidden: true
+  - Case Study 
 tags:
   - CaseStudy
   - Go-to-market Strategy

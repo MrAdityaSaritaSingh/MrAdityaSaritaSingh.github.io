@@ -4,6 +4,7 @@ categories:
   - Story
 tags:
   - Career
+hidden: true
 ---
 
 ![Transition to Product](/assets/images/transition-to-product.jpg)
