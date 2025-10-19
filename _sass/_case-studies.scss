@@ -4,36 +4,144 @@
 
 /*
    Wrapper for the data table to control max-width and padding.
-   This ensures it aligns with the rest of the theme's content.
 */
 .case-studies-wrapper {
-  max-width: $large; // Use theme variable for max-width
+  max-width: $large;
   margin: 0 auto;
-  padding: $space-xl $space-m; // Use theme spacing variables
+  padding: $space-xl $space-m;
+}
+
+/*
+   DataTables - General Wrapper
+*/
+.dataTables_wrapper {
+  width: 100%; // Ensure the wrapper takes up the full available width
+  // The .row class is added by the 'dom' option in JS
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/*
+   "Show X entries" dropdown
+*/
+.dataTables_length {
+  label {
+    // font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    font-size: $type-size-7;
+  }
+}
+
+/*
+   Search Filter
+*/
+.dataTables_filter {
+  text-align: right; // Align the search to the right
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    font-size: $type-size-6; 
+  }
+
+  input {
+    width: 200px; // Reduce input box width
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: $space-xs $space-s;
+    transition: border-color $global-transition, box-shadow $global-transition;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    }
+  }
+}
+
+/*
+   Table Alignment Correction
+*/
+#case-studies-table {
+  th, td {
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
+  }
+}
+
+.col-table-row{
+  width: 100%;
+}
+
+/*
+   "Showing X of Y" info text
+*/
+.dataTables_info {
+  color: $muted-text-color;
+  font-size: $type-size-6;
+}
+
+/*
+   Pagination Controls
+*/
+.dataTables_paginate {
+  text-align: right;
+
+  .paginate_button {
+    padding: $space-xs $space-s;
+    margin-left: $space-xxs;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color $global-transition, color $global-transition;
+
+    &.current,
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+      border-color: $primary-color;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
 }
 
 /*
    Generic Tag/Pill Style
-   Used for categories, frameworks, and difficulty levels.
 */
 .tag {
   display: inline-block;
   padding: 0.35em 0.65em;
-  font-size: $type-size-7; // Use theme type scale
+  font-size: $type-size-7;
   font-weight: bold;
   line-height: 1;
-  color: #fff; // White text is generally safe on colored backgrounds
+  color: #fff;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 50rem; // Fully rounded pills
+  border-radius: 50rem;
+  margin-right: 5px; // Add some spacing between tags
 }
 
-
+/*
+   Category-specific Tag Color
+*/
+.tag--category {
+  background-color: $secondary-color;
+}
 
 /*
    Page Header
-   Mirrors the style of the projects page header for consistency.
 */
 .page__header {
   background-color: $secondary-color;
@@ -67,5 +175,34 @@
     padding: 2rem 1rem;
     .page__title { font-size: 1.8rem; }
     .page__subtitle { font-size: 1rem; }
+  }
+}
+
+/*
+   Responsive Styles for DataTables
+*/
+@media (max-width: $medium) {
+  .dataTables_wrapper .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $space-m;
+  }
+
+  .dataTables_filter {
+    text-align: left;
+    width: 100%;
+
+    label {
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .dataTables_paginate {
+    text-align: left;
+    margin-top: $space-m;
   }
 }
