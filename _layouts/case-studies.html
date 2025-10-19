@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="case-studies-wrapper">
+
+  {{ content }}
+
+  <table id="case-studies-table" class="display" style="width:100%">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Difficulty</th>
+        <th>Tags</th>
+        <th>Date Solved</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign posts = site.posts | where_exp: "item", "item.hidden != true" %}
+      {% for item in posts %}
+        <tr>
+          <td><a href="{{ item.url | relative_url }}">{{ item.title }}</a></td>
+          <td>
+            {% for category in item.categories %}
+              {% assign category_slug = category | slugify %}
+              {% assign category_color = site.data.tag_colors[category_slug] | default: "#6c757d" %}
+              <span class="tag" style="background-color: {{ category_color }}; margin-right: 5px;">{{ category }}</span>
+            {% endfor %}
+          </td>
+          <td>
+            {% if item.difficulty %}
+              {% assign difficulty_slug = item.difficulty | slugify %}
+              {% assign difficulty_color = site.data.tag_colors[difficulty_slug] | default: "#6c757d" %}
+              <span class="tag" style="background-color: {{ difficulty_color }}">{{ item.difficulty }}</span>
+            {% endif %}
+          </td>
+          <td>
+            {% for tag in item.tags %}
+              {% assign tag_slug = tag | slugify %}
+              {% assign tag_color = site.data.tag_colors[tag_slug] | default: "#6c757d" %}
+              <span class="tag" style="background-color: {{ tag_color }}; margin-right: 5px;">{{ tag }}</span>
+            {% endfor %}
+          </td>
+          <td>{{ item.date | date: "%Y-%m-%d" }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

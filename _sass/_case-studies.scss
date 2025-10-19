@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Case Studies Table Styles
+   ========================================================================== */
+
+/* DataTables Customizations */
+.dataTables_wrapper {
+  .dataTables_filter {
+    margin-bottom: 1.5em;
+    text-align: left;
+    
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      margin-left: 0.5em;
+      display: inline-block;
+      width: auto;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      padding: 0.5em 0.75em;
+      
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+      }
+    }
+  }
+}
+
+/* Generic Tag/Pill Style */
+.tag {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50rem; /* Fully rounded pills */
+}

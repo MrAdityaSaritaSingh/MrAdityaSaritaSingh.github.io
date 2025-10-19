@@ -1,0 +1,23 @@
+# Define colors for tags here.
+# The key should be the slugified version of your category or difficulty.
+
+# Category Colors
+product-improvement: "#4285F4" # Blue
+teardown: "#DB4437" # Red
+guesstimates: "#F4B400" # Yellow
+product-strategy: "#0F9D58" # Green
+market-analysis: "#9C27B0" # Purple
+case-study: "#FF5722" # Deep Orange
+Story: "#795548" #
+
+# Difficulty Colors
+hard: "#d9534f"
+medium: "#f0ad4e"
+easy: "#5cb85c"
+
+# Tag Colors
+user-research: "#2196F3" # Blue
+ab-testing: "#E91E63" # Pink
+product-strategy: "#009688" # Teal
+data-analysis: "#FFC107" # Amber
+jobs-to-be-done: "#673AB7" # Deep Purple
