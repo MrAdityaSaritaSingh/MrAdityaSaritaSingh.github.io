@@ -44,3 +44,17 @@ If you have a question about using Jekyll, start a discussion on the [Jekyll For
 - [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
 - [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
 - [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+
+---
+
+## Creating New Posts
+
+A script is available to quickly create new blog posts with the correct front matter.
+
+To use it, run the following command from the root of the project:
+
+```bash
+./scripts/new_post.sh "Post Title" "Category1,Category2" "Tag1,Tag2"
+```
+
+This will create a new Markdown file in the `_posts` directory with the current date and the provided title, categories, and tags.
