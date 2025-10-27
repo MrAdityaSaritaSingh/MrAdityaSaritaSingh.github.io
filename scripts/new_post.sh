@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Check for correct number of arguments
+# ./new_post.sh "Estimate the number of washing machines sold in 2025 in India" "Guesstimate" "Sales, Top Down"
 if [ "$#" -ne 3 ]; then
     echo "Usage: $0 \"Post Title\" \"Category1,Category2\" \"Tag1,Tag2\""
     exit 1
