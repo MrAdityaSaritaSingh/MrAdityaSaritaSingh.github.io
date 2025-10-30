@@ -188,6 +188,7 @@ function identifyInternalUsers() {
         posthog.identify(posthog.get_distinct_id(), {
             user_type: 'internal'
         });
+        posthog.capture('internal_user_view');
     }
 }
 
