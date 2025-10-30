@@ -218,63 +218,99 @@ function toStrikethrough(text) {
 function convertMarkdown() {
     const markdownInput = document.getElementById("markdown-input").value;
     let convertedText = markdownInput;
+    const urls = [];
 
-    // Convert code blocks (e.g., ```text```)
-    convertedText = convertedText.replace(/```([\s\S]*?)```/g, (match, text) =>
-        toMonospaceUnicode(text)
-    );
-
-    // Convert strikethrough (e.g., ~~text~~)
-    convertedText = convertedText.replace(/~~(.*?)~~/g, (match, text) =>
-        toStrikethrough(text)
-    );
-
-    // Convert headings (e.g., # Title)
-    convertedText = convertedText.replace(/^#+\s+(.*)/gm, (match, text) =>
-        toBoldUnicode(text)
-    );
-
-    // Convert bold (e.g., **text** or __text__)
+    // 1. Protect markdown links [text](url)
     convertedText = convertedText.replace(
-        /\*\*(.*?)\*\*|__(.*?)__/g,
-        (match, p1, p2) => toBoldUnicode(p1 || p2)
-    );
-
-    // Convert italic (e.g., *text* or _text_)
-    convertedText = convertedText.replace(
-        /\*(.*?)\*|_(.*?)_/g,
-        (match, p1, p2) => toItalicUnicode(p1 || p2)
-    );
-
-    // Convert links (e.g., [text](url)) to "text (url)"
-    convertedText = convertedText.replace(
-        /\[(.*?)\]\((.*?)\)/g,
-        (match, text, url) => {
-            if (text === url) {
-                return url;
-            } else {
-                return `${text} (${url})`;
-            }
+        /\[([^\]]+)\]\(([^)]+)\)/g,
+        function (match, text, url) {
+            const id = urls.length;
+            // we keep "text (url)" as the final form
+            const finalLink =
+                text.trim() === url.trim() ? url : text + " (" + url + ")";
+            urls.push(finalLink);
+            return "§§URL_" + id + "§§"; // safe placeholder
         }
     );
 
-    // Convert unordered lists (e.g., * item, - item, + item) to "• item"
-    convertedText = convertedText.replace(/^[\t ]*["\*\-\+]\s+(.*)/gm, "• $1");
+    // 1b. Protect bare URLs
+    convertedText = convertedText.replace(
+        /https?:\/\/[^\s)]+/g,
+        function (match) {
+            const id = urls.length;
+            urls.push(match);
+            return "§§URL_" + id + "§§";
+        }
+    );
 
-    // Convert ordered lists (e.g., 1. item) - LinkedIn supports this natively, so we can just remove extra indentation
-    convertedText = convertedText.replace(/^\s*\d+\.\s+(.*)/gm, "$1");
+    // 2. Fenced code blocks ```...```
+    convertedText = convertedText.replace(
+        /```([\s\S]*?)```/g,
+        function (match, text) {
+            return toMonospaceUnicode(text);
+        }
+    );
 
-    // Remove blockquotes
-    convertedText = convertedText.replace(/^>\s?/gm, "");
+    // 2.1 Inline code `...`
+    convertedText = convertedText.replace(
+        /`([^`]+)`/g,
+        function (match, inner) {
+            return toMonospaceUnicode(inner);
+        }
+    );
 
-    // Remove horizontal rules
-    convertedText = convertedText.replace(/^-{3,}|_{3,}|\*{3,}/g, "");
+    // 3. Strikethrough ~~text~~
+    convertedText = convertedText.replace(/~~(.*?)~~/g, function (match, text) {
+        return toStrikethrough(text);
+    });
 
-    // Remove images e.g., ![alt text](url)
-    convertedText = convertedText.replace(/!\[(.*?)\]\((.*?)\)/g, "");
+    // 4. Headings
+    convertedText = convertedText.replace(
+        /^(\s{0,3}#{1,6})\s+(.*)$/gm,
+        function (match, hashes, text) {
+            return toBoldUnicode(text);
+        }
+    );
 
-    // Clean up extra newlines
+    // 5. Lists / block / hr / images
+    // unordered
+    convertedText = convertedText.replace(/^[ \t]*([*\-+])\s+(.*)$/gm, "• $2");
+    // ordered (keep number)
+    convertedText = convertedText.replace(/^[ \t]*(\d+)\.\s+(.*)$/gm, "$1. $2");
+    // blockquotes
+    convertedText = convertedText.replace(/^[ \t]*>\s?/gm, "");
+    // horizontal rules
+    convertedText = convertedText.replace(
+        /^[ \t]*(?:-{3,}|\*{3,}|_{3,})[ \t]*$/gm,
+        ""
+    );
+    // images
+    convertedText = convertedText.replace(/!\[[^\]]*?\]\([^)]+?\)/g, "");
+    // collapse blanks
     convertedText = convertedText.replace(/\n{3,}/g, "\n\n");
+
+    // 6. Restore URLs NOW (before italics/bold)
+    urls.forEach(function (url, i) {
+        var re = new RegExp("§§URL_" + i + "§§", "g");
+        convertedText = convertedText.replace(re, url);
+    });
+
+    // 7. Bold **...** and __...__
+    convertedText = convertedText
+        .replace(/\*\*(.+?)\*\*/g, function (m, inner) {
+            return toBoldUnicode(inner);
+        })
+        .replace(/__(.+?)__/g, function (m, inner) {
+            return toBoldUnicode(inner);
+        });
+
+    // 8. Italic — ONLY *...*, not _..._
+    convertedText = convertedText.replace(
+        /\*(?!\*)([^*\n]+)\*(?!\*)/g,
+        function (m, inner) {
+            return toItalicUnicode(inner);
+        }
+    );
 
     document.getElementById("linkedin-output").value = convertedText.trim();
 }
