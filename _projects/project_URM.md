@@ -7,6 +7,7 @@ image: /assets/images/post-bg-urm.png
 description: Mistakes during design thinking process fixed via user research methodologies.
 layout: project
 drive_link: https://drive.google.com/file/d/1lw_qZhbYEXYWuPhLPcRIBtxjPZhIhWXB/view?usp=sharing
+feedback: true
 ---
 
 ## From Missteps to Meaningful Design — A User Research Journey

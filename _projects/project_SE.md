@@ -7,6 +7,7 @@ image: /assets/images/post_bg_text2querry.png
 description: A web application that converts English statements into MySQL queries for data retrieval.
 layout: project
 drive_link: https://drive.google.com/file/d/17B6EDQNZRqd3HhpDVIH2jQ5GnNgGIENA/view?usp=drive_link
+feedback: true
 ---
 
 ## Project Overview

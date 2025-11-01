@@ -6,6 +6,7 @@ tags: [Jekyll, Product Thinking, UX, Analytics]
 image: /assets/images/website_landing.png
 description: "Applying product management principles to build and optimize my personal website as a central hub for my professional identity."
 layout: project
+feedback: true
 ---
 
 ## Project Overview

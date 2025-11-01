@@ -7,6 +7,7 @@ image: /assets/images/post_bg_khet_to_plate.png
 description: A strategic approach to connecting farmers directly with consumers and businesses.
 layout: project
 drive_link: https://drive.google.com/file/d/1-FgryPVbSRNTLTBqeu0tIKDCQqDQttff/view?usp=drive_link
+feedback: true
 ---
 
 ## Project Overview
