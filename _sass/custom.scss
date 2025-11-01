@@ -472,3 +472,11 @@ textarea {
     justify-content: center;
     gap: 10px;
 }
+
+.page__feedback iframe {
+  width: 100%;
+  height: 600px; /* Adjust as needed */
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  margin: 10px;
+}

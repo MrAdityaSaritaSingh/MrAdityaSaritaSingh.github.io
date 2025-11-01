@@ -6,6 +6,7 @@ tags:
   - Sales
   - Top Down
 date: 2025-10-22
+feedback: true
 ---
 ## 1) Inputs & high-level assumptions
 
@@ -57,25 +58,24 @@ Two drivers:
 
 1. Replacement sales
 
-* **Average life (L):** 8–10 years → replacement rate ≈ **1/L**
-* Use midpoint **L = 9** → **≈11.1%** replacement
-* **Replacement 2025:** `B / L = 6.79 / 9 ≈ **0.75 cr**`
+   * **Average life (L):** 8–10 years → replacement rate ≈ **1/L**
+   * Use midpoint **L = 9** → **≈11.1%** replacement
+   * **Replacement 2025:** `B / L = 6.79 / 9 ≈ 0.75 cr`
 
 2. First-time buyers (new households)
+   * **Urban HH growth:** ~2% of 14 cr → **0.28 cr** new HH
 
-Estimate new households and apply adoption:
+     * **Adoption among new urban HH (aᵤ):** ~60% → **0.28 × 0.60 = 0.168 cr**
+   * **Rural HH growth:** ~1% of 17 cr → **0.17 cr** new HH
 
-* **Urban HH growth:** ~2% of 14 cr → **0.28 cr** new HH
+     * **Adoption among new rural HH (aᵣ):** ~10% → **0.17 × 0.10 = 0.017 cr**
 
-  * **Adoption among new urban HH (aᵤ):** ~60% → **0.28 × 0.60 = 0.168 cr**
-* **Rural HH growth:** ~1% of 17 cr → **0.17 cr** new HH
-
-  * **Adoption among new rural HH (aᵣ):** ~10% → **0.17 × 0.10 = 0.017 cr**
-
-**First-time buyers 2025:** `0.168 + 0.017 = **0.185 cr**`
+**First-time buyers 2025:** `0.168 + 0.017 = 0.185 cr`
 
 ## 6) Result
 
-Sales_2025 = Replacement + First-time = 0.75 + 0.185 = **0.94 cr units**
+Sales_2025 = Replacement + First-time 
+
+`0.75 + 0.185 = 0.94 cr units`
 
 > Notes: This is a rough, top-down guesstimate based on stated assumptions (income splits, rural filter, life, and growth proxy). Adjusting any assumption (e.g., rural affordability, urban penetration, average life, or growth rate) will proportionally move the final estimate.
