@@ -13,22 +13,22 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Aditya S. Rathore
+title: Aditya S Rathore
 email: Mr.AdityaSRathore@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-    Aditya S. Rathore is an aspiring Product Manager currently pursuing a Master's degree at IIIT Hyderabad.  With over four years of experience as a Software Engineer building products, Aditya brings a unique blend of technical expertise and a product-focused mindset.  Describing himself as a "tinker with a hacker mentality," Aditya has always been driven by a deep curiosity for how things work and a passion for both building and innovating within systems.
-hero_role: "Builder | PM | Engineer"
-hero_description: "A hybrid Product Manager that turn user insights into user-centered products with measurable outcomes."
+    "Aditya S Rathore is a Product Builder and Product Manager pursuing his Master’s in Product Design & Management at IIIT Hyderabad. With over four years of experience as a Software Engineer, he bridges the gap between product strategy and technical execution. A lifelong tinkerer with a hacker’s mindset, Aditya helps founders and teams build fast, validate faster, and turn ideas into impactful products.""
+hero_role: "Product Manager | Builder"
+hero_description: "I combine strategy, system, and code to turn user insights into products that deliver impact."
 hero_image: "assets/images/profile.webp"
 hero_cta_1:
     text: "View My Resume"
     url: "/resume/"
 hero_cta_2:
-    text: "Explore My Portfolio"
+    text: "Explore My Work"
     url: "/portfolio/"
 # logo: "/assets/images/logo.png"
 twitter_username: adityasrathor3
-github_username: adigeak
+github_username: MrAdityaSaritaSingh
 #theme: minimal-mistakes-jekyll
 # theame
 minimal_mistakes_skin: "asr" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise", "myskin"
@@ -51,13 +51,13 @@ analytics:
 # Homepage content
 homepage:
     timeline:
-        - icon: "fas fa-lightbulb"
-          title: "Init"
-          description: "Born in 1999, in a small town of Uttar Pradesh, India. Developed an early fascination for technology and problem-solving."
-          url: "/story/the-spark/"
+        # - icon: "fas fa-lightbulb"
+        #   title: "Init"
+        #   description: "Born in 1999, in a small town of Uttar Pradesh, India. Developed an early fascination for technology and problem-solving."
+        #   url: "/story/the-spark/"
         - icon: "fas fa-graduation-cap"
-          title: "Start with software"
-          description: "Got My First PC, Started building softwares. Joined Bachelor's degree in Computer Science and Engineering in 2017."
+          title: "Starting with software"
+          description: "Got My First PC in 2008, Started building softwares. Joined Bachelor's degree in Computer Science and Engineering in 2017."
           url: "/story/computer-science-basics/"
         - icon: "fas fa-rocket"
           title: "Co-Founded a Startup"
@@ -65,16 +65,16 @@ homepage:
           url: "/story/entrepreneurial-leap/"
         - icon: "fas fa-code"
           title: "Joined a Startup"
-          description: "Joined Lohia Mechatronik in 2020 as an intern, swiftly rising to Senior Software Engineer. A founding engineer, I wore multiple hats, driving thing from development to deployement at client side."
+          description: "Joined Lohia Mechatronik in 2020 as an intern, swiftly rising to Senior Software Engineer. As a founding engineer, I wore multiple hats, driving thing from development to deployement at client side."
           url: "/story/software-engineer/"
         - icon: "fas fa-cube"
           title: "Started Product Journey"
-          description: "Pursuing a Master's in Product Design & Management at IIIT Hyderabad to bridge my technical and business acumen."
+          description: "Joined Master's in Product Design & Management at IIIT Hyderabad to bridge my technical and business acumen."
           url: "/story/transition-to-product/"
-        - icon: "fas fa-heartbeat"
-          title: "Launch 2.0"
-          description: "Interned at the Centre for Digital Technology in Healthcare, conducting research and analysis for non-invasive anemia detection."
-          url: "/story/product-management-internship/"
+        # - icon: "fas fa-heartbeat"
+        #   title: "Launch 2.0"
+        #   description: "Interned at the Centre for Digital Technology in Healthcare, conducting research and analysis for non-invasive anemia detection."
+        #   url: "/story/product-management-internship/"
         # - icon: "fas fa-bullseye"
         #   title: "Future Vision"
         #   description: "To build products that enhance human capability, with a long-term goal of starting my own company."
@@ -114,20 +114,20 @@ plugins:
     - jekyll-include-cache
 
 author:
-    name: "Aditya S. Rathore"
+    name: "Aditya S Rathore"
     avatar: "assets/images/Headshot.png"
     bio: "I build, iterate, and think from first principles."
-    location: Kanpur, Hyderabad & Pune
+    location: Hyderabad & Pune
     links:
         - label: "Blog"
           icon: "fas fa-fw fa-link"
           url: "https://adigeak.github.io/"
         - label: "Twitter"
           icon: "fab fa-fw fa-twitter-square"
-          url: "https://twitter.com/01100001ditya"
+          url: "https://x.com/adityasrathor3"
         - label: "GitHub"
           icon: "fab fa-fw fa-github"
-          url: "https://github.com/adigeak"
+          url: "https://github.com/MrAdityaSaritaSingh"
         - label: "LinkedIn"
           icon: "fab fa-fw fa-linkedin"
           url: "https://www.linkedin.com/in/aditya-s-rathore/"
@@ -139,10 +139,10 @@ footer:
     links:
         - label: "Twitter"
           icon: "fab fa-fw fa-twitter-square"
-          url: "https://twitter.com/01100001ditya"
+          url: "https://x.com/adityasrathor3"
         - label: "GitHub"
           icon: "fab fa-fw fa-github"
-          url: "https://github.com/adigeak"
+          url: "https://github.com/MrAdityaSaritaSingh"
         - label: "LinkedIn"
           icon: "fab fa-fw fa-linkedin"
           url: "https://www.linkedin.com/in/aditya-s-rathore/"

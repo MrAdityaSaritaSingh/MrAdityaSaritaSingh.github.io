@@ -3,7 +3,7 @@ main:
       url: /
     - title: "About Me"
       url: /about/
-    - title: "Projects"
+    - title: "Portfolio"
       url: /portfolio/
     - title: "Cases Studies"
       url: /case-studies/
