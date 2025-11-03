@@ -72,3 +72,14 @@ blockquote, .quote {
   font-style: italic;
   color: $muted-text-color; // Helps set it apart from body text
 }
+
+/* 6. Table Customizations */
+
+thead {
+  background-color: $primary-color !important; // Use primary for a bold header
+  color: $background-color !important; // Ensure text is readable
+  th {
+    color: $background-color !important; // Ensure th text is also white
+  }
+
+}
