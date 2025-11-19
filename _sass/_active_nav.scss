@@ -1,0 +1,6 @@
+/* Active navigation item */
+.masthead__menu-item .active {
+    font-weight: bold;
+    color: $primary-color;
+    border-bottom: 2px solid $primary-color;
+}
