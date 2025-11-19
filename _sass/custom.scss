@@ -433,15 +433,15 @@ ul {
   }
 }
 
-.timeline-item-link {
-  text-decoration: none !important;
+.timeline .timeline-item-link {
+  text-decoration: none;
   color: inherit;
   display: block;
   transition: transform 0.2s ease-in-out;
 }
 
-.timeline-item-link:hover {
-  text-decoration: none !important;
+.timeline .timeline-item-link:hover {
+  text-decoration: none;
   transform: scale(1.01);
 }
 
