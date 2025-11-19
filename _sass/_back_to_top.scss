@@ -6,19 +6,24 @@
     display: none;
     background-color: $primary-color;
     color: #fff;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     text-align: center;
-    line-height: 40px;
+    line-height: 60px;
+    font-size: 24px;
     border-radius: 50%;
     z-index: 99;
     cursor: pointer;
-    transition: opacity 0.3s ease-in-out, background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
 
     &:hover {
         background-color: darken($primary-color, 10%);
         color: #fff;
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        opacity: 1;
     }
 }
 
