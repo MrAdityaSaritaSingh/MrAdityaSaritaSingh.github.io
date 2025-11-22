@@ -7,5 +7,7 @@ main:
       url: /portfolio/
     - title: "Cases Studies"
       url: /case-studies/
+    - title: "Blogs"
+      url: adigeak.github.io
     - title: "Contact"
       url: /contact/
