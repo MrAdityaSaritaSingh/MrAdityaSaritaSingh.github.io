@@ -17,6 +17,13 @@
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    // Track Modal Open
+    if (typeof posthog !== 'undefined') {
+      posthog.capture('resource_modal_opened', {
+        resource_name: resourceName
+      });
+    }
   }
 
   function closeModal() {
@@ -54,6 +61,13 @@
     submitBtn.innerText = 'Processing...';
     submitBtn.disabled = true;
 
+    // Track Lead Submission
+    if (typeof posthog !== 'undefined') {
+      posthog.capture('resource_lead_submitted', {
+        resource_name: resourceName
+      });
+    }
+
     // Submit the form
     form.submit();
 
@@ -66,6 +80,14 @@
     setTimeout(() => {
       closeModal();
       alert("Thanks! Your download has started.");
+
+      // Track Download
+      if (typeof posthog !== 'undefined') {
+        posthog.capture('resource_downloaded', {
+          resource_name: resourceName,
+          url: currentDownloadUrl
+        });
+      }
 
       // Trigger download
       const link = document.createElement('a');
@@ -87,6 +109,14 @@
     const url = new URL(window.location.href);
     url.searchParams.set('id', id);
     navigator.clipboard.writeText(url.toString()).then(() => {
+      alert('Link copied to clipboard!');
+      
+      // Track Share
+      if (typeof posthog !== 'undefined') {
+        posthog.capture('resource_share_clicked', {
+          resource_id: id
+        });
+      }
     }).catch(err => {
       console.error('Failed to copy: ', err);
     });
