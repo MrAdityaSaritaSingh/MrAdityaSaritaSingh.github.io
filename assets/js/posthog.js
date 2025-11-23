@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
     setupResumeTracking();
     setupProjectLinkTracking();
     setupTimelineTracking();
+    setupCaseStudyTracking();
+    setupSocialTracking();
+    setupContactTracking();
 
 
     /**
@@ -147,6 +150,89 @@ function setupTimelineTracking() {
             const timelineEvent = link.getAttribute("data-track-timeline");
             posthog.capture("timeline_link_clicked", {
                 timeline_event: timelineEvent
+            });
+        });
+    });
+}
+
+/**
+ * EVENT TRACKER: Case Study Clicks
+ *
+ * - **Goal:** Track interest in specific case studies.
+ * - **Event Captured:** `case_study_clicked`
+ */
+function setupCaseStudyTracking() {
+    const caseStudyLinks = document.querySelectorAll("[data-track-case-study]");
+
+    caseStudyLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            const caseStudyTitle = link.getAttribute("data-track-case-study");
+            posthog.capture("case_study_clicked", {
+                case_study_title: caseStudyTitle
+            });
+        });
+    });
+}
+
+/**
+ * EVENT TRACKER: Social Media Clicks
+ *
+ * - **Goal:** Track which social platforms users visit.
+ * - **Event Captured:** `social_link_clicked`
+ */
+function setupSocialTracking() {
+    // Select links in footer and author profile that point to social media
+    const socialLinks = document.querySelectorAll(".author__urls-wrapper a, .page__footer-follow a");
+
+    socialLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            // Try to find the label text or icon class to identify the platform
+            let platform = link.innerText.trim();
+            if (!platform) {
+                const icon = link.querySelector("i");
+                if (icon) {
+                    // Extract platform from class name (e.g., "fa-twitter" -> "twitter")
+                    const classList = icon.className;
+                    if (classList.includes("twitter")) platform = "Twitter";
+                    else if (classList.includes("linkedin")) platform = "LinkedIn";
+                    else if (classList.includes("github")) platform = "GitHub";
+                    else if (classList.includes("instagram")) platform = "Instagram";
+                    else platform = "Unknown";
+                }
+            }
+
+            posthog.capture("social_link_clicked", {
+                platform: platform,
+                url: link.href
+            });
+        });
+    });
+}
+
+/**
+ * EVENT TRACKER: Contact Interactions
+ *
+ * - **Goal:** Track intent to contact.
+ * - **Event Captured:** `contact_link_clicked`
+ */
+function setupContactTracking() {
+    // "Let's Connect" button on homepage
+    const connectBtn = document.querySelector(".connect-section .cta-button");
+    if (connectBtn) {
+        connectBtn.addEventListener("click", function () {
+            posthog.capture("contact_link_clicked", {
+                type: "homepage_cta"
+            });
+        });
+    }
+
+    // Email links
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            posthog.capture("contact_link_clicked", {
+                type: "email_link",
+                email: link.href.replace("mailto:", "")
             });
         });
     });

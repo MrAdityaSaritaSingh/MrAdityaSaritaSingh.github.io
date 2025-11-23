@@ -11,37 +11,37 @@ author_profile: true
 </div>
 
 {% comment %}
-  Prepare the data for the data_table component.
-  1. Define the table headers.
-  2. Initialize an empty array for the rows.
-  3. Loop through the desired collection (in this case, posts that aren't hidden).
-  4. For each item, build the HTML for each cell and capture it.
-  5. Create a row by joining the cells.
-  6. Add the complete row to the rows array.
+Prepare the data for the data_table component.
+1. Define the table headers.
+2. Initialize an empty array for the rows.
+3. Loop through the desired collection (in this case, posts that aren't hidden).
+4. For each item, build the HTML for each cell and capture it.
+5. Create a row by joining the cells.
+6. Add the complete row to the rows array.
 {% endcomment %}
 {% assign table_headers = "Title,Category,Date Solved" | split: "," %}
 {% assign table_rows = "" | split: "" %}
 
 {% assign collection = site.posts | where_exp: "item", "item.hidden != true" %}
 {% for item in collection %}
-  {% capture title_cell %}<td><a href="{{ item.url | relative_url }}">{{ item.title }}</a></td>{% endcapture %}
+{% capture title_cell %}<td><a href="{{ item.url | relative_url }}" data-track-case-study="{{ item.title | strip_html | escape }}">{{ item.title }}</a></td>{% endcapture %}
 
-  {% capture category_cell %}
-    <td>
-      {% for category in item.categories %}
-        <span class="tag tag--category">{{ category }}</span>
-      {% endfor %}
-    </td>
-  {% endcapture %}
+{% capture category_cell %}
+<td>
+  {% for category in item.categories %}
+  <span class="tag tag--category">{{ category }}</span>
+  {% endfor %}
+</td>
+{% endcapture %}
 
-  {% capture date_cell %}<td>{{ item.date | date: "%Y-%m-%d" }}</td>{% endcapture %}
+{% capture date_cell %}<td>{{ item.date | date: "%Y-%m-%d" }}</td>{% endcapture %}
 
-  {% assign row = "" | split: "" %}
-  {% assign row = row | push: title_cell %}
-  {% assign row = row | push: category_cell %}
-  {% assign row = row | push: date_cell %}
+{% assign row = "" | split: "" %}
+{% assign row = row | push: title_cell %}
+{% assign row = row | push: category_cell %}
+{% assign row = row | push: date_cell %}
 
-  {% assign table_rows = table_rows | push: row %}
+{% assign table_rows = table_rows | push: row %}
 {% endfor %}
 
 {% include data_table.html headers=table_headers rows=table_rows id='case-studies-table' wrapper_class='case-studies-wrapper' class='datatable display responsive nowrap' %}

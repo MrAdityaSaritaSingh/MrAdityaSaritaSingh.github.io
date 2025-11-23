@@ -1,6 +1,6 @@
 ---
 title: Portfolio
-permalink: /portfolio/ 
+permalink: /portfolio/
 layout: default
 ---
 <div class="page-header">
@@ -13,27 +13,30 @@ layout: default
 <div class="projects-grid">
   {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
   {% for project in sorted_projects %}
-    <div class="project-card">
-      {% if project.image %}
-        <img src="{{ project.image }}" alt="{{ project.title }}" class="project-card__image">
-      {% endif %}
-      <div class="project-card__content">
-        <h3 class="project-card__title"><a href="{{ project.url }}" data-track-project="{{ project.title | strip_html | escape }}">{{ project.title }}</a></h3>
-        <div class="project-card__meta">
-          {% if project.categories %}
-            {% for category in project.categories %}
-              <span class="project-card__category">{{ category }}</span>
-            {% endfor %}
-          {% endif %}
-        </div>
-        <p class="project-card__description">{{ project.description }}</p>
-        <div class="project-card__cta-container">
-          <a href="{{ project.url }}" class="btn--card primary">Read the Detail</a>
-          {% if project.drive_link %}
-            <a href="{{ project.drive_link }}" class="btn--card secondary">View Final Report</a>
-          {% endif %}
-        </div>
+  <div class="project-card">
+    {% if project.image %}
+    <img src="{{ project.image }}" alt="{{ project.title }}" class="project-card__image" loading="lazy">
+    {% endif %}
+    <div class="project-card__content">
+      <h3 class="project-card__title"><a href="{{ project.url }}"
+          data-track-project="{{ project.title | strip_html | escape }}">{{ project.title }}</a></h3>
+      <div class="project-card__meta">
+        {% if project.categories %}
+        {% for category in project.categories %}
+        <span class="project-card__category">{{ category }}</span>
+        {% endfor %}
+        {% endif %}
+      </div>
+      <p class="project-card__description">{{ project.description }}</p>
+      <div class="project-card__cta-container">
+        <a href="{{ project.url }}" class="btn--card primary"
+          data-track-project="{{ project.title | strip_html | escape }} - Detail">Read the Detail</a>
+        {% if project.drive_link %}
+        <a href="{{ project.drive_link }}" class="btn--card secondary"
+          data-track-project="{{ project.title | strip_html | escape }} - Report">View Final Report</a>
+        {% endif %}
       </div>
     </div>
+  </div>
   {% endfor %}
 </div>
