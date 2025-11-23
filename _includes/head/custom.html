@@ -4,7 +4,11 @@
 
 <!-- DataTables CSS -->
 <!-- Custom JavaScript -->
-<script src="{{ '/assets/js/embed-controls.js' | relative_url }}" defer></script>
+<!-- Page Metadata for Analytics -->
+<meta name="page-layout" content="{{ page.layout }}">
+<meta name="page-categories" content="{{ page.categories | jsonify | escape }}">
+<meta name="page-title" content="{{ page.title | escape }}">
+
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css"
     href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
