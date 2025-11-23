@@ -3,24 +3,141 @@
    ========================================================================== */
 
 .embed-header {
-  margin-bottom: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1em;
 
-  p {
+  &__description {
     margin: 0;
     flex-grow: 1;
   }
+
+  &__actions {
+    display: flex;
+    gap: 0.5em;
+  }
 }
 
+/* Embed Wrapper */
+.embed-wrapper {
+  position: relative;
+  margin-bottom: 1.5em;
+
+  &--fullscreen {
+    background: $background-color;
+
+    .embed-controls {
+      background: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Control Toolbar */
+.embed-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: mix($background-color, $border-color, 95%);
+  border: 1px solid $border-color;
+  border-bottom: none;
+  border-radius: $border-radius $border-radius 0 0;
+  padding: 0.5em 1em;
+  gap: 1em;
+
+  &__group {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+}
+
+.embed-hint {
+  font-size: $type-size-7;
+  color: $muted-text-color;
+
+  kbd {
+    background: mix($background-color, $border-color, 90%);
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-family: $monospace;
+    font-size: 0.9em;
+  }
+}
+
+.embed-control-btn {
+  background: transparent;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  padding: 0.4em 0.6em;
+  cursor: pointer;
+  color: $text-color;
+  font-size: $type-size-6;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: #fff;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  i {
+    font-size: 0.9em;
+  }
+}
+
+/* Loading State */
+.embed-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+
+  p {
+    margin-top: 1em;
+    color: $muted-text-color;
+    font-size: $type-size-6;
+  }
+}
+
+.embed-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba($primary-color, 0.2);
+  border-top-color: $primary-color;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Container */
 .responsive-embed-container {
   position: relative;
   overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  margin-bottom: 1.5em;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
+  border: 1px solid $border-color;
+  border-radius: 0 0 $border-radius $border-radius;
+  background: #f5f5f5;
 
   iframe {
     position: absolute;
@@ -29,5 +146,38 @@
     width: 100%;
     height: 100%;
     border: 0;
+  }
+}
+
+/* Fullscreen Mode */
+.embed-wrapper--fullscreen {
+  .responsive-embed-container {
+    padding-top: 100vh;
+    border-radius: 0;
+  }
+
+  .embed-controls {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-radius: 0;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .embed-controls {
+    padding: 0.4em 0.6em;
+    font-size: $type-size-7;
+  }
+
+  .embed-control-btn {
+    padding: 0.3em 0.5em;
+  }
+
+  .embed-hint {
+    display: none; // Hide keyboard hint on mobile
   }
 }

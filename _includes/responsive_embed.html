@@ -1,7 +1,7 @@
 {% comment %}
-  Embeds a responsive iframe for a Google Drive link from front matter.
-  - Handles page.drive_link for embedding.
-  - Optionally shows a description and download button.
+Embeds a responsive iframe for a Google Drive link from front matter.
+- Handles page.drive_link for embedding.
+- Optionally shows a description and download button.
 {% endcomment %}
 
 {%- assign embed_src = "" -%}
@@ -9,36 +9,65 @@
 {%- assign embed_class = "responsive-embed-container" -%}
 
 {%- if page.drive_link -%}
-  {%- assign file_id = page.drive_link | split: '/d/' | last | split: '/' | first -%}
-  {%- if page.drive_link contains '/presentation/' -%}
-    {%- assign embed_src = "https://docs.google.com/presentation/d/" | append: file_id | append: "/embed?start=false&loop=false&delayms=3000" -%}
-  {%- else -%}
-    {%- assign embed_src = "https://drive.google.com/file/d/" | append: file_id | append: "/preview" -%}
-    {%- assign embed_class = "responsive-embed-container responsive-embed-container--portrait" -%}
-  {%- endif -%}
-  {%- assign download_href = "https://drive.google.com/uc?export=download&id=" | append: file_id -%}
+{%- assign file_id = page.drive_link | split: '/d/' | last | split: '/' | first -%}
+{%- if page.drive_link contains '/presentation/' -%}
+{%- assign embed_src = "https://docs.google.com/presentation/d/" | append: file_id | append:
+"/embed?start=false&loop=false&delayms=3000" -%}
+{%- else -%}
+{%- assign embed_src = "https://drive.google.com/file/d/" | append: file_id | append: "/preview" -%}
+{%- assign embed_class = "responsive-embed-container responsive-embed-container--portrait" -%}
+{%- endif -%}
+{%- assign download_href = "https://drive.google.com/uc?export=download&id=" | append: file_id -%}
 {%- endif -%}
 
 {%- assign has_header = false -%}
 {%- if page.embed_description or download_href != "" -%}
-  {%- assign has_header = true -%}
+{%- assign has_header = true -%}
 {%- endif -%}
 
 {% if embed_src != "" %}
-  {% if has_header %}
-    <div class="embed-header">
-      {% if page.embed_description %}
-        <p>{{ page.embed_description }}</p>
-      {% endif %}
-      {% if download_href != "" %}
-        <a href="{{ download_href }}" class="btn btn--primary" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-      {% endif %}
-    </div>
+{% if has_header %}
+<div class="embed-header">
+  {% if page.embed_description %}
+  <p>{{ page.embed_description }}</p>
   {% endif %}
-
-  <div class="{{ embed_class }}">
-    <iframe src="{{ embed_src }}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  <div class="embed-header__actions">
+    {% if download_href != "" %}
+    <a href="{{ download_href }}" class="btn btn--primary btn--small" target="_blank" title="Download file">
+      <i class="fas fa-download"></i> Download
+    </a>
+    {% endif %}
+    <a href="{{ page.drive_link }}" class="btn btn--secondary btn--small" target="_blank" title="Open in new tab">
+      <i class="fas fa-external-link-alt"></i> Open
+    </a>
   </div>
+</div>
+{% endif %}
+
+<div class="embed-wrapper" id="embed-wrapper-{{ file_id }}">
+  <!-- Control Toolbar -->
+  <div class="embed-controls">
+    <div class="embed-controls__group">
+      <span class="embed-hint">Press <kbd>F</kbd> for fullscreen</span>
+    </div>
+    <div class="embed-controls__group">
+      <button class="embed-control-btn" id="fullscreen-toggle-{{ file_id }}" title="Fullscreen (F)">
+        <i class="fas fa-expand"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div class="embed-loading" id="embed-loading-{{ file_id }}">
+    <div class="embed-spinner"></div>
+    <p>Loading document...</p>
+  </div>
+
+  <!-- Embedded Content -->
+  <div class="{{ embed_class }}">
+    <iframe src="{{ embed_src }}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+      onload="document.getElementById('embed-loading-{{ file_id }}').style.display='none';">
+    </iframe>
+  </div>
+</div>
 {% endif %}
