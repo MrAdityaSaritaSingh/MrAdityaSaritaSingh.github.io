@@ -8,7 +8,7 @@
 .case-studies-wrapper {
   max-width: $large;
   margin: 0 auto;
-  padding: $space-xl $space-m;
+  padding: 0 $space-xl $space-xl $space-xl;
 }
 
 /*
@@ -16,6 +16,7 @@
 */
 .dataTables_wrapper {
   width: 100%; // Ensure the wrapper takes up the full available width
+
   // The .row class is added by the 'dom' option in JS
   .row {
     display: flex;
@@ -47,7 +48,7 @@
     display: flex;
     align-items: center;
     gap: $space-xs;
-    font-size: $type-size-6; 
+    font-size: $type-size-6;
   }
 
   input {
@@ -69,14 +70,16 @@
    Table Alignment Correction
 */
 #case-studies-table {
-  th, td {
+
+  th,
+  td {
     text-align: left;
     vertical-align: middle;
     width: 100%;
   }
 }
 
-.col-table-row{
+.col-table-row {
   width: 100%;
 }
 
@@ -167,14 +170,59 @@
 
   @media (max-width: 768px) {
     padding: 3rem 1.5rem;
-    .page__title { font-size: 2rem; }
-    .page__subtitle { font-size: 1.2rem; }
+
+    .page__title {
+      font-size: 2rem;
+    }
+
+    .page__subtitle {
+      font-size: 1.2rem;
+    }
   }
 
   @media (max-width: 480px) {
     padding: 2rem 1rem;
-    .page__title { font-size: 1.8rem; }
-    .page__subtitle { font-size: 1rem; }
+
+    .page__title {
+      font-size: 1.8rem;
+    }
+
+    .page__subtitle {
+      font-size: 1rem;
+    }
+  }
+}
+
+/*
+   Section Title
+*/
+.page__section-title {
+  font-size: $type-size-2;
+  font-weight: 700;
+  color: $text-color;
+  margin: $space-xl 0 $space-l 0;
+  padding-left: $space-xl;
+  border-left: 4px solid $primary-color;
+
+  @media (max-width: 768px) {
+    font-size: $type-size-3;
+    padding-left: $space-m;
+  }
+}
+
+/*
+   Section Divider
+*/
+.case-studies-divider {
+  margin: $space-xxl auto $space-xl auto;
+  max-width: $large;
+  padding: 0 $space-xl;
+
+  .section-subtitle {
+    font-size: $type-size-6;
+    color: $muted-text-color;
+    margin: $space-s 0 0 0;
+    padding-left: calc($space-xl + 4px);
   }
 }
 

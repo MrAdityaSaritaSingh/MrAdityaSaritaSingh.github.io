@@ -1,0 +1,25 @@
+<div class="star-card">
+    <div class="star-card__header">
+        <span class="star-card__tag">{{ include.tag }}</span>
+        <h3 class="star-card__title"><a href="{{ include.url }}">{{ include.title }}</a></h3>
+    </div>
+    <div class="star-card__grid">
+        <div class="star-section">
+            <span class="star-label">Situation</span>
+            <p>{{ include.situation }}</p>
+        </div>
+        <div class="star-section">
+            <span class="star-label">Task</span>
+            <p>{{ include.task }}</p>
+        </div>
+        <div class="star-section">
+            <span class="star-label">Action</span>
+            <p>{{ include.action }}</p>
+        </div>
+        <div class="star-section">
+            <span class="star-label">Result</span>
+            <p>{{ include.result }}</p>
+        </div>
+    </div>
+    <a href="{{ include.url }}" class="star-card__link">Read Full Case Study &rarr;</a>
+</div>

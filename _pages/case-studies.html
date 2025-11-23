@@ -7,7 +7,52 @@ author_profile: true
 
 <div class="page__header">
   <h1 class="page__title">Case Studies</h1>
-  <p class="page__subtitle">Here is my collection 📑</p>
+  <p class="page__subtitle">Product Thinking in Action 🧠</p>
+</div>
+
+<div class="case-studies-divider">
+  <h2 class="page__section-title">Top Case Studies</h2>
+  <p class="section-subtitle">Featuring my best work across RCA, Strategy, and Design</p>
+</div>
+
+<div class="star-card-container">
+  {% include star_card.html
+  tag="RCA & Analytics"
+  title="Diagnosing a 30% Drop in Watch Time"
+  url="/rca/diagnose-a-30-dip-in-avg-watch-time-of-netflix/"
+  situation="Netflix saw a sudden 30% drop in Avg. Watch Time, primarily on mobile devices."
+  task="Diagnose the root cause of the engagement drop and recommend an immediate fix."
+  action="Segmented metrics by device/OS. Identified correlation with new Android SDK update causing buffering spikes."
+  result="Confirmed causality via A/B test. Rolled back SDK, restoring watch time to baseline levels."
+  %}
+
+  {% include star_card.html
+  tag="Guesstimate"
+  title="How Many Toyota Fortuners are in Gurgaon?"
+  url="/guesstimates/toyota-fortuner-gurgaon-guesstimate/"
+  situation="Estimate total registered Fortuners in Gurgaon without direct data."
+  task="Build a bottom-up model using vehicle registration data, income distribution, and SUV market share."
+  action="Segmented by vehicle type, calculated SUV penetration, and applied Fortuner's luxury segment share
+  (2013-2025)."
+  result="Estimated using structured assumptions: 4.5 crore personal cars → 1.2 crore SUVs → Fortuner share
+  calculation."
+  %}
+
+  {% include star_card.html
+  tag="Product Design"
+  title="Designing Netflix for Kids"
+  url="/design/design-netflix-for-kid/"
+  situation="Parents want educational value from screen time; Kids want fun. Current Netflix Kids is just
+  entertainment."
+  task="Design a 'Netflix for Kids' experience that balances learning with entertainment constraints."
+  action="Used CIRCLES framework. Prioritized short-form 'Edutainment' and streak-based gamification."
+  result="Proposed a feature set including 'Smart Time Suggestions' and 'Parental Control Panel' to build trust."
+  %}
+</div>
+
+<div class="case-studies-divider">
+  <h2 class="page__section-title">List of All Case Studies</h2>
+  <p class="section-subtitle">Browse the complete collection with filters and search</p>
 </div>
 
 {% comment %}
@@ -24,7 +69,8 @@ Prepare the data for the data_table component.
 
 {% assign collection = site.posts | where_exp: "item", "item.hidden != true" %}
 {% for item in collection %}
-{% capture title_cell %}<td><a href="{{ item.url | relative_url }}" data-track-case-study="{{ item.title | strip_html | escape }}">{{ item.title }}</a></td>{% endcapture %}
+{% capture title_cell %}<td><a href="{{ item.url | relative_url }}"
+    data-track-case-study="{{ item.title | strip_html | escape }}">{{ item.title }}</a></td>{% endcapture %}
 
 {% capture category_cell %}
 <td>
@@ -44,4 +90,5 @@ Prepare the data for the data_table component.
 {% assign table_rows = table_rows | push: row %}
 {% endfor %}
 
-{% include data_table.html headers=table_headers rows=table_rows id='case-studies-table' wrapper_class='case-studies-wrapper' class='datatable display responsive nowrap' %}
+{% include data_table.html headers=table_headers rows=table_rows id='case-studies-table'
+wrapper_class='case-studies-wrapper' class='datatable display responsive nowrap' %}
