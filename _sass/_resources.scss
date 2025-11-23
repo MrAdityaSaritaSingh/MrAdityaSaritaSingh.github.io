@@ -1,0 +1,149 @@
+/* Resource Card Styles */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $space-l;
+    /* Theme spacing */
+    margin-top: $space-l;
+}
+
+.resource-card {
+    border: 1px solid $border-color;
+    /* Theme border color */
+    border-radius: $border-radius;
+    /* Theme radius */
+    padding: $space-l;
+    background: $background-color;
+    box-shadow: $box-shadow;
+    /* Theme shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Slightly stronger shadow on hover */
+}
+
+.resource-icon {
+    font-size: 2rem;
+    color: $primary-color;
+    /* Theme primary color */
+    margin-bottom: $space-m;
+}
+
+.resource-title {
+    font-size: $type-size-4;
+    /* Theme typography */
+    font-weight: bold;
+    margin-bottom: $space-xs;
+    color: $text-color;
+}
+
+.resource-desc {
+    font-size: $type-size-5;
+    color: mix($background-color, $text-color, 50%);
+    margin-bottom: $space-l;
+    flex-grow: 1;
+}
+
+.resource-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2147483647 !important;
+    /* Ensure it's on top of everything */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: $background-color;
+    padding: $space-l;
+    border-radius: $border-radius;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: $box-shadow;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: $space-m;
+    right: $space-m;
+    font-size: $type-size-3;
+    cursor: pointer;
+    color: $muted-text-color;
+    line-height: 1;
+}
+
+.modal-header {
+    margin-bottom: $space-l;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: $type-size-3;
+    font-weight: bold;
+    margin-bottom: $space-xs;
+}
+
+.modal-subtitle {
+    color: $muted-text-color;
+    font-size: $type-size-6;
+}
+
+/* Form Styles - Inheriting mostly from theme, just layout tweaks */
+.form-group {
+    margin-bottom: $space-m;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: $space-xs;
+    font-weight: bold;
+    color: $text-color;
+}
+
+/* We don't need .form-input styles as standard inputs are styled by _forms.scss */
+/* We don't need .resource-btn or .submit-btn styles as we use .btn classes now */
+
+/* Custom Secondary Button to match Home Page CTA */
+.btn--secondary {
+    background-color: $secondary-color;
+    color: #fff;
+    /* Assuming white text looks good on orange */
+    border: 1px solid darken($secondary-color, 10%);
+
+    &:hover,
+    &:focus {
+        background-color: darken($secondary-color, 10%);
+        color: #fff;
+    }
+}

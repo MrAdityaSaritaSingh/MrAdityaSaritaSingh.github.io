@@ -5,7 +5,8 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
+        <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}"
+            alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
         <a class="site-title" href="{{ '/' | relative_url }}">
           {{ site.masthead_title | default: site.title | escape_once | strip }}
@@ -13,19 +14,29 @@
         </a>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
-            <li class="masthead__menu-item">
-              <a
-                href="{{ link.url | relative_url }}"
-                {% if link.description %} title="{{ link.description }}"{% endif %}
-                {% if link.target %} target="{{ link.target }}"{% endif %}
-                {% if link.url == page.url %} class="active"{% endif %}
-              >{{ link.title }}</a>
-            </li>
+          <li class="masthead__menu-item {% if link.children %}dropdown{% endif %}">
+            {% if link.children %}
+            <a href="#" class="dropdown-toggle" onclick="return false;">{{ link.title }} <i
+                class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              {% for child in link.children %}
+              <li class="masthead__menu-item--child">
+                <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% else %}
+            <a href="{{ link.url | relative_url }}" {% if link.description %} title="{{ link.description }}" {% endif %}
+              {% if link.target %} target="{{ link.target }}" {% endif %} {% if link.url==page.url %} class="active" {%
+              endif %}>{{ link.title }}</a>
+            {% endif %}
+          </li>
           {%- endfor -%}
         </ul>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
+          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search"
+            }}</span>
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
@@ -38,3 +49,39 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdowns = document.querySelectorAll('.dropdown-toggle');
+
+    dropdowns.forEach(function (toggle) {
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent greedy nav from closing the menu
+
+        // Toggle the 'is-open' class on the parent list item
+        const parent = this.closest('.masthead__menu-item');
+        const wasOpen = parent.classList.contains('is-open');
+
+        // Close all other dropdowns first
+        document.querySelectorAll('.masthead__menu-item.is-open').forEach(function (item) {
+          item.classList.remove('is-open');
+        });
+
+        // If it wasn't open before, open it now
+        if (!wasOpen) {
+          parent.classList.add('is-open');
+        }
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.masthead__menu-item')) {
+        document.querySelectorAll('.masthead__menu-item.is-open').forEach(function (item) {
+          item.classList.remove('is-open');
+        });
+      }
+    });
+  });
+</script>

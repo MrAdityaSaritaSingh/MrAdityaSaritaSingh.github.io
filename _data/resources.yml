@@ -1,0 +1,20 @@
+# - title: "Product Management Frameworks"
+#   id: "pm-frameworks" # Unique ID for deep linking
+#   icon: "fas fa-tools"
+#   description: "A collection of templates for PMs."
+#   download_url: "/assets/downloads/The Ultimate PM Frameworks Cheat Sheet.pdf"
+#   button_text: "Download Cheat Sheet"
+
+- title: "The Ultimate PM Frameworks Cheat Sheet"
+  id: "pm-frameworks"
+  icon: "fas fa-file-pdf"
+  description: "A comprehensive cheat sheet covering essential product management frameworks."
+  download_url: "/assets/downloads/The Ultimate PM Frameworks Cheat Sheet.pdf"
+  button_text: "Download Cheat Sheet"
+
+- title: "Guesstimate Guide"
+  id: "guesstimate-guide"
+  icon: "fas fa-calculator"
+  description: "A guide to mastering guesstimate problems for PM interviews."
+  download_url: "/assets/downloads/myguestimategude.pdf"
+  button_text: "Download Guide"

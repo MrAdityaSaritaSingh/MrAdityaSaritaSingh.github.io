@@ -1,0 +1,83 @@
+---
+layout: single
+title: "Resources"
+permalink: /resources/
+author_profile: true
+---
+
+Here are some curated resources, tools, and guides that I've built or collected to help you on your product and
+engineering journey.
+
+<div class="resource-grid">
+  {% for resource in site.data.resources %}
+  <div class="resource-card">
+    <div class="resource-icon"><i class="{{ resource.icon }}"></i></div>
+    <div class="resource-title">{{ resource.title }}</div>
+    <div class="resource-desc">{{ resource.description }}</div>
+    <div class="resource-actions">
+      <button class="btn btn--secondary btn--large"
+        onclick="openModal('{{ resource.title | escape }}', '{{ resource.download_url }}')">{{
+        resource.button_text }}</button>
+      <button class="btn btn--primary btn--large" onclick="copyLink('{{ resource.id }}')" title="Copy Link">
+        <i class="fas fa-link"></i> Share
+      </button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Lead Magnet Modal -->
+<div class="modal-overlay" id="leadModal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <div class="modal-header">
+      <div class="modal-title">Get Your Resource</div>
+      <div class="modal-subtitle">Enter your details to unlock the download.</div>
+    </div>
+
+    <!-- 
+      GOOGLE FORM INTEGRATION INSTRUCTIONS:
+      1. Create a Google Form with Short Answer fields for Name, Email, Role, and Resource.
+      2. Get the "pre-filled link" to find the entry IDs (e.g., entry.123456).
+      3. Replace GOOGLE_FORM_ACTION_URL with your form's action URL (ends in /formResponse).
+      4. Replace the name="entry.XXXXXX" attributes below with your actual entry IDs.
+    -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    <form id="lead-magnet-form"
+      action="https://docs.google.com/forms/d/e/1FAIpQLScz5G5W_PDr2XMO87yaM3_YIjRtfDLmCHBR07gR-ZdqD3M7SA/formResponse"
+      method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">
+
+      <!-- Hidden field for Resource Name (Not submitted to Google Form directly, handled via JS if needed) -->
+      <input type="hidden" id="resource-name" name="resource_name">
+
+      <div class="form-group">
+        <label class="form-label" for="name">Name</label>
+        <input type="text" id="name" name="entry.891785618" class="form-input" placeholder="Your Name" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" id="email" name="entry.749093361" class="form-input" placeholder="Your Email" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="role">Role</label>
+        <input type="text" id="role" name="entry.2093806624" class="form-input" placeholder="e.g. Product Manager"
+          required>
+      </div>
+
+      <button type="submit" class="submit-btn btn btn--secondary btn--large">Send Me the Resource</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const resourcesData = {
+    {% for resource in site.data.resources %}
+  "{{ resource.id }}": {
+    title: "{{ resource.title | escape }}",
+      url: "{{ resource.download_url }}"
+  } {% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+  };
+</script>

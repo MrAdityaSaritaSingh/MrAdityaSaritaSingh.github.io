@@ -506,3 +506,123 @@ textarea {
   border-radius: 4px;
   margin: 10px;
 }
+
+/* Dropdown Navigation Styles */
+.masthead__menu-item {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: $background-color;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: 10px 0;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+}
+
+.masthead__menu-item:hover .dropdown-menu,
+.masthead__menu-item.is-open .dropdown-menu {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.masthead__menu-item--child {
+  display: block;
+  width: 100%;
+}
+
+.masthead__menu-item--child a {
+  display: block;
+  padding: 8px 20px;
+  color: $text-color;
+  text-decoration: none;
+  font-size: $type-size-5;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.masthead__menu-item--child a:hover {
+  background-color: mix($background-color, $text-color, 95%);
+  color: $primary-color;
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  background-color: $background-color;
+  transform: rotate(45deg);
+  border-top: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.greedy-nav .visible-links {
+  overflow: visible !important;
+}
+
+.dropdown-menu {
+  z-index: 50 !important;
+}
+
+/* Mobile/Greedy Nav Dropdown Styles */
+.hidden-links .dropdown-menu {
+  position: static;
+  float: none;
+  width: 100%;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+  padding-left: 0;
+  /* Remove Indent */
+  display: block !important;
+  /* Always show */
+  margin: 0;
+}
+
+.hidden-links .dropdown-toggle {
+  display: none !important;
+  /* Hide "More" text */
+}
+
+.hidden-links .dropdown-menu::before {
+  display: none;
+}
+
+.hidden-links .masthead__menu-item--child a {
+  padding: 10px 20px;
+  font-size: $type-size-5;
+}
+
+.hidden-links .masthead__menu-item--child:last-child a {
+  border-bottom: none;
+}
