@@ -1,8 +1,8 @@
 ---
-title: Ather Energy Case Study
+title: Ather Energy Ethical Sourcing
 date: 2025-11-23
 categories: [Product Strategy, Market Analysis, EV]
-tags: [Product Management, Case Study, Ather]
+tags: [Product Management, GTM, Ather]
 image: /assets/images/post-bg-ather.png
 description: "Project RayTracer: A process-driven solution to ensure clean mobility does not come at a human cost, focusing on ethical sourcing and traceability."
 layout: project
