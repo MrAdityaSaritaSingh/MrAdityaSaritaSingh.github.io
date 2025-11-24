@@ -873,3 +873,324 @@ td {
     border: 1px solid $border-color;
   }
 }
+
+/* ========================================================================
+   Skill Filter Modal Styles
+   ======================================================================== */
+
+/* Clickable Skills */
+.clickable-skill {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+  position: relative;
+
+  &:hover {
+    background-color: mix($background-color, $secondary-color, 85%);
+    color: $secondary-color;
+    transform: translateX(3px);
+
+    &:before {
+      color: $primary-color;
+    }
+  }
+
+  &:active {
+    transform: translateX(3px) scale(0.98);
+  }
+}
+
+/* Modal Overlay & Container */
+.skill-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+
+  &.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.skill-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+.skill-modal__container {
+  position: relative;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Header */
+.skill-modal__header {
+  padding: $space-l $space-xl;
+  border-bottom: 1px solid $border-color;
+  background: linear-gradient(145deg, lighten($background-color, 3%) 0%, $background-color 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.skill-modal__title {
+  font-size: $type-size-3;
+  margin: 0;
+  color: $text-color;
+
+  span {
+    color: $primary-color;
+    font-weight: 700;
+  }
+}
+
+.skill-modal__close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: $text-color;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: mix($background-color, $text-color, 90%);
+    color: $primary-color;
+    transform: rotate(90deg);
+  }
+}
+
+/* Modal Content */
+.skill-modal__content {
+  padding: $space-xl;
+  overflow-y: auto;
+  flex: 1;
+
+  /* Custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: mix($background-color, $text-color, 95%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: mix($background-color, $text-color, 70%);
+    border-radius: 4px;
+
+    &:hover {
+      background: mix($background-color, $text-color, 60%);
+    }
+  }
+}
+
+/* Empty State */
+.skill-modal__empty {
+  text-align: center;
+  padding: $space-xxl;
+  color: mix($background-color, $text-color, 40%);
+
+  i {
+    font-size: 4rem;
+    margin-bottom: $space-l;
+    opacity: 0.5;
+  }
+
+  p {
+    font-size: $type-size-4;
+    margin-bottom: $space-l;
+  }
+}
+
+/* Project Cards in Modal */
+.skill-modal__project-card {
+  display: flex;
+  gap: $space-l;
+  background: linear-gradient(145deg, lighten($background-color, 5%) 0%, $background-color 100%);
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: $space-l;
+  margin-bottom: $space-l;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: $primary-color;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skill-modal__project-image {
+  flex-shrink: 0;
+  width: 160px;
+  height: 120px;
+  border-radius: 6px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.skill-modal__project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // Prevents flex item from overflowing
+}
+
+.skill-modal__project-title {
+  margin: 0 0 $space-s 0;
+  font-size: $type-size-4;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.skill-modal__project-description {
+  margin: 0 0 $space-m 0;
+  font-size: $type-size-6;
+  color: mix($background-color, $text-color, 30%);
+  line-height: 1.6;
+}
+
+.skill-modal__project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  margin-top: auto;
+}
+
+.skill-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, $primary-color 0%, mix($primary-color, $secondary-color, 70%) 100%);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: $type-size-8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skill-modal__container {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .skill-modal__header {
+    padding: $space-m $space-l;
+  }
+
+  .skill-modal__title {
+    font-size: $type-size-4;
+  }
+
+  .skill-modal__content {
+    padding: $space-l;
+  }
+
+  .skill-modal__project-card {
+    flex-direction: column;
+  }
+
+  .skill-modal__project-image {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-modal__header {
+    padding: $space-m;
+  }
+
+  .skill-modal__title {
+    font-size: $type-size-5;
+  }
+
+  .skill-modal__content {
+    padding: $space-m;
+  }
+
+  .skill-modal__project-card {
+    padding: $space-m;
+  }
+
+  .skill-modal__close {
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;
+  }
+}

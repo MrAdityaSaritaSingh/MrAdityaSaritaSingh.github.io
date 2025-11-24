@@ -77,33 +77,19 @@ layout: splash
       <div class="skills-section">
         <h2>Core Competencies</h2>
         <div class="skills-grid">
+          {% for category in site.data.skills.categories %}
           <div class="skill-category scroll-fade-in">
-            <h3>User Experience</h3>
+            <h3>{{ category.name }}</h3>
             <ul>
-              <li>Product Management</li>
-              <li>Product Roadmap</li>
-              <li>UX Research</li>
-              <li>A/B Experimentation</li>
+              {% for skill in category.skills %}
+              <li class="clickable-skill" data-skill="{{ skill.name }}" data-tags='{{ skill.tags | jsonify }}'
+                title="{{ skill.description }}">
+                {{ skill.name }}
+              </li>
+              {% endfor %}
             </ul>
           </div>
-          <div class="skill-category scroll-fade-in">
-            <h3>Technical</h3>
-            <ul>
-              <li>System Architecture</li>
-              <li>Python</li>
-              <li>C++</li>
-              <li>SQL</li>
-            </ul>
-          </div>
-          <div class="skill-category scroll-fade-in">
-            <h3>Soft Skills</h3>
-            <ul>
-              <li>Storytelling</li>
-              <li>Collaboration</li>
-              <li>Data-driven Decisions</li>
-              <li>Team Leadership</li>
-            </ul>
-          </div>
+          {% endfor %}
         </div>
       </div>
       <div class="connect-section">
@@ -113,5 +99,20 @@ layout: splash
     </div>
   </section>
 
+
   <!-- Process Section: How PM works in infographics.... -->
+
+  <!-- Skills Filter Modal -->
+  <div id="skillFilterModal" class="skill-modal">
+    <div class="skill-modal__overlay"></div>
+    <div class="skill-modal__container">
+      <div class="skill-modal__header">
+        <h2 class="skill-modal__title">Projects using <span id="modalSkillName"></span></h2>
+        <button class="skill-modal__close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="skill-modal__content" id="modalProjectsContainer">
+        <!-- Projects will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
 </main>

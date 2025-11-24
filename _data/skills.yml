@@ -1,0 +1,76 @@
+# Skills Configuration
+# Defines skill categories, individual skills, and their mapping to project tags
+
+categories:
+  - name: "User Experience"
+    id: "user-experience"
+    skills:
+      - name: "Product Management"
+        tags:
+          - "Product Management"
+        description: "End-to-end product development and strategy"
+      
+      - name: "Product Roadmap"
+        tags:
+          - "Product Management"
+          - "Go-to-market Strategy"
+        description: "Strategic planning and feature prioritization"
+      
+      - name: "UX Research"
+        tags:
+          - "User Research"
+          - "UX"
+        description: "User interviews, surveys, and usability testing"
+      
+      - name: "A/B Experimentation"
+        tags:
+          - "Analytics"
+        description: "Data-driven testing and optimization"
+
+  - name: "Technical"
+    id: "technical"
+    skills:
+      - name: "System Architecture"
+        tags:
+          - "System Architecture"
+        description: "Designing scalable and maintainable systems"
+      
+      - name: "Python"
+        tags:
+          - "AI"
+          - "NLP"
+        description: "AI/ML development and automation"
+      
+      - name: "C++"
+        tags: []
+        description: "Systems programming and performance optimization"
+      
+      - name: "SQL"
+        tags:
+          - "AI"
+          - "NLP"
+        description: "Database design and query optimization"
+
+  - name: "Soft Skills"
+    id: "soft-skills"
+    skills:
+      - name: "Storytelling"
+        tags:
+          - "Product Thinking"
+        description: "Communicating vision and impact"
+      
+      - name: "Collaboration"
+        tags:
+          - "Product Design"
+        description: "Cross-functional teamwork"
+      
+      - name: "Data-driven Decisions"
+        tags:
+          - "Market Research"
+          - "Competitor Analysis"
+        description: "Using data to inform strategy"
+      
+      - name: "Team Leadership"
+        tags:
+          - "Product Management"
+        description: "Mentoring and guiding teams"
