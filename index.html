@@ -51,14 +51,23 @@ layout: splash
           <a href="{{ item.url | relative_url }}" class="timeline-item-link"
             data-track-timeline="{{ item.title | strip_html | escape }}">
             <div class="timeline-content">
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.description }}</p>
+              {% if item.image %}
+              <div class="timeline-image">
+                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy">
+              </div>
+              {% endif %}
+              <div class="timeline-text">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
             </div>
           </a>
           {% else %}
           <div class="timeline-content">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
+            <div class="timeline-text">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
           </div>
           {% endif %}
         </div>
