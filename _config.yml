@@ -17,8 +17,6 @@ title: Aditya S Rathore
 email: Mr.AdityaSRathore@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
     "Aditya S Rathore is a Product Builder and Product Manager pursuing his Master’s in Product Design & Management at IIIT Hyderabad. With over four years of experience as a Software Engineer, he bridges the gap between product strategy and technical execution. A lifelong tinkerer with a hacker’s mindset, Aditya helps founders and teams build fast, validate faster, and turn ideas into impactful products.""
-hero_role: "Product Manager | Builder"
-hero_description: "I combine strategy, system, and code to turn user insights into products that deliver impact."
 hero_image: "assets/images/profile.webp"
 hero_cta_1:
     text: "View My Resume"
@@ -31,7 +29,7 @@ twitter_username: adityasrathor3
 github_username: MrAdityaSaritaSingh
 #theme: minimal-mistakes-jekyll
 # theame
-minimal_mistakes_skin: "asr" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise", "myskin"
+minimal_mistakes_skin: "asr-dark" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise", "myskin"
 search: true
 enable_copy_code_button: true
 google_site_verification: "61p7MzbQhkn7H1km0b7BCp3qvG-17b3eSh_gQYaygvY"

@@ -1,0 +1,92 @@
+/* ==========================================================================
+   ASR Dark Skin
+   ========================================================================== */
+
+/* 1. Typography Imports */
+// Google Fonts: Montserrat (Headings), Inter/Roboto (Body), Poppins (Accent)
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&family=Poppins:ital,wght@1,500&display=swap');
+
+// Font Variables
+$header-font: 'Montserrat', sans-serif;
+$body-font: 'Inter', 'Roboto', sans-serif;
+$accent-font: 'Poppins', cursive;
+
+/* 2. Colors */
+$text-color: #f0f0f0 !default;
+$muted-text-color: #a0a0a0 !default;
+$primary-color: #3b82f6 !default; // Vibrant Blue
+$secondary-color: #60a5fa !default; // Lighter Blue
+$border-color: #333333 !default;
+$footer-background-color: #0a0a0a !default;
+$link-color: $primary-color !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+$navicon-link-color-hover: $primary-color !default;
+$background-color: #0f0f0f !default; // Deep dark gray/black
+$code-background-color: #1a1a1a !default;
+$code-background-color-dark: #121212 !default;
+$form-background-color: #1a1a1a !default;
+$link-color-visited: mix(#fff, $link-color, 20%) !default;
+$link-color-hover: mix(#fff, $link-color, 20%) !default;
+
+/* 3. Global Color Assignments */
+$accent-color: $secondary-color !default;
+
+/* 4. Component Overrides */
+
+// Use Montserrat for H1-H6 elements
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $header-font;
+}
+
+// Body text defaults to Inter
+body {
+    font-family: $body-font;
+}
+
+// Footer Styling
+.page__footer {
+    background-color: $footer-background-color;
+    color: $muted-text-color !important;
+}
+
+.page__footer-follow .social-icons .fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+    color: $muted-text-color;
+}
+
+// Primary CTA Button
+.btn--primary {
+    background-color: $accent-color;
+    border-color: $accent-color;
+    color: $background-color;
+
+    &:hover {
+        background-color: darken($accent-color, 10%);
+        border-color: darken($accent-color, 10%);
+    }
+}
+
+// Quotes/Accents
+blockquote,
+.quote {
+    font-family: $accent-font;
+    font-style: italic;
+    color: $muted-text-color;
+}
+
+// Tables
+thead {
+    background-color: $primary-color !important;
+    color: $background-color !important;
+
+    th {
+        color: $background-color !important;
+    }
+}

@@ -7,18 +7,24 @@ layout: splash
   <!-- Hero Section -->
   <header class="hero">
     <div class="hero-content">
-      <div class="hero-image">
-        <img src="{{ site.hero_image | relative_url }}" alt="{{ site.title }}" class="profile-picture" />
+      <div class="hero-text scroll-fade-in visible">
+        <h1 class="name">I build products that matter.</h1>
+        <div class="desc" id="hero-desc">
+          <p>Hi, I'm <strong>Aditya</strong>. I combine engineering precision with product strategy to turn ambiguity
+            into impact.</p>
+          <p>Currently building at <strong>IIIT Hyderabad</strong>.</p>
+        </div>
+        <div class="hero-buttons">
+          <a href="{{ site.hero_cta_1.url | relative_url }}" id="cta-button-1" class="cta-button"><i
+              class="fas fa-file-alt"></i> {{ site.hero_cta_1.text }}</a>
+          <a href="{{ site.hero_cta_2.url | relative_url }}" id="cta-button-2" class="cta-button"><i
+              class="fas fa-layer-group"></i> {{ site.hero_cta_2.text }}</a>
+        </div>
       </div>
 
-      <div class="hero-text">
-        <h1 class="name">{{ site.title }}</h1>
-        <div class="role" id="hero-role">{{ site.hero_role }}</div>
-        <div class="desc" id="hero-desc">{{ site.hero_description }}</div>
-        <div class="hero-buttons">
-          <a href="{{ site.hero_cta_1.url | relative_url }}" id="cta-button-1" class="cta-button"><i class="fas fa-rocket"></i> {{ site.hero_cta_1.text }}</a>
-          <a href="{{ site.hero_cta_2.url | relative_url }}" id="cta-button-2" class="cta-button"><i class="fas fa-file-alt"></i> {{ site.hero_cta_2.text }}</a>
-        </div>
+      <!-- Optional: Hero Image or Abstract Graphic -->
+      <div class="hero-image scroll-fade-in visible">
+        <img src="{{ site.hero_image | relative_url }}" alt="{{ site.title }}" class="profile-picture" />
       </div>
     </div>
   </header>
@@ -29,31 +35,33 @@ layout: splash
       <div class="intro-header">
         <h2>From Ambiguity to Building Leaner</h2>
         <p>
-        I work across <strong>product and engineering</strong> to move unclear goal to defined products.
-        My approach is simple: understand the system, validate with users, then build <strong>what actually gets used</strong>.<br>
-        This led to <em>ship faster, reduce waste, and focus on user needs</em>.
+          I work across <strong>product and engineering</strong> to move unclear goal to defined products.
+          My approach is simple: understand the system, validate with users, then build <strong>what actually gets
+            used</strong>.<br>
+          This led to <em>ship faster, reduce waste, and focus on user needs</em>.
         </p>
 
       </div>
 
       <div class="timeline">
         {% for item in site.homepage.timeline %}
-          <div class="timeline-item scroll-fade-in">
-            <div class="timeline-icon"><i class="{{ item.icon }}"></i></div>
-            {% if item.url %}
-              <a href="{{ item.url | relative_url }}" class="timeline-item-link" data-track-timeline="{{ item.title | strip_html | escape }}">
-                <div class="timeline-content">
-                  <h3>{{ item.title }}</h3>
-                  <p>{{ item.description }}</p>
-                </div>
-              </a>
-            {% else %}
-              <div class="timeline-content">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
-              </div>
-            {% endif %}
+        <div class="timeline-item scroll-fade-in">
+          <div class="timeline-icon"><i class="{{ item.icon }}"></i></div>
+          {% if item.url %}
+          <a href="{{ item.url | relative_url }}" class="timeline-item-link"
+            data-track-timeline="{{ item.title | strip_html | escape }}">
+            <div class="timeline-content">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+          </a>
+          {% else %}
+          <div class="timeline-content">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
           </div>
+          {% endif %}
+        </div>
         {% endfor %}
       </div>
 
@@ -90,7 +98,8 @@ layout: splash
         </div>
       </div>
       <div class="connect-section">
-        <p>I'm always eager to learn and grow. <br><a href="/contact/" class="cta-button"><i class="fas fa-link"></i>Let's connect!</a></p>
+        <p>I'm always eager to learn and grow. <br><a href="/contact/" class="cta-button"><i
+              class="fas fa-link"></i>Let's connect!</a></p>
       </div>
     </div>
   </section>
