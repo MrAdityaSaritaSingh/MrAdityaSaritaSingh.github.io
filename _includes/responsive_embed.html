@@ -33,11 +33,14 @@ Embeds a responsive iframe for a Google Drive link from front matter.
   {% endif %}
   <div class="embed-header__actions">
     {% if download_href != "" %}
-    <a href="{{ download_href }}" class="btn btn--primary btn--small" target="_blank" title="Download file">
+    <a href="{{ download_href }}" class="btn btn--primary btn--small" target="_blank" title="Download file"
+      data-track-download data-file-url="{{ download_href }}" data-file-name="{{ page.title | escape }}">
       <i class="fas fa-download"></i> Download
     </a>
     {% endif %}
-    <a href="{{ page.drive_link }}" class="btn btn--secondary btn--small" target="_blank" title="Open in new tab">
+    <a href="{{ page.drive_link | default: page.pdf_url }}" class="btn btn--secondary btn--small" target="_blank"
+      title="Open in new tab" data-track-open data-file-url="{{ page.drive_link | default: page.pdf_url }}"
+      data-file-name="{{ page.title | escape }}">
       <i class="fas fa-external-link-alt"></i> Open
     </a>
   </div>

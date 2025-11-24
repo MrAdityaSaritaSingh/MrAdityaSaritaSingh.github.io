@@ -7,6 +7,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Wait a moment to ensure analytics libraries are loaded
   setTimeout(trackPageEvent, 1000);
+  
+  // Initialize click tracking for downloads
+  initDownloadTracking();
 });
 
 function trackPageEvent() {
@@ -48,6 +51,36 @@ function trackPageEvent() {
       page_path: url
     });
   }
+}
+
+function initDownloadTracking() {
+  // Track Download Button Clicks
+  document.querySelectorAll('[data-track-download]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const fileUrl = this.getAttribute('data-file-url');
+      const fileName = this.getAttribute('data-file-name');
+      
+      sendEvent('click_download', {
+        file_url: fileUrl,
+        file_name: fileName,
+        page_path: window.location.pathname
+      });
+    });
+  });
+
+  // Track Open Button Clicks
+  document.querySelectorAll('[data-track-open]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const fileUrl = this.getAttribute('data-file-url');
+      const fileName = this.getAttribute('data-file-name');
+      
+      sendEvent('click_open_embed', {
+        file_url: fileUrl,
+        file_name: fileName,
+        page_path: window.location.pathname
+      });
+    });
+  });
 }
 
 /**
