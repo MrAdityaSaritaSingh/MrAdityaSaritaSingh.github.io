@@ -2,7 +2,7 @@
 .back-to-top {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     display: none;
     background-color: $primary-color;
     color: #fff;
@@ -30,6 +30,6 @@
 @media (min-width: 1024px) {
     .back-to-top {
         bottom: 40px;
-        right: 40px;
+        left: 40px;
     }
 }
