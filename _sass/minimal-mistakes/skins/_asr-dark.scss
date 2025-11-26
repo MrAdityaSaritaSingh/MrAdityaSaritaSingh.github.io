@@ -65,11 +65,35 @@ body {
 .btn--primary {
     background-color: $accent-color;
     border-color: $accent-color;
-    color: $background-color;
+    color: $text-color !important;
 
-    &:hover {
+    &:visited {
+        color: $text-color !important;
+    }
+
+    &:hover,
+    &:focus {
         background-color: darken($accent-color, 10%);
         border-color: darken($accent-color, 10%);
+        color: $muted-text-color !important;
+    }
+}
+
+// Secondary Button
+.btn--secondary {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    color: $text-color !important; // Force white text
+
+    &:visited {
+        color: $text-color !important;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: darken($secondary-color, 10%);
+        border-color: darken($secondary-color, 10%);
+        color: $muted-text-color !important;
     }
 }
 

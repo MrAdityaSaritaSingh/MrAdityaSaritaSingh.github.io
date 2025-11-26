@@ -1,11 +1,16 @@
 {% comment %}
 Embeds a responsive iframe for a Google Drive link from front matter.
 - Handles page.drive_link for embedding.
+- Handles page.pdf_url as a fallback for the "Open" button.
 - Optionally shows a description and download button.
 {% endcomment %}
 
+{%- assign primary_url = page.drive_link | default: page.pdf_url -%}
+
+{%- if primary_url -%}
 {%- assign embed_src = "" -%}
 {%- assign download_href = "" -%}
+{%- assign file_id = "" -%}
 {%- assign embed_class = "responsive-embed-container" -%}
 
 {%- if page.drive_link -%}
@@ -21,56 +26,59 @@ Embeds a responsive iframe for a Google Drive link from front matter.
 {%- endif -%}
 
 {%- assign has_header = false -%}
-{%- if page.embed_description or download_href != "" -%}
+{%- if page.embed_description or download_href != "" or primary_url != "" -%}
 {%- assign has_header = true -%}
 {%- endif -%}
 
-{% if embed_src != "" %}
-{% if has_header %}
-<div class="embed-header">
-  {% if page.embed_description %}
-  <p>{{ page.embed_description }}</p>
-  {% endif %}
-  <div class="embed-header__actions">
-    {% if download_href != "" %}
-    <a href="{{ download_href }}" class="btn btn--primary btn--small" target="_blank" title="Download file"
-      data-track-download data-file-url="{{ download_href }}" data-file-name="{{ page.title | escape }}">
-      <i class="fas fa-download"></i> Download
-    </a>
+<div class="embed-section">
+  {% if has_header %}
+  <div class="embed-header">
+    {% if page.embed_description %}
+    <p>{{ page.embed_description }}</p>
     {% endif %}
-    <a href="{{ page.drive_link | default: page.pdf_url }}" class="btn btn--secondary btn--small" target="_blank"
-      title="Open in new tab" data-track-open data-file-url="{{ page.drive_link | default: page.pdf_url }}"
-      data-file-name="{{ page.title | escape }}">
-      <i class="fas fa-external-link-alt"></i> Open
-    </a>
-  </div>
-</div>
-{% endif %}
+    <div class="embed-header__actions">
+      {% if download_href != "" %}
+      <a href="{{ download_href }}" class="btn btn--primary btn--small" target="_blank" title="Download file"
+        data-track-download data-file-url="{{ download_href }}" data-file-name="{{ page.title | escape }}">
+        <i class="fas fa-download"></i> Download
+      </a>
+      {% endif %}
 
-<div class="embed-wrapper" id="embed-wrapper-{{ file_id }}">
-  <!-- Control Toolbar -->
-  <div class="embed-controls">
-    <div class="embed-controls__group">
-      <span class="embed-hint">Press <kbd>F</kbd> for fullscreen</span>
-    </div>
-    <div class="embed-controls__group">
-      <button class="embed-control-btn" id="fullscreen-toggle-{{ file_id }}" title="Fullscreen (F)">
-        <i class="fas fa-expand"></i>
-      </button>
+      <a href="{{ primary_url }}" class="btn btn--secondary btn--small" target="_blank" title="Open in new tab"
+        data-track-open data-file-url="{{ primary_url }}" data-file-name="{{ page.title | escape }}">
+        <i class="fas fa-external-link-alt"></i> Open
+      </a>
     </div>
   </div>
+  {% endif %}
 
-  <!-- Loading Spinner -->
-  <div class="embed-loading" id="embed-loading-{{ file_id }}">
-    <div class="embed-spinner"></div>
-    <p>Loading document...</p>
-  </div>
+  {% if embed_src != "" %}
+  <div class="embed-wrapper" id="embed-wrapper-{{ file_id }}">
+    <!-- Control Toolbar -->
+    <div class="embed-controls">
+      <div class="embed-controls__group">
+        <span class="embed-hint">Press <kbd>F</kbd> for fullscreen</span>
+      </div>
+      <div class="embed-controls__group">
+        <button class="embed-control-btn" id="fullscreen-toggle-{{ file_id }}" title="Fullscreen (F)">
+          <i class="fas fa-expand"></i>
+        </button>
+      </div>
+    </div>
 
-  <!-- Embedded Content -->
-  <div class="{{ embed_class }}">
-    <iframe src="{{ embed_src }}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
-      onload="document.getElementById('embed-loading-{{ file_id }}').style.display='none';">
-    </iframe>
+    <!-- Loading Spinner -->
+    <div class="embed-loading" id="embed-loading-{{ file_id }}">
+      <div class="embed-spinner"></div>
+      <p>Loading document...</p>
+    </div>
+
+    <!-- Embedded Content -->
+    <div class="{{ embed_class }}">
+      <iframe src="{{ embed_src }}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+        onload="document.getElementById('embed-loading-{{ file_id }}').style.display='none';">
+      </iframe>
+    </div>
   </div>
+  {% endif %}
 </div>
-{% endif %}
+{%- endif -%}
