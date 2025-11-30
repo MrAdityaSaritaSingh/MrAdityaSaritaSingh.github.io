@@ -5,6 +5,13 @@
 #   download_url: "/assets/downloads/The Ultimate PM Frameworks Cheat Sheet.pdf"
 #   button_text: "Download Cheat Sheet"
 
+- title: "The PM Metrics Cheat Sheet"
+  id: "pm-metrics"
+  icon: "fas fa-filter "
+  description: "A comprehensive cheat sheet covering essential AARRR product metrics."
+  download_url: "/assets/downloads/AARRR_CHEATSHEET.pdf"
+  button_text: "Download Cheat Sheet"
+
 - title: "The Ultimate PM Frameworks Cheat Sheet"
   id: "pm-frameworks"
   icon: "fas fa-file-pdf"
