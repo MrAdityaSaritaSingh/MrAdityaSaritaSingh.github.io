@@ -18,11 +18,21 @@ Embeds a responsive iframe for a Google Drive link from front matter.
 {%- if page.drive_link contains '/presentation/' -%}
 {%- assign embed_src = "https://docs.google.com/presentation/d/" | append: file_id | append:
 "/embed?start=false&loop=false&delayms=3000" -%}
+{%- assign download_href = "https://docs.google.com/presentation/d/" | append: file_id | append: "/export/pptx" -%}
+{%- elsif page.drive_link contains '/document/' -%}
+{%- assign embed_src = "https://docs.google.com/document/d/" | append: file_id | append: "/preview" -%}
+{%- assign download_href = "https://docs.google.com/document/d/" | append: file_id | append: "/export?format=docx" -%}
+{%- assign embed_class = "responsive-embed-container responsive-embed-container--portrait" -%}
+{%- elsif page.drive_link contains '/spreadsheets/' -%}
+{%- assign embed_src = "https://docs.google.com/spreadsheets/d/" | append: file_id | append: "/preview" -%}
+{%- assign download_href = "https://docs.google.com/spreadsheets/d/" | append: file_id | append: "/export?format=xlsx"
+-%}
+{%- assign embed_class = "responsive-embed-container responsive-embed-container--portrait" -%}
 {%- else -%}
 {%- assign embed_src = "https://drive.google.com/file/d/" | append: file_id | append: "/preview" -%}
 {%- assign embed_class = "responsive-embed-container responsive-embed-container--portrait" -%}
-{%- endif -%}
 {%- assign download_href = "https://drive.google.com/uc?export=download&id=" | append: file_id -%}
+{%- endif -%}
 {%- endif -%}
 
 {%- assign has_header = false -%}
