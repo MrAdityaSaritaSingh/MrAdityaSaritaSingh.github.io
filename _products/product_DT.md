@@ -5,7 +5,7 @@ categories: [User Research, Product Design, UX, Social Impact]
 tags: [User Research, Product Design, UX]
 image: /assets/images/post_bg_DT_project.png
 description: Understanding the challenges and behaviors of the elderly population through design thinking.
-layout: project
+layout: product
 drive_link: https://drive.google.com/file/d/1qKzZIcDJwDZmVbe9PDWL1t54IPefPq1x/view?usp=sharing
 feedback: true
 ---

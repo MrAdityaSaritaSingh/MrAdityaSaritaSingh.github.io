@@ -5,7 +5,7 @@ categories: [Product Management, Market Research, Competitor Analysis]
 tags: [Product Management, Market Research, Competitor Analysis, Go-to-market Strategy]
 image: /assets/images/post_bg_khet_to_plate.png
 description: A strategic approach to connecting farmers directly with consumers and businesses.
-layout: project
+layout: product
 drive_link: https://drive.google.com/file/d/1-FgryPVbSRNTLTBqeu0tIKDCQqDQttff/view?usp=drive_link
 feedback: true
 ---

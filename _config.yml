@@ -174,9 +174,9 @@ defaults:
           author_profile: true
 
 collections:
-    projects:
+    products:
         output: true
-        permalink: /projects/:path/
+        permalink: /products/:path/
 
 category_archive:
     type: liquid

@@ -5,7 +5,7 @@ categories: [User Research, Research Methodology, UX]
 tags: [User Research, UX]
 image: /assets/images/post-bg-urm.png
 description: Mistakes during design thinking process fixed via user research methodologies.
-layout: project
+layout: product
 drive_link: https://drive.google.com/file/d/1lw_qZhbYEXYWuPhLPcRIBtxjPZhIhWXB/view?usp=sharing
 feedback: true
 ---

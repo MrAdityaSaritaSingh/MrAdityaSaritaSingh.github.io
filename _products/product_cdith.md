@@ -5,7 +5,7 @@ categories: [Healthcare, User Research, Product Strategy, Market Analysis]
 tags: [MedTech, Anemia Mukt Bharat, Non-Invasive, Public Health]
 image: /assets/images/anemia_project_cover.png
 description: A comprehensive landscape and stakeholder analysis for non-invasive hemoglobin measurement devices to combat the silent epidemic of anemia in India.
-layout: project
+layout: product
 drive_link: https://docs.google.com/presentation/d/1_N7PiagkLRqijH8wU9Uc0AJOUBPeegUOr3o2aG3JxLM/edit?usp=sharing
 feedback: true
 ---

@@ -1,0 +1,42 @@
+---
+title: Portfolio
+permalink: /portfolio/
+layout: default
+---
+<div class="page-header">
+  <div class="container">
+    <h1 class="page-header__title">PM + SE: IDEAS TO PRODUCTS</h1>
+    <h5 class="page-header__subtitle">Key product initiatives</h5>
+  </div>
+</div>
+
+<div class="projects-grid">
+  {% assign sorted_products = site.products | sort: 'date' | reverse %}
+  {% for product in sorted_products %}
+  <div class="project-card">
+    {% if product.image %}
+    <img src="{{ product.image }}" alt="{{ product.title }}" class="project-card__image" loading="lazy">
+    {% endif %}
+    <div class="project-card__content">
+      <h3 class="project-card__title"><a href="{{ product.url }}"
+          data-track-project="{{ product.title | strip_html | escape }}">{{ product.title }}</a></h3>
+      <div class="project-card__meta">
+        {% if product.categories %}
+        {% for category in product.categories %}
+        <span class="project-card__category">{{ category }}</span>
+        {% endfor %}
+        {% endif %}
+      </div>
+      <p class="project-card__description">{{ product.description }}</p>
+      <div class="project-card__cta-container">
+        <a href="{{ product.url }}" class="btn--card primary"
+          data-track-project="{{ product.title | strip_html | escape }} - Detail">Read the Detail</a>
+        {% if product.drive_link %}
+        <a href="{{ product.drive_link }}" class="btn--card secondary"
+          data-track-project="{{ product.title | strip_html | escape }} - Report">View Final Report</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

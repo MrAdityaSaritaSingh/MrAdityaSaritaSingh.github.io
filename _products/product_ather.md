@@ -5,7 +5,7 @@ categories: [Product Strategy, Market Analysis, EV]
 tags: [Product Management, GTM, Ather]
 image: /assets/images/post-bg-ather.png
 description: "Project RayTracer: A process-driven solution to ensure clean mobility does not come at a human cost, focusing on ethical sourcing and traceability."
-layout: project
+layout: product
 feedback: true
 drive_link: https://drive.google.com/file/d/1IkWhax8T0g459eV5NcbMUZmP22VYE51B/view?usp=drive_link
 ---

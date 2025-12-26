@@ -5,7 +5,7 @@ categories: [Product Management, Digital Strategy, UX, Analytics]
 tags: [Jekyll, Product Thinking, UX, Analytics]
 image: /assets/images/website_homepage_full.png
 description: "Applying product management principles to build and optimize my personal website as a central hub for my professional identity."
-layout: project
+layout: product
 feedback: true
 drive_link: https://drive.google.com/file/d/1WfL9i4dBt5VKLNHTw4MRiPmI2TcAaB8w/view?usp=sharing
 ---
