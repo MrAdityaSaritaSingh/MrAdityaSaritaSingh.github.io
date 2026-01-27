@@ -87,7 +87,7 @@ function initDownloadTracking() {
  * Helper to send events to all active providers
  */
 function sendEvent(eventName, params) {
-  console.log(`[Analytics] Tracking ${eventName}:`, params);
+  // console.log(`[Analytics] Tracking ${eventName}:`, params);
 
   // Google Analytics 4
   if (typeof gtag === 'function') {
@@ -99,3 +99,6 @@ function sendEvent(eventName, params) {
     posthog.capture(eventName, params);
   }
 }
+
+// Expose trackEvent globally
+window.trackEvent = sendEvent;

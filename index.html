@@ -74,24 +74,7 @@ layout: splash
         {% endfor %}
       </div>
 
-      <div class="skills-section">
-        <h2>Core Competencies</h2>
-        <div class="skills-grid">
-          {% for category in site.data.skills.categories %}
-          <div class="skill-category scroll-fade-in">
-            <h3>{{ category.name }}</h3>
-            <ul>
-              {% for skill in category.skills %}
-              <li class="clickable-skill" data-skill="{{ skill.name }}" data-tags='{{ skill.tags | jsonify }}'
-                title="{{ skill.description }}">
-                {{ skill.name }}
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
+      {% include core_competencies.html %}
       <div class="connect-section">
         <p>I'm always eager to learn and grow. <br><a href="/contact/" class="cta-button"><i
               class="fas fa-link"></i>Let's connect!</a></p>
@@ -102,17 +85,5 @@ layout: splash
 
   <!-- Process Section: How PM works in infographics.... -->
 
-  <!-- Skills Filter Modal -->
-  <div id="skillFilterModal" class="skill-modal">
-    <div class="skill-modal__overlay"></div>
-    <div class="skill-modal__container">
-      <div class="skill-modal__header">
-        <h2 class="skill-modal__title">Projects using <span id="modalSkillName"></span></h2>
-        <button class="skill-modal__close" aria-label="Close modal">&times;</button>
-      </div>
-      <div class="skill-modal__content" id="modalProjectsContainer">
-        <!-- Projects will be dynamically inserted here -->
-      </div>
-    </div>
-  </div>
+
 </main>

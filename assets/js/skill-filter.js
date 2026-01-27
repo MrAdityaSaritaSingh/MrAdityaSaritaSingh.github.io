@@ -1,20 +1,21 @@
 /**
- * Skill Filter Modal
- * Displays projects filtered by skill when a skill is clicked on the homepage
+ * Core Competencies Dashboard
+ * Handles interactive filtering and display of project proofs
  */
 
-// Skill to tag mapping - dynamically loaded from DOM data attributes
-// This is populated from _data/skills.yml via Jekyll templating
+// Global state
 let SKILL_TO_TAGS = {};
+const ALL_PROJECTS = window.ALL_PROJECTS || [];
 
 /**
- * Build skill-to-tag mapping from DOM
- * Reads data-tags attribute from each clickable skill element
+ * Build skill-to-tag mapping from DOM elements
+ * Reads data-tags from .skill-btn elements
  */
 function buildSkillMapping() {
-  document.querySelectorAll('.clickable-skill').forEach(el => {
-    const skillName = el.getAttribute('data-skill');
-    const tagsAttr = el.getAttribute('data-tags');
+  const buttons = document.querySelectorAll('.skill-btn');
+  buttons.forEach(btn => {
+    const skillName = btn.getAttribute('data-skill');
+    const tagsAttr = btn.getAttribute('data-tags');
     
     try {
       const tags = tagsAttr ? JSON.parse(tagsAttr) : [];
@@ -24,151 +25,114 @@ function buildSkillMapping() {
       SKILL_TO_TAGS[skillName] = [];
     }
   });
-  
-  console.log('Skill mapping loaded:', SKILL_TO_TAGS);
 }
 
-// All projects data - loaded from window.ALL_PROJECTS (generated in custom_scripts.html)
-const ALL_PROJECTS = window.ALL_PROJECTS || [];
-
 /**
- * Filter projects by skill
- * @param {string} skill - The skill name
- * @returns {Array} - Filtered projects
+ * Filter and sort projects by relevance to a skill
  */
-function filterProjectsBySkill(skill) {
-  const relevantTags = SKILL_TO_TAGS[skill] || [];
+function getProjectsForSkill(skillName) {
+  const skillTags = SKILL_TO_TAGS[skillName] || [];
   
-  // If no tag mapping exists, try exact match
-  if (relevantTags.length === 0) {
-    relevantTags.push(skill);
-  }
-  
-  return ALL_PROJECTS.filter(project => {
-    return project.tags.some(tag => 
-      relevantTags.some(relevantTag => 
-        tag.toLowerCase().includes(relevantTag.toLowerCase()) ||
-        relevantTag.toLowerCase().includes(tag.toLowerCase())
-      )
-    );
+  // Map projects to match counts
+  const scoredProjects = ALL_PROJECTS.map(project => {
+    if (!project.tags) return { ...project, matchCount: 0 };
+    
+    // Count how many project tags match any of the skill tags
+    const matchCount = project.tags.filter(pTag => 
+      skillTags.some(sTag => sTag.toLowerCase() === pTag.toLowerCase())
+    ).length;
+    
+    return { ...project, matchCount };
   });
+
+  // Filter existing matches and sort by relevance (highest match count first)
+  return scoredProjects
+    .filter(p => p.matchCount > 0)
+    .sort((a, b) => b.matchCount - a.matchCount)
+    .slice(0, 2); // Take top 2
 }
 
 /**
- * Render projects in the modal
- * @param {Array} projects - Projects to render
+ * Render projects into the dashboard preview pane
  */
-function renderModalProjects(projects) {
-  const container = document.getElementById('modalProjectsContainer');
-  
-  if (projects.length === 0) {
-    container.innerHTML = `
-      <div class="skill-modal__empty">
-        <i class="fas fa-folder-open"></i>
-        <p>No projects found for this skill yet.</p>
-        <a href="/portfolio/" class="cta-button">View All Projects</a>
-      </div>
-    `;
-    return;
-  }
-  
-  const projectsHTML = projects.map(project => `
-    <div class="skill-modal__project-card">
-      ${project.image ? `
-        <div class="skill-modal__project-image">
-          <img src="${project.image}" alt="${project.title}" loading="lazy">
-        </div>
-      ` : ''}
-      <div class="skill-modal__project-content">
-        <h3 class="skill-modal__project-title">
-          <a href="${project.url}" data-track-skill-project="${project.title}">${project.title}</a>
-        </h3>
-        <p class="skill-modal__project-description">${project.description}</p>
-        <div class="skill-modal__project-tags">
-          ${project.tags.map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
-        </div>
-      </div>
-    </div>
-  `).join('');
-  
-  container.innerHTML = projectsHTML;
-}
+function renderDashboardProjects(projects, skillName) {
+  const container = document.getElementById('proof-content');
+  if (!container) return;
 
-/**
- * Open the modal with filtered projects
- * @param {string} skill - The skill name
- */
-function openSkillModal(skill) {
-  const modal = document.getElementById('skillFilterModal');
-  const skillNameSpan = document.getElementById('modalSkillName');
-  
-  // Set skill name
-  skillNameSpan.textContent = skill;
-  
-  // Filter and render projects
-  const filteredProjects = filterProjectsBySkill(skill);
-  renderModalProjects(filteredProjects);
-  
-  // Show modal
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Prevent background scroll
-  
-  // Track analytics
-  if (window.trackEvent) {
-    window.trackEvent('Skill Click', { skill, projectCount: filteredProjects.length });
-  }
-}
+  // Fade out
+  container.style.opacity = '0';
 
-/**
- * Close the modal
- */
-function closeSkillModal() {
-  const modal = document.getElementById('skillFilterModal');
-  modal.classList.remove('active');
-  document.body.style.overflow = ''; // Restore scroll
-}
-
-/**
- * Initialize skill filter functionality
- */
-function initSkillFilter() {
-  // Build the skill-to-tag mapping from DOM
-  buildSkillMapping();
-  
-  // Add click listeners to all skills
-  document.querySelectorAll('.clickable-skill').forEach(skillElement => {
-    skillElement.addEventListener('click', function() {
-      const skill = this.getAttribute('data-skill');
-      openSkillModal(skill);
-    });
-  });
-  
-  // Close button
-  const closeButton = document.querySelector('.skill-modal__close');
-  if (closeButton) {
-    closeButton.addEventListener('click', closeSkillModal);
-  }
-  
-  // Close on overlay click
-  const overlay = document.querySelector('.skill-modal__overlay');
-  if (overlay) {
-    overlay.addEventListener('click', closeSkillModal);
-  }
-  
-  // Close on ESC key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      const modal = document.getElementById('skillFilterModal');
-      if (modal.classList.contains('active')) {
-        closeSkillModal();
-      }
+  setTimeout(() => {
+    let html = '';
+    
+    if (projects.length === 0) {
+      html = `
+        <div class="no-projects">
+          <p>No specific case studies uploaded for <strong>${skillName}</strong> yet, but it's a key part of my daily work.</p>
+        </div>`;
+    } else {
+      html = projects.map(p => `
+        <a href="${p.url}" class="project-proof-card">
+            <div class="card-image" style="background-image: url('${p.image}');"></div>
+            <div class="card-details">
+                <h4>${p.title}</h4>
+                <p>${p.description}</p>
+                <div class="card-meta">
+                    <span class="project-date"><i class="far fa-calendar"></i> ${p.date || ''}</span>
+                    <span class="cta-text">View Case Study →</span>
+                </div>
+            </div>
+        </a>
+      `).join('');
     }
-  });
+
+    container.innerHTML = html;
+    
+    // Fade in
+    container.style.opacity = '1';
+  }, 200);
 }
 
-// Initialize when DOM is ready
+/**
+ * Handle skill button click
+ */
+function handleSkillClick(btn) {
+  // Update UI state
+  document.querySelectorAll('.skill-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Logic
+  const skillName = btn.getAttribute('data-skill');
+  const projects = getProjectsForSkill(skillName);
+  renderDashboardProjects(projects, skillName);
+  
+  // Optional: Track event
+  if (window.trackEvent) {
+      window.trackEvent('Skill Click', { skill: skillName });
+  }
+}
+
+/**
+ * Initialize
+ */
+function initCompetenciesDashboard() {
+  buildSkillMapping();
+
+  const buttons = document.querySelectorAll('.skill-btn');
+  if (buttons.length === 0) return;
+
+  // Attach listeners
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => handleSkillClick(btn));
+  });
+
+  // Auto-select first interaction
+  handleSkillClick(buttons[0]);
+}
+
+// Boot
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSkillFilter);
+  document.addEventListener('DOMContentLoaded', initCompetenciesDashboard);
 } else {
-  initSkillFilter();
+  initCompetenciesDashboard();
 }

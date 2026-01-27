@@ -75,7 +75,7 @@
   /* Explicitly bold */
   font-size: $type-size-5;
   text-decoration: none;
-  margin: 0;
+  margin: 10px;
   /* Remove margin to use gap in flex container */
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -1193,4 +1193,236 @@ td {
     height: 32px;
     font-size: 1.5rem;
   }
+}
+
+/* Core Competencies Redesign */
+.competencies-section {
+  max-width: 1200px;
+  margin: $space-xxl auto;
+  padding: 0 $space-l;
+}
+
+.competencies-header {
+  text-align: center;
+  margin-bottom: $space-l;
+
+  h2 {
+    font-size: $type-size-2;
+    color: $primary-color;
+    margin-bottom: $space-xs;
+  }
+
+  .subtitle {
+    color: mix($background-color, $text-color, 40%);
+    font-size: $type-size-4;
+  }
+}
+
+.competencies-dashboard {
+  display: flex;
+  gap: $space-l;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+/* Left Panel: Skills Navigator */
+.skills-navigator {
+  width: 40%;
+  background: rgba(30, 30, 30, 0.4); // Semi-transparent dark
+  border: 1px solid $border-color;
+  backdrop-filter: blur(8px);
+  border-radius: $border-radius;
+  padding: $space-m;
+  max-height: 500px; // Approx height of 2 cards
+  overflow-y: auto;
+
+  // Custom Scrollbar
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-height: 300px; // Smaller specific height for mobile
+  }
+}
+
+.skill-category-group {
+  margin-bottom: $space-m;
+
+  .category-title {
+    font-size: $type-size-6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $space-s;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: $space-xs;
+    color: $secondary-color;
+  }
+}
+
+.skill-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: $text-color;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: $type-size-6;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    .skill-indicator {
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #fff;
+      display: inline-block;
+    }
+  }
+
+  .skill-indicator {
+    display: none;
+  }
+}
+
+/* Right Panel: Live Proof Preview */
+.proof-preview {
+  width: 60%;
+  min-height: 400px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.proof-content {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.project-proof-card {
+  display: flex;
+  background: rgba(30, 30, 30, 0.6);
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: $space-m;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: $primary-color;
+    text-decoration: none;
+  }
+
+  .card-image {
+    width: 35%;
+    background-size: cover;
+    background-position: center;
+    min-height: 150px;
+  }
+
+  .card-details {
+    width: 65%;
+    padding: $space-m;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+    h4 {
+      margin: 0 0 $space-xs 0;
+      font-size: $type-size-5;
+      color: #fff !important;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: $type-size-6;
+      color: mix($text-color, $background-color, 70%);
+      margin-bottom: $space-s;
+      line-height: 1.4;
+    }
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $type-size-7;
+    color: $primary-color;
+    font-weight: 600;
+
+    .cta-text {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .project-date {
+      color: mix($text-color, $background-color, 50%);
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+
+    .card-image {
+      width: 100%;
+      height: 140px;
+    }
+
+    .card-details {
+      width: 100%;
+    }
+  }
+}
+
+.no-projects {
+  padding: $space-xl;
+  text-align: center;
+  color: mix($text-color, $background-color, 50%);
+  border: 1px dashed $border-color;
+  border-radius: $border-radius;
+  margin-top: $space-m;
+  background: rgba(0, 0, 0, 0.2);
 }

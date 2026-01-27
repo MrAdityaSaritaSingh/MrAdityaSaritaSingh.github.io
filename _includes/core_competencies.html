@@ -1,0 +1,33 @@
+<section class="competencies-section" id="core-competencies">
+    <div class="competencies-header">
+        <h2>Core Competencies</h2>
+        <p class="subtitle">Select a skill to see real-world proof →</p>
+    </div>
+
+    <div class="competencies-dashboard">
+        <!-- Left Panel: Skills Navigator -->
+        <div class="skills-navigator">
+            {% for category in site.data.skills.categories %}
+            <div class="skill-category-group">
+                <h3 class="category-title">{{ category.name }}</h3>
+                <div class="skill-buttons">
+                    {% for skill in category.skills %}
+                    <button class="skill-btn" data-skill="{{ skill.name }}" data-tags='{{ skill.tags | jsonify }}'
+                        aria-label="Show projects for {{ skill.name }}">
+                        <span class="skill-name">{{ skill.name }}</span>
+                        <span class="skill-indicator"></span>
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Right Panel: Live Proof Preview -->
+        <div class="proof-preview">
+            <div id="proof-content" class="proof-content fade-in">
+                <!-- Dynamic Content Injected Here -->
+            </div>
+        </div>
+    </div>
+</section>
