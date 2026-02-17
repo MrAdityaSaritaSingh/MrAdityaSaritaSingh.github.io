@@ -103,4 +103,214 @@ This is a comprehensive review of the Jekyll-based static site for Aditya S Rath
 - **Version Control**: Git-based (inferred); .gitignore excludes build artifacts and sensitive files.
 - **Testing**: No automated tests; manual build/serve for validation.
 
-This review provides a complete context for understanding, maintaining, or extending the site. For code snippets or deeper dives, refer to the repository files.
+---
+
+# Strategic Direction & Growth Strategy
+
+## The Core Problem (Feb 2026)
+
+**The website is not broken technically. It is broken strategically.**
+
+Current issues:
+- **Too many identities**: Portfolio + blog + journal + playground + skills dashboard + resume
+- **No sharp positioning**: Generic messaging ("I build products that matter") creates no authority
+- **Zero distribution**: 90% direct traffic, minimal organic search, content sits invisible
+- **Exploration-based, not decision-based**: Homepage doesn't guide clear actions
+
+**Analytics Reality (Jan 19 - Feb 15, 2026):**
+- 224 users (97% new, 3% returning)
+- 14 organic search users (6%) vs 201 direct (90%)
+- 16.67 seconds avg engagement time
+- Blog posts getting 1-3 users each despite high quality
+- 82% average bounce rate on blog content
+
+## Strategic Positioning
+
+### Sharp Positioning (REQUIRED)
+**Who Aditya is FOR:**
+- Technical Product Manager specializing in AI-driven and 0→1 products
+- 3.5 years engineering + product experience
+- Turns ambiguity into shipped outcomes
+
+**NOT:** Generic PM portfolio  
+**IS:** Reference point for aspiring PMs learning structured product thinking
+
+### Target Audience
+1. **Recruiters/Hiring Managers** → Need to see work quality fast
+2. **PM Interview Candidates** → Need frameworks, examples, practice problems
+3. **Current PMs** → Need AI/technical product insights
+
+## Content Strategy
+
+### Three Core Pillars (SEO Hubs)
+
+**1. Product Management Case Studies**
+- Deep-dive analyses of product decisions
+- RCA frameworks
+- Real product problems with solutions
+- Target: "PM case study", "product management examples"
+
+**2. Product Teardowns & Strategy Analysis**
+- Growth strategy breakdowns
+- Retention analysis
+- Monetization models
+- Target: "[Company] product strategy", "[Product] growth analysis"
+
+**3. Guesstimate Practice with Solutions**
+- Step-by-step market sizing
+- Framework explanations
+- Interview-style problems
+- Target: "guesstimate questions", "market sizing practice"
+
+### Content Clusters
+
+**Cluster 1: PM Interview Prep** (High search demand)
+- Product sense frameworks
+- Execution question guides
+- RCA templates
+- Behavioral interview prep
+
+**Cluster 2: AI Product Strategy** (Differentiation)
+- AI-first product development
+- When NOT to use AI
+- Technical PM insights
+- Neuro-symbolic AI for PMs
+
+**Cluster 3: Deep Product Teardowns** (Reference-grade)
+- WhatsApp strategy analysis
+- Slack growth breakdown
+- YouTube retention strategy
+- Include: Screenshots, diagrams, frameworks
+
+## SEO Requirements
+
+### Title Format
+**BEFORE:** "Designing Netflix for Kids"  
+**AFTER:** "Netflix Product Case Study: Improving Kids Experience (PM Interview Style)"
+
+**Rules:**
+- Target search intent, not vanity
+- Include brand name + keyword + qualifier
+- Match what people actually type in search
+
+### Post Structure
+- 1500+ words for pillar pages
+- H2/H3 structure for scannability
+- Internal links to 2 related posts + 1 pillar page
+- Featured images for social sharing
+- Meta descriptions (150-160 chars, keyword-rich)
+
+### Internal Linking Strategy
+Every post must link to:
+1. Two related posts
+2. One pillar page
+3. One CTA page (email signup, case studies hub)
+
+**No isolated posts.** Google hates content islands.
+
+## Distribution Strategy
+
+### Primary: LinkedIn (3x/week)
+Every blog post becomes:
+- 1 carousel post (framework summary)
+- 1 insight thread (key takeaways)
+- 1 single-image insight
+
+Target: PM audience, recruiters, hiring managers
+
+### Secondary: Medium
+- Republish optimized versions
+- Link back to main site
+- Leverage Medium's built-in distribution
+
+### Selective: Reddit
+- r/ProductManagement
+- r/PMCareer
+- r/startups
+- Answer questions, link when genuinely helpful
+
+### Email List (Critical)
+Lead magnets:
+- PM Interview Framework PDF
+- 0→1 Product Thinking Checklist
+- Guesstimate Master Guide
+
+**Even 10 subscribers = leverage**
+
+## Homepage Requirements
+
+### Hero Section (Decision-Based)
+**Current:** "I build products that matter."  
+**Required:** "Technical Product Manager building AI-driven and 0→1 products. 3.5 years engineering + product. I turn ambiguity into shipped outcomes."
+
+**CTAs:**
+- Primary: "View Case Studies" (recruiter-focused)
+- Secondary: "Download Resume"
+
+### Three Clear Pathways
+1. 🧠 **I'm a recruiter** → See work quality fast
+2. 🎯 **I'm preparing for PM interviews** → Learn frameworks
+3. 🤝 **I want to collaborate** → Contact
+
+### Navigation Structure
+**BEFORE:**
+- Home, About, Portfolio, Case Studies, More (Blog, Resources, Contact)
+
+**REQUIRED:**
+- Home
+- Case Studies (pillar page)
+- PM Interview Prep (pillar page)
+- AI & Strategy (pillar page)
+- About
+- Resume
+
+Categorize by intent, not content type.
+
+## Growth Targets (90 Days)
+
+**Month 1:** 500 monthly visitors  
+**Month 2:** 1,500 monthly visitors  
+**Month 3:** 3,000+ monthly visitors
+
+**Required Actions:**
+- 1 high-quality post per week
+- Aggressive distribution (LinkedIn 3x/week)
+- SEO-optimized titles and structure
+- Email capture enabled
+
+## What NOT to Do
+
+❌ Don't add more project types (stay focused)  
+❌ Don't write "interesting" content (write searchable content)  
+❌ Don't publish without distributing  
+❌ Don't use generic positioning  
+❌ Don't create isolated posts (always internal link)  
+❌ Don't skip email capture  
+❌ Don't optimize for exploration (optimize for decision)
+
+## Success Metrics
+
+**Weekly Tracking:**
+- Organic search traffic %
+- Avg. engagement time (target: 90+ seconds)
+- Bounce rate (target: <60%)
+- Email signups
+- LinkedIn engagement
+
+**Monthly Tracking:**
+- Total visitors
+- Returning visitor %
+- Top performing posts
+- Keyword rankings
+- Backlinks gained
+
+## Implementation Priority
+
+1. **Week 1:** Homepage hero + navigation + email capture
+2. **Week 2:** Create 3 pillar pages (hubs)
+3. **Week 3:** Rewrite top 10 post titles for SEO
+4. **Week 4:** Internal linking + first LinkedIn distribution push
+
+**Rule:** Fix positioning and structure BEFORE writing new content.
+
+This strategic framework must guide ALL future decisions about content, design, and distribution.
