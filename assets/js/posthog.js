@@ -18,7 +18,7 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (window.__internal_traffic) {
+    if (window.__internal) {
         return;
     }
 

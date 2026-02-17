@@ -5,7 +5,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-  if (window.__internal_traffic) {
+  if (window.__internal) {
     return;
   }
 
@@ -91,11 +91,14 @@ function initDownloadTracking() {
  * Helper to send events to all active providers
  */
 function sendEvent(eventName, params) {
-  if (window.__internal_traffic) {
+  if (window.__internal) {
     return;
   }
 
-  // console.log(`[Analytics] Tracking ${eventName}:`, params);
+  // Attach channel source to every event
+  if (window.__ref) {
+    params = Object.assign({ ref: window.__ref }, params);
+  }
 
   // Google Analytics 4
   if (typeof gtag === 'function') {

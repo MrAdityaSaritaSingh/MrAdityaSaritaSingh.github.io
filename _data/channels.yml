@@ -1,0 +1,58 @@
+# ============================================================================
+# Traffic Channels — source attribution for analytics
+# ============================================================================
+#
+# Add ?ref=<slug> to any link pointing to your site.
+# The slug is captured on first page load, stored for the session,
+# and attached to every PostHog + GA4 event automatically.
+#
+# Example links:
+#   Resume PDF    → https://adityasrathore.com/?ref=resume
+#   LinkedIn bio  → https://adityasrathore.com/?ref=linkedin
+#   Twitter post  → https://adityasrathore.com/case-studies/?ref=twitter
+#   Email sig     → https://adityasrathore.com/?ref=email
+#
+# Standard UTM params (?utm_source=X) are also captured as fallback.
+#
+# Internal traffic:
+#   ?internal=1   → marks browser as internal (persists via localStorage)
+#   ?internal=0   → clears the flag
+#   localhost      → always internal
+# ============================================================================
+
+channels:
+  - slug: resume
+    name: Resume PDF
+    description: Link embedded in resume/CV document
+
+  - slug: linkedin
+    name: LinkedIn
+    description: LinkedIn profile, posts, or DMs
+
+  - slug: twitter
+    name: Twitter / X
+    description: Twitter profile or tweets
+
+  - slug: email
+    name: Email
+    description: Direct email or email signature
+
+  - slug: github
+    name: GitHub
+    description: GitHub profile README or repo links
+
+  - slug: whatsapp
+    name: WhatsApp
+    description: Shared via WhatsApp message
+
+  - slug: referral
+    name: Referral
+    description: Word-of-mouth or shared link
+
+  - slug: qr
+    name: QR Code
+    description: Scanned from business card or print material
+
+  - slug: recruiter
+    name: Recruiter Outreach
+    description: Link shared directly with a recruiter

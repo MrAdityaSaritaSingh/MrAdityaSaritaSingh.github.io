@@ -1,29 +1,17 @@
-<!--
-  This file combines multiple analytics providers following theme conventions.
-  
-  Example _config.yml structure:
-  
-  analytics:
-    provider: "custom"
-    google:
-      tracking_id: "G-XXXXXXXXXX"
-    posthog:
-      api_key: "phc_..."
-      host: "https://eu.i.posthog.com"
--->
-<script src="{{ '/assets/js/internal-traffic.js' | relative_url }}"></script>
+<!-- Traffic detection: internal filter + channel attribution -->
+<script src="{{ '/assets/js/traffic.js' | relative_url }}"></script>
 
 {%- if site.analytics.google.tracking_id -%}
 <!-- GA opt-out property must be set before gtag loads -->
 <script>
-  if (window.__internal_traffic) {
+  if (window.__internal) {
     window['ga-disable-{{ site.analytics.google.tracking_id }}'] = true;
   }
 </script>
 
 <!-- Google Analytics 4 -->
 <script>
-  if (!window.__internal_traffic) {
+  if (!window.__internal) {
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.tracking_id }}';
@@ -31,15 +19,17 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '{{ site.analytics.google.tracking_id }}', { 'anonymize_ip': {{ site.analytics.google.anonymize_ip | default: false }}});
+    var gaConfig = { 'anonymize_ip': {{ site.analytics.google.anonymize_ip | default: false }} };
+    if (window.__ref) { gaConfig.traffic_source = window.__ref; }
+    gtag('config', '{{ site.analytics.google.tracking_id }}', gaConfig);
   }
 </script>
 {%- endif -%}
 
 {%- if site.analytics.posthog.api_key and site.analytics.posthog.host -%}
-  <!-- Start PostHog Snippet -->
+<!-- PostHog -->
 <script>
-  if (!window.__internal_traffic) {
+  if (!window.__internal) {
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}var u=t.createElement("script");u.type="text/javascript",u.async=!0,u.src=s.api_host+"/static/array.js",(p=t.getElementsByTagName("script")[0]).parentNode.insertBefore(u,p);var h=e;for(void 0!==a?h=e[a]=[]:a="posthog",h.people=h.people||[],h.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},h.people.toString=function(){return h.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(h,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('{{ site.analytics.posthog.api_key }}', {
       api_host: '{{ site.analytics.posthog.host }}',
@@ -50,7 +40,9 @@
       },
       disable_session_recording: {{ site.analytics.posthog.disable_session_recording | default: false }}
     });
+    if (window.__ref) {
+      posthog.register({ ref: window.__ref });
+    }
   }
 </script>
-  <!-- End PostHog Snippet -->
 {%- endif -%}
