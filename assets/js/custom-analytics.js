@@ -5,6 +5,10 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+  if (window.__internal_traffic) {
+    return;
+  }
+
   // Wait a moment to ensure analytics libraries are loaded
   setTimeout(trackPageEvent, 1000);
   
@@ -87,6 +91,10 @@ function initDownloadTracking() {
  * Helper to send events to all active providers
  */
 function sendEvent(eventName, params) {
+  if (window.__internal_traffic) {
+    return;
+  }
+
   // console.log(`[Analytics] Tracking ${eventName}:`, params);
 
   // Google Analytics 4

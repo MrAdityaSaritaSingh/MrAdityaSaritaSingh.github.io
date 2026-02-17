@@ -11,15 +11,17 @@
  *    - setupResumeTracking()
  *    - setupProjectLinkTracking()
  *    - setupTimelineTracking()
- * 3. User Identification
- *    - identifyInternalUsers()
- * 4. Helper Functions
+ * 3. Helper Functions
  *    - trackClick()
  * 5. A/B Test Example (for reference)
  *    - setupDummyButtonColorTest()
  */
 
 document.addEventListener("DOMContentLoaded", function () {
+    if (window.__internal_traffic) {
+        return;
+    }
+
     // First, check if the PostHog object is available on the window.
     if (typeof posthog === "undefined") {
         console.error(
@@ -34,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
      * ========================================================================
      * Call the functions that set up your event trackers and user identification.
      */
-    identifyInternalUsers(); // Identify internal users first
     setupHomepageCtaTracking();
     setupResumeTracking();
     setupProjectLinkTracking();
@@ -243,41 +244,6 @@ function setupContactTracking() {
  * 3. User Identification
  * ========================================================================
  */
-
-/**
- * Identifies internal users based on a URL parameter or a cookie.
- *
- * - **Goal:** Separate internal (team) traffic from external (public) traffic.
- * - **Method:**
- *   1. Checks for a `?team=true` query parameter in the URL.
- *   2. If found, it sets a cookie `is_internal_user=true`.
- *   3. On any page load, it checks for the cookie.
- *   4. If the cookie exists, it identifies the user to PostHog with the
- *      property `user_type: 'internal'`.
- */
-function identifyInternalUsers() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const isInternalParam = urlParams.get('team');
-    const internalUserCookie = document.cookie.includes('is_internal_user=true');
-
-    // If the URL parameter is present, set the cookie.
-    // The cookie will expire in 30 days.
-    if (isInternalParam === 'true') {
-        document.cookie = "is_internal_user=true; max-age=2592000; path=/";
-    }
-
-    // If the cookie is present (either just set or from a previous session),
-    // identify the user to PostHog.
-    if (internalUserCookie || isInternalParam === 'true') {
-        // `posthog.identify()` links all events to a single user profile.
-        // `posthog.people.set()` adds properties to that user profile.
-        posthog.identify(posthog.get_distinct_id(), {
-            user_type: 'internal'
-        });
-        posthog.capture('internal_user_view');
-    }
-}
-
 
 /**
  * ========================================================================
