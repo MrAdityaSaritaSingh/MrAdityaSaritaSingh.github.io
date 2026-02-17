@@ -16,17 +16,14 @@
 title: Aditya S Rathore
 email: Mr.AdityaSRathore@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-    "Aditya S Rathore is a Product Builder and Product Manager pursuing his Master’s in Product Design & Management at IIIT Hyderabad. With over four years of experience as a Software Engineer, he bridges the gap between product strategy and technical execution. A lifelong tinkerer with a hacker’s mindset, Aditya helps founders and teams build fast, validate faster, and turn ideas into impactful products.""
+  Technical Product Manager specializing in AI-driven products and 0-to-1 builds. 3 years software engineering + product at Lohia Mechatronik and 2 years MTech in Product Management at IIIT Hyderabad. Structured thinking, technical depth, and shipped outcomes.
 hero_image: "assets/images/profile.webp"
 hero_cta_1:
-    text: "View My Resume"
-    url: "/resume/"
-hero_cta_2:
-    text: "Explore My Work"
+    text: "Products I've shipped"
     url: "/portfolio/"
-# logo: "/assets/images/logo.png"
-twitter_username: adityasrathor3
-github_username: MrAdityaSaritaSingh
+hero_cta_2:
+    text: "Download Resume"
+    url: "/resume/"
 #theme: minimal-mistakes-jekyll
 # theame
 minimal_mistakes_skin: "asr-dark" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise", "myskin"
@@ -119,8 +116,8 @@ plugins:
 author:
     name: "Aditya S Rathore"
     avatar: "assets/images/Headshot.png"
-    bio: "I build, iterate, and think from first principles."
-    location: Hyderabad & Pune
+    bio: "Technical PM | Ex-Senior SWE | First principles thinker"
+    location: Hyderabad & Pune & Remote
     links:
         - label: "Blog"
           icon: "fas fa-fw fa-link"
