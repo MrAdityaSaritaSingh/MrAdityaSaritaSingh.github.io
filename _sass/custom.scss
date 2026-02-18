@@ -29,8 +29,17 @@
 .hero-text {
   max-width: 50%;
   color: $text-color;
-  min-height: 18rem;
-  /* Reserve space for text to prevent layout shift */
+
+  /* Reset page__content h2 border inside hero */
+  h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Reset base heading margins inside hero */
+  h1, h2 {
+    margin: 0;
+  }
 
   .intro {
     font-size: $type-size-5;
@@ -44,21 +53,34 @@
     font-weight: 700;
   }
 
-  .role {
-    font-size: $type-size-3;
-    font-weight: 500;
-    margin-bottom: $space-m;
-    color: mix($background-color, $text-color, 50%);
-    min-height: 3em;
-    /* Reserve space to prevent layout shift */
+  /* Gradient name heading – large, bold, foreground gradient */
+  .gradient-name {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 0.25rem;
+    background: linear-gradient(to right, $text-color, rgba($text-color, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Gradient role subtitle – primary→secondary gradient */
+  .gradient-role {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .desc {
     font-size: $type-size-5;
-    margin-bottom: $space-xl;
+    margin-bottom: $space-l;
     color: mix($background-color, $text-color, 50%);
-    min-height: 5em;
-    /* Reserve space to prevent layout shift */
   }
 }
 
@@ -382,8 +404,12 @@ ul {
     height: 450px;
   }
 
-  .hero-text .name {
-    font-size: 3.5rem;
+  .hero-text .gradient-name {
+    font-size: 3.75rem;
+  }
+
+  .hero-text .gradient-role {
+    font-size: 2.5rem;
   }
 
   .introduction .container {
@@ -427,12 +453,12 @@ ul {
     height: 250px;
   }
 
-  .hero-text .name {
+  .hero-text .gradient-name {
     font-size: $type-size-2;
   }
 
-  .hero-text .role {
-    font-size: $type-size-4;
+  .hero-text .gradient-role {
+    font-size: $type-size-3;
   }
 
   .timeline {

@@ -1,17 +1,14 @@
 main:
-    - title: "Home"
-      url: /
-    - title: "About"
-      url: /about/
     - title: "Portfolio"
       url: /portfolio/
     - title: "Case Studies"
       url: /case-studies/
+    - title: "Contact"
+      url: /contact/
     - title: "More"
       children:
-        - title: "Blogs"
-          url: https://adigeak.github.io
-        - title: "Resources"
-          url: /resources/
-        - title: "Contact"
-          url: /contact/
+      - title: "Resources"
+        url: /resources/
+      - title: "Blogs"
+        url: https://adigeak.github.io
+        
