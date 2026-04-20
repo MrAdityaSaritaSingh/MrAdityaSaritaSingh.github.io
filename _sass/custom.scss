@@ -37,7 +37,8 @@
   }
 
   /* Reset base heading margins inside hero */
-  h1, h2 {
+  h1,
+  h2 {
     margin: 0;
   }
 
@@ -67,8 +68,8 @@
 
   /* Gradient role subtitle – primary→secondary gradient */
   .gradient-role {
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-    font-weight: 600;
+    font-size: clamp(.75rem, 2.5vw, 1.5rem);
+    font-weight: 400;
     line-height: 1.2;
     margin: 0 0 1rem;
     background: linear-gradient(to right, $primary-color, $secondary-color);
