@@ -5,8 +5,8 @@ categories: [Product Design, UX Research, System Architecture]
 tags: [AI, Finance, B2B, Fraud Detection]
 image: /assets/images/post_audit.avif
 description: This project explores an AI-powered ledger scrutiny system designed to surface financial anomalies and support auditor decision-making.
-drive_link: https://docs.google.com/presentation/d/1OGpJHAtvDvYPw2-fJyiBwg-ijyrHgZZtHxe_WFvrmGY/edit?usp=sharing
 layout: product
+drive_link: https://docs.google.com/presentation/d/1OGpJHAtvDvYPw2-fJyiBwg-ijyrHgZZtHxe_WFvrmGY/edit?usp=sharing
 feedback: true
 ---
 
