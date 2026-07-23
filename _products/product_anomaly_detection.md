@@ -5,6 +5,7 @@ categories: [Product Design, UX Research, System Architecture]
 tags: [AI, Finance, B2B, Fraud Detection]
 image: /assets/images/post_audit.avif
 description: This project explores an AI-powered ledger scrutiny system designed to surface financial anomalies and support auditor decision-making.
+drive_link: https://docs.google.com/presentation/d/1OGpJHAtvDvYPw2-fJyiBwg-ijyrHgZZtHxe_WFvrmGY/edit?usp=sharing
 layout: product
 feedback: true
 ---
@@ -95,5 +96,3 @@ Ledger scrutiny forms the backbone of audits, making it critical for detecting a
 * **Ledger Data Ingestion:** Imports Excel / CSV / Tally / ERP systems and auto-detects columns to normalize ledger structure.
 * **Anomaly Detection Engine:** Identifies unusual or suspicious transactions and flags potential anomalies.
 * **Human-in-the-Loop:** Auditor reviews flagged items, approves / rejects system alerts and adds comments and reasoning.
-
-[full report](https://docs.google.com/presentation/d/1OGpJHAtvDvYPw2-fJyiBwg-ijyrHgZZtHxe_WFvrmGY/edit?usp=sharing)
