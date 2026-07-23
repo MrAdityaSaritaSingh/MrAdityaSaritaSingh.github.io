@@ -3,7 +3,7 @@ title: Anomaly Detection System for Ledger Scrutiny
 date: 2026-03-27
 categories: [Product Design, UX Research, System Architecture]
 tags: [AI, Finance, B2B, Fraud Detection]
-image: /assets/images/anomaly_detection_cover.png
+image: /assets/images/post_audit.avif
 description: This project explores an AI-powered ledger scrutiny system designed to surface financial anomalies and support auditor decision-making.
 layout: product
 feedback: true
